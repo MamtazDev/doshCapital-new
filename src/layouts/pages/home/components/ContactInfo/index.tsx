@@ -1,7 +1,5 @@
 // @material-ui core components
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import Autocomplete from "@mui/material/Autocomplete";
 
 //  React TS components
 import MDBox from "components/MDBox";
@@ -11,7 +9,6 @@ import MDTypography from "components/MDTypography";
 import FormField from "layouts/pages/account/components/FormField";
 
 // Data
-import selectData from "layouts/pages/account/settings/components/BasicInfo/data/selectData";
 import { Container, TextField } from "@mui/material";
 import MDButton from "../../../../../components/MDButton";
 

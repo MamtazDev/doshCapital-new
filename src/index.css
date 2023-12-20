@@ -88,7 +88,7 @@
   background-color: unset !important;
 }
 
-/* 
+/*
 .css-hgn5yn {
   background-color: #1a2335 !important;
 } */
@@ -117,3 +117,13 @@
 footer {
   background-color: black !important;
 }
+
+/* revison css */
+
+.css-tcmus9-MuiPaper-root-MuiCard-root{
+  background-color: unset !important;
+  box-shadow: unset !important;
+  margin-top: unset !important;
+}
+
+/* revision css /-end */

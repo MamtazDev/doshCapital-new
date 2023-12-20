@@ -1,23 +1,18 @@
 /* eslint-disable no-param-reassign */
-import { useState, useEffect, ReactNode, Fragment, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
 
 // @mui material components
-import Icon from "@mui/material/Icon";
-import Popper from "@mui/material/Popper";
-import Grow, { GrowProps } from "@mui/material/Grow";
-import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
-import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
-import { Theme } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Grow, { GrowProps } from "@mui/material/Grow";
+import Icon from "@mui/material/Icon";
 
 //  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
 
 //  React TS examples components
 import HomeNavbarDropdown from "examples/Navbars/HomeNavbar/HomeNavbarDropdown";
@@ -27,13 +22,13 @@ import HomeNavbarMobile from "examples/Navbars/HomeNavbar/HomeNavbarMobile";
 import breakpoints from "assets/theme/base/breakpoints";
 
 //  React context
-import { setOpenConfigurator, useMaterialUIController } from "context";
-import doshLogo from "assets/images/DoshLogo.png";
-import { blue, grey } from "@mui/material/colors";
-import MDInput from "components/MDInput";
 import { IconButton } from "@mui/material";
-import { navbarIconButton } from "../DashboardNavbar/styles";
+import { grey } from "@mui/material/colors";
+import doshLogo from "assets/images/DoshLogo.png";
 import colors from "assets/theme/base/colors";
+import MDInput from "components/MDInput";
+import { setOpenConfigurator, useMaterialUIController } from "context";
+import { navbarIconButton } from "../DashboardNavbar/styles";
 // import rgba from "../../../assets/theme/functions/rgba";
 
 // Declaring props types for HomeNavbar
@@ -96,10 +91,11 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
       }
     }
 
-    /** 
-     The event listener that's calling the displayMobileNavbar function when 
+    /**
+     The event listener that's calling the displayMobileNavbar function when
      resizing the window.
     */
+
     window.addEventListener("resize", displayMobileNavbar);
 
     // Call the displayMobileNavbar function to set the state with the initial value.
