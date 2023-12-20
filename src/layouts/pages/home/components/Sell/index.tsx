@@ -13,8 +13,8 @@ import robotsImage from "assets/images/dosh/robots.png";
 function Sell(): JSX.Element {
   const [collapse, setCollapse] = useState<number | boolean>(false);
   return (
-    <MDBox mt={8}>
-      <MDBox mt={2} mb={3}>
+    <MDBox>
+      <MDBox mb={3}>
         <Grid container spacing={3} alignItems="stretch">
           <Grid item xs={12} md={6} lg={4} mb={4}>
             <MDBox mt={3} sx={{ height: "100%" }}>

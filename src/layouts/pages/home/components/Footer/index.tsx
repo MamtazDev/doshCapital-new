@@ -7,6 +7,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import logo from "../../../../../assets/images/dosh/DustyzTrans.png";
 
 //  React TS components
 import MDBox from "components/MDBox";
@@ -20,7 +21,7 @@ function Footer(): JSX.Element {
         <Grid container justifyContent="center">
           <Grid item xs={10} lg={3} container justifyContent="center">
             <MDBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-              <MDTypography
+              {/* <MDTypography
                 component="a"
                 href="#"
                 variant="h3"
@@ -28,7 +29,8 @@ function Footer(): JSX.Element {
                 color="secondary"
               >
                 Dosh Capital Investment
-              </MDTypography>
+              </MDTypography> */}
+              <img width={200} src={logo} alt="" />
             </MDBox>
           </Grid>
           <Grid item xs={10} lg={3} container justifyContent="center">

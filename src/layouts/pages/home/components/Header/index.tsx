@@ -28,6 +28,7 @@ import { Container } from "@mui/system";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import video from "assets/hero.mp4";
 import homeBg from "assets/images/dosh/homeBg.png";
+import homeBgTwo from "assets/images/dosh/homeBg-2.png";
 import { Box, Button, Fade, Icon, Link, Modal, Typography } from "@mui/material";
 import breakpoints from "assets/theme/base/breakpoints";
 import MDButton from "../../../../../components/MDButton";
@@ -80,8 +81,6 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
       name,
       email,
     };
-
-
 
     try {
       const res = await axios.post(`${BASE_URL}/api/send-email`, data);
@@ -136,7 +135,17 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     style={{ fontFamily: "felix-titling-regular" }}
                     className="home_text"
                   >
-                    AUTOMATED TRADING NETWORKING
+                    AUTOMATED TRADING
+                  </MDTypography>
+                  <MDTypography
+                    variant="h3"
+                    color="white"
+                    fontWeight="bold"
+                    align="right"
+                    style={{ fontFamily: "felix-titling-regular" }}
+                    className="home_text"
+                  >
+                    NETWORKING
                   </MDTypography>
                   <MDTypography
                     variant="h3"
@@ -183,11 +192,14 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     </MDButton>{" "} */}
                     <br />
                     <button
+                      onClick={() => setOpen(true)}
                       style={{
+                        fontWeight: "600",
+                        fontSize: "15px",
                         border: "none",
                         backgroundColor: "#247DEA",
                         color: "white",
-                        padding: "0 10px",
+                        padding: "15px 25px",
                         borderRadius: "5px",
                         display: "flex",
                         alignItems: "center",
@@ -299,7 +311,8 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               zIndex: "-1",
             }}
           >
-            <img className="homebg" src={homeBg} alt="home background" />
+            <img className="homebg" src={homeBgTwo} alt="home background" />
+
             {/* <video
               ref={videoRef}
               style={{ width: "100%" }}

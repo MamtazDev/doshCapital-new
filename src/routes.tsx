@@ -207,7 +207,8 @@ const routes = [
         name: "Products",
         key: "products",
         route: "/pages/products",
-        component: <PrivateRoute><Products /></PrivateRoute>,
+        // component: <PrivateRoute><Products /></PrivateRoute>,
+        component: <Products />,
       },
       {
         name: "Pricing Page",

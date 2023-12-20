@@ -113,3 +113,7 @@
   border: 2px solid red !important;
   height: 50px !important;
 }
+
+footer {
+  background-color: black !important;
+}
