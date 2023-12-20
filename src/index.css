@@ -126,4 +126,12 @@ footer {
   margin-top: unset !important;
 }
 
+.css-1q1k6n-MuiInputBase-root-MuiInput-root input::placeholder{
+  color: rgb(48, 48, 48) !important;
+}
+
+.css-1q1k6n-MuiInputBase-root-MuiInput-root input{
+  color: #22283f !important;
+}
+
 /* revision css /-end */
