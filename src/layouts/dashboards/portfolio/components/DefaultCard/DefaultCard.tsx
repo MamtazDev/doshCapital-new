@@ -3,9 +3,9 @@
 import { ReactNode } from "react";
 
 // @mui material components
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
 
 //  React TS components
 import MDBox from "components/MDBox";
@@ -22,7 +22,7 @@ interface Props {
   count2: string | number;
   button: boolean;
   belowText: boolean;
-  buttonVarient:"inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning"
+  buttonVarient: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
   percentage?: {
     color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "white";
     value: string | number;
@@ -36,15 +36,25 @@ interface Props {
   [key: string]: any;
 }
 
-function DefaultCard({ title, count, percentage,title2,count2,button, buttonVarient, dropdown, belowText }: Props): JSX.Element {
+function DefaultCard({
+  title,
+  count,
+  percentage,
+  title2,
+  count2,
+  button,
+  buttonVarient,
+  dropdown,
+  belowText,
+}: Props): JSX.Element {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
   return (
     <Card>
       <MDBox p={2}>
-        <Grid container justifyContent="space-between" >
-          <Grid item >
+        <Grid container justifyContent="space-between">
+          <Grid item>
             <MDBox mb={0.5} lineHeight={1}>
               <MDTypography
                 variant="button"
@@ -57,14 +67,32 @@ function DefaultCard({ title, count, percentage,title2,count2,button, buttonVari
               </MDTypography>
             </MDBox>
             <MDBox lineHeight={1}>
-             {button? <Button variant="contained" size="small" sx={{display:"block", backgroundColor:`${buttonVarient==="success" &&"#70ad47"}`} }>{count}</Button>:  <MDTypography variant="h5" fontWeight="bold"
-              //  sx={{fontSize:"16px"}}
+              {button ? (
+                <Button
+                  variant="contained"
+                  size="medium"
+                  sx={{
+                    display: "block",
+                    backgroundColor: `${buttonVarient === "success" && "#70ad47"}`,
+                  }}
+                >
+                  {count}
+                </Button>
+              ) : (
+                <MDTypography
+                  variant="h5"
+                  fontWeight="bold"
+                  //  sx={{fontSize:"16px"}}
+                >
+                  {count}
+                </MDTypography>
+              )}
+              <MDTypography
+                variant="button"
+                fontWeight="bold"
+                color={percentage.color}
+                //  sx={{fontSize:"10px"}}
               >
-                {count}
-              </MDTypography>}
-              <MDTypography variant="button" fontWeight="bold" color={percentage.color}
-              //  sx={{fontSize:"10px"}}
-               >
                 {percentage.value}&nbsp;
                 <MDTypography
                   variant="button"
@@ -77,7 +105,7 @@ function DefaultCard({ title, count, percentage,title2,count2,button, buttonVari
               </MDTypography>
             </MDBox>
           </Grid>
-          <Grid item >
+          <Grid item>
             <MDBox mb={0.5} lineHeight={1}>
               <MDTypography
                 variant="button"
@@ -86,16 +114,16 @@ function DefaultCard({ title, count, percentage,title2,count2,button, buttonVari
                 textTransform="capitalize"
                 // sx={{fontSize:"12px"}}
               >
-            {title2}
+                {title2}
               </MDTypography>
             </MDBox>
             <MDBox lineHeight={1}>
-              <MDTypography variant="h5" fontWeight="bold" sx={{fontSize:"16px"}}>
-               {count2}
+              <MDTypography variant="h5" fontWeight="bold" sx={{ fontSize: "16px" }}>
+                {count2}
               </MDTypography>
-              
             </MDBox>
-            {belowText&&<MDTypography variant="button" fontWeight="bold" color={percentage.color}>
+            {/* {belowText && (
+              <MDTypography variant="button" fontWeight="bold" color={percentage.color}>
                 {percentage.value}&nbsp;
                 <MDTypography
                   variant="button"
@@ -104,10 +132,50 @@ function DefaultCard({ title, count, percentage,title2,count2,button, buttonVari
                 >
                   {percentage.label}
                 </MDTypography>
-              </MDTypography>}
-          </Grid>                
+              </MDTypography>
+            )} */}
+            <MDBox lineHeight={1}>
+              {/* {button ? (
+                <Button
+                  variant="contained"
+                  size="medium"
+                  sx={{
+                    display: "block",
+                    backgroundColor: `${buttonVarient === "success" && "#70ad47"}`,
+                  }}
+                >
+                  {count}
+                </Button>
+              ) :  */}
+              {/* ( */}
+              <MDTypography
+                variant="h5"
+                fontWeight="bold"
+                //  sx={{fontSize:"16px"}}
+              >
+                {/* {count} */}
+              </MDTypography>
+              {/* ) */}
+              {/* } */}
+              <MDTypography
+                variant="button"
+                fontWeight="bold"
+                color={percentage.color}
+                //  sx={{fontSize:"10px"}}
+              >
+                {percentage.value}&nbsp;
+                <MDTypography
+                  variant="button"
+                  fontWeight="regular"
+                  color={darkMode ? "text" : "secondary"}
+                  // sx={{fontSize:"10px"}}
+                >
+                  {percentage.label}
+                </MDTypography>
+              </MDTypography>
+            </MDBox>
+          </Grid>
         </Grid>
-       
       </MDBox>
     </Card>
   );

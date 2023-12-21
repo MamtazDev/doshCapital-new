@@ -1,38 +1,32 @@
-import { useState, useEffect, ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import "./index.css";
 
 // @mui material components
+import AppBar from "@mui/material/AppBar";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Icon from "@mui/material/Icon";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import homeDecor1 from "assets/images/new/Picture1.png";
+import homeDecor2 from "assets/images/new/Picture2.png";
+import homeDecor3 from "assets/images/new/Picture3.png";
+import homeDecor4 from "assets/images/new/Picture4.png";
 import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import team5 from "assets/images/team-5.jpg";
-import homeDecor1 from "assets/images/new/Picture1.png";
-import homeDecor2 from "assets/images/new/Picture2.png";
-import homeDecor3 from "assets/images/new/Picture3.png";
-import homeDecor4 from "assets/images/new/Picture4.png";
 
 //  React TS components
+import mission from "assets/images/mission.png";
+import value from "assets/images/values.png";
+import vision from "assets/images/vision.png";
+import MDAvatar from "components/MDAvatar";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDAvatar from "components/MDAvatar";
-import logoSlack from "assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import logoXD from "assets/images/small-logos/logo-xd.svg";
-import mission from "assets/images/mission.png";
-import vision from "assets/images/vision.png";
-import value from "assets/images/values.png";
-import logoAsana from "assets/images/small-logos/logo-asana.svg";
-import logoInvision from "assets/images/small-logos/logo-invision.svg";
-import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
 
 //  React TS Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
@@ -40,13 +34,11 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Images
 import dusty from "assets/images/Me.jpg";
 import backgroundImage from "assets/images/Sydney.jpg";
-import { Avatar, AvatarGroup, Box, Container, Typography } from "@mui/material";
 import ComplexProjectCard from "examples/Cards/ProjectCards/ComplexProjectCard";
+import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
+import Footer from "examples/Footer";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Header from "layouts/pages/profile/components/Header";
-import Footer from "examples/Footer";
-import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 
 function About({ children }: { children?: ReactNode }): JSX.Element {
   const [slackBotMenu, setSlackBotMenu] = useState(null);
@@ -65,7 +57,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
         : setTabsOrientation("horizontal");
     }
 
-    /** 
+    /**
      The event listener that's calling the handleTabsOrientation function when resizing the window.
     */
     window.addEventListener("resize", handleTabsOrientation);
@@ -107,12 +99,13 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+
       <MDBox position="relative" mb={5} mt={3}>
         <MDBox
           style={{
             position: "absolute",
             top: "50%",
-            right: "20%",
+            right: "-15%",
             transform: "translate(-50%,-50%)",
             zIndex: 9,
           }}
@@ -134,7 +127,6 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             At Dosh we come together to fix one common problem by providing a Solution and Service
             to Financial Freedom. We provide this through Automated Trading, Networking & DoshCoin
           </MDTypography>{" "}
-          <br />
           <MDTypography variant="button" color="text" fontWeight="regular">
             Ever hard of a company that provides great Service a Robust Product and Reliable steady
             Income through consistent profits? Its Dosh Capital Investment!
@@ -149,10 +141,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           borderRadius="xl"
           sx={{
             backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-              `${linearGradient(
-                rgba(gradients.info.main, 0.6),
-                rgba(gradients.info.state, 0.6)
-              )}, url(${backgroundImage})`,
+              ` url(${backgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "50%",
             overflow: "hidden",
@@ -164,14 +153,15 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             position: "relative",
             mt: -8,
             mx: 3,
-            py: 2,
+            py: 1,
             px: 2,
           }}
         >
-          <Grid container spacing={3} alignItems="center" style={{ padding: " 10px 0" }}>
+          <Grid container spacing={3} alignItems="center" >
             <Grid item>
-              <MDAvatar src={dusty} alt="profile-image" size="xl" shadow="sm" />
+            <MDAvatar src={dusty} alt="profile-image" size="xl" shadow="sm" />
             </Grid>
+
             <Grid item>
               <MDBox height="100%" mt={0.5} lineHeight={1}>
                 <MDTypography variant="h5" fontWeight="medium">
@@ -182,6 +172,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                 </MDTypography>
               </MDBox>
             </Grid>
+
             <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
               <AppBar position="static">
                 <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
@@ -217,6 +208,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           {children}
         </Card>
       </MDBox>
+
       <div style={{ padding: "0 30px " }}>
         <MDBox height="100%" mt={4} lineHeight={1}>
           <MDTypography variant="h5" fontWeight="medium">
@@ -240,7 +232,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   image={mission}
                   title="Our Mission"
                   subtitle="What we are"
-                  description="Is to provide the best possible investment strategy trading with the goal to drive client investment growth like no other! 
+                  description="Is to provide the best possible investment strategy trading with the goal to drive client investment growth like no other!
                     "
                   dateTime="02.03.22"
                   members={[team1, team2, team3, team4, team5]}
@@ -257,7 +249,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   image={vision}
                   title="Our Vision"
                   subtitle="What we see"
-                  description="Is to grow our client database and network to over one million in the next 5 years with an ROI of over 100% per annum. 
+                  description="Is to grow our client database and network to over one million in the next 5 years with an ROI of over 100% per annum.
                     "
                   dateTime="22.11.21"
                   members={[team1, team2, team3]}

@@ -1,21 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-import { ReactNode, useEffect, useRef, useState } from "react";
-import "./index.css";
+import { ReactNode, useRef, useState } from "react";
 import "../../../../../fonts/Felixti.TTF";
+import "./index.css";
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Backdrop from "@mui/material/Backdrop";
 
 //  React TS components
+import EastIcon from "@mui/icons-material/East";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDInput from "components/MDInput";
-import EastIcon from "@mui/icons-material/East";
 
 //  React TS examples components
 
@@ -23,17 +17,13 @@ import EastIcon from "@mui/icons-material/East";
 import pageRoutes from "page.routes";
 
 // Images
-import bgImage from "assets/images/bg-pricing.jpg";
+import { Box, Modal } from "@mui/material";
 import { Container } from "@mui/system";
-import HomeNavbar from "examples/Navbars/HomeNavbar";
-import video from "assets/hero.mp4";
-import homeBg from "assets/images/dosh/homeBg.png";
 import homeBgTwo from "assets/images/dosh/homeBg-2.png";
-import { Box, Button, Fade, Icon, Link, Modal, Typography } from "@mui/material";
-import breakpoints from "assets/theme/base/breakpoints";
-import MDButton from "../../../../../components/MDButton";
 import axios from "axios";
 import { BASE_URL } from "config/config";
+import HomeNavbar from "examples/Navbars/HomeNavbar";
+import ContactInfoForm from "../ContactInfoForm";
 
 // Declaring props types for Header
 interface Props {
@@ -63,7 +53,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "background.paper",
+    bgcolor: "transparant",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
@@ -194,6 +184,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     <button
                       onClick={() => setOpen(true)}
                       style={{
+                        cursor: "pointer",
                         fontWeight: "600",
                         fontSize: "15px",
                         border: "none",
@@ -221,9 +212,9 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                       //   },
                       // }}
                     >
-                      <Fade in={open}>
-                        <Box sx={style}>
-                          <MDBox pt={4} pb={3} px={3}>
+                      {/* <Fade in={open}> */}
+                      <Box sx={style}>
+                        {/* <MDBox pt={4} pb={3} px={3}>
                             <MDBox component="form" role="form" onSubmit={handleSubmit}>
                               <MDBox mb={2}>
                                 <MDInput
@@ -255,11 +246,12 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                                 </MDButton>
                               </MDBox>
                             </MDBox>
-                          </MDBox>
-                        </Box>
-                      </Fade>
+                          </MDBox> */}
+                        <ContactInfoForm />
+                      </Box>
+                      {/* </Fade> */}
                     </Modal>
-                    <Modal
+                    {/* <Modal
                       open={childopen}
                       onClose={childhandleClose}
                       aria-labelledby="modal-modal-title"
@@ -285,7 +277,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                           </MDButton>
                         </MDBox>
                       </Box>
-                    </Modal>
+                    </Modal> */}
                     {/* <MDButton
                       component={Link}
                       to={"/"}

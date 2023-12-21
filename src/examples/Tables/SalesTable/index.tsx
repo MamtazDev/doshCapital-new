@@ -8,8 +8,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
 //  React TS components
-import MDTypography from "components/MDTypography";
 import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
 
 //  React TS examples components
 import SalesTableCell from "examples/Tables/SalesTable/SalesTableCell";
@@ -55,11 +55,11 @@ function SalesTable({ title, rows, shadow }: Props): JSX.Element {
   );
 
   return (
-    <TableContainer sx={{ height: "380px", boxShadow: !shadow && "none", overflowY:"scroll" }}>
+    <TableContainer sx={{ height: "380px", boxShadow: !shadow && "none",  }}>
       <Table>
         {title ? (
           <TableHead>
-            <MDBox component="tr" width="max-content" display="block" mb={1.5}>
+            <MDBox component="tr" width="max-content" display="block" mb={1.5} >
               <MDTypography variant="h6" component="td">
                 {title}
               </MDTypography>

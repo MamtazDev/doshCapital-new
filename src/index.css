@@ -40,10 +40,10 @@
 }
 
 .mmmmmmmm {
-  width: 30% !important;
+  width: 65% !important;
   position: "absolute";
   top: 50%;
-  right: 20%;
+  right: 15%;
   transform: translate(-50%, -50%);
   z-index: 9;
 }
@@ -120,18 +120,66 @@ footer {
 
 /* revison css */
 
-.css-tcmus9-MuiPaper-root-MuiCard-root{
+.css-tcmus9-MuiPaper-root-MuiCard-root {
   background-color: unset !important;
   box-shadow: unset !important;
   margin-top: unset !important;
 }
 
-.css-1q1k6n-MuiInputBase-root-MuiInput-root input::placeholder{
+.css-1q1k6n-MuiInputBase-root-MuiInput-root input::placeholder {
   color: rgb(48, 48, 48) !important;
 }
 
-.css-1q1k6n-MuiInputBase-root-MuiInput-root input{
+.css-1q1k6n-MuiInputBase-root-MuiInput-root input {
   color: #22283f !important;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root {
+  width: 100%;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
+  border: none;
+  outline: none !important;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea::placeholder {
+  font: inherit;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
+  border-bottom: 1px solid #ddd;
+}
+
+.css-fvv6qq-MuiFormControlLabel-root .MuiFormControlLabel-label{
+  color:#ddd !important;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-17ceore-MuiSvgIcon-root{
+  border: 1px solid #22283f;
+}
+
+.css-1b14d7z-MuiGrid-root{
+  margin-top: unset !important;
+}
+
+.css-dg8ndu-MuiButtonBase-root-MuiButton-root{
+  background-color: #A13BB6 !important;
+}
+
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-12xa49n-MuiTableCell-root{
+  text-align: start !important;
+}
+
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-fdjidb-MuiTableCell-root{
+  text-align: start !important;
+}
+
+.MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root{
+padding-left: 75px;
 }
 
 /* revision css /-end */

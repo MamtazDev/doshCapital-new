@@ -38,11 +38,8 @@ import { useMaterialUIController } from "context";
 function Products(): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
   const { darkMode } = controller;
-
   const initalData = botsData;
-
   const [bots, setBots] = useState([]);
-
   useEffect(() => {
     if (darkMode) {
       setBots(initalData.filter((bot) => bot.theme === "dark"));
