@@ -1,11 +1,12 @@
 import emailjs from "@emailjs/browser";
 import {
+  Button,
   Checkbox,
   FormControl,
   FormControlLabel,
   FormGroup,
   Input,
-  TextareaAutosize,
+  TextareaAutosize
 } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -90,7 +91,10 @@ function ContactInfoForm() {
             </MDBox>
 
             <MDBox>
-              <input type="submit" value="Send" />
+              <Button type="submit" value="Send" variant="contained">
+                Send Message
+              </Button>
+              {/* <input type="submit" value="Send" /> */}
             </MDBox>
           </MDBox>
         </FormGroup>
