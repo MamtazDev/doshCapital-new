@@ -56,10 +56,7 @@ function Header({ children }: { children?: ReactNode }): JSX.Element {
         borderRadius="xl"
         sx={{
           backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.info.main, 0.6),
-              rgba(gradients.info.state, 0.6)
-            )}, url(${backgroundImage})`,
+            `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "50%",
           overflow: "hidden",
@@ -70,7 +67,7 @@ function Header({ children }: { children?: ReactNode }): JSX.Element {
           position: "relative",
           mt: -8,
           mx: 3,
-          py: 2,
+          py: 1,
           px: 2,
         }}
       >

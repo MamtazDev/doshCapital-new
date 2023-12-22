@@ -182,4 +182,11 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 padding-left: 75px;
 }
 
+
+@media(max-width: 550px){
+  .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root{
+    padding-left: 0px;
+  }
+}
+
 /* revision css /-end */

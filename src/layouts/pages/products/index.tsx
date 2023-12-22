@@ -2,25 +2,22 @@ import { useEffect, useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
 //  React TS components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDTypography from "components/MDTypography";
 
 //  React TS examples components
+import Footer from "examples/Footer";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
 
 // Project page components
 import Header from "layouts/pages/profile/components/Header";
 
 // Images
-import Chaser from "assets/images/dosh/Chaser.png";
 // import team2 from "assets/images/team-2.jpg";
 // import team3 from "assets/images/team-3.jpg";
 // import team4 from "assets/images/team-4.jpg";
@@ -31,9 +28,9 @@ import Chaser from "assets/images/dosh/Chaser.png";
 // import logoAsana from "assets/images/small-logos/logo-asana.svg";
 // import logoInvision from "assets/images/small-logos/logo-invision.svg";
 // import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
-import ComplexProductCard from "examples/Cards/ProductCards/ComplexProductCard";
-import { botsData } from "data/bots";
 import { useMaterialUIController } from "context";
+import { botsData } from "data/bots";
+import ComplexProductCard from "examples/Cards/ProductCards/ComplexProductCard";
 
 function Products(): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
