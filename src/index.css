@@ -187,6 +187,34 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
     padding-left: 0px;
   }
+
+  .css-1602fiz-MuiPaper-root-MuiCard-root {
+    margin-top: -30px !important;
+  }
+
+  .css-10fw84t {
+    max-width: 120px;
+  }
+
+  .css-1iu09ww {
+    padding: 10px !important;
+  }
+
+  .css-1yyhlhe {
+    padding: 0 !important;
+  }
+
+  .css-exfl4s-MuiGrid-root>.MuiGrid-item {
+    padding: 0 !important;
+  }
+
+  .css-1id64jh {
+    margin-top: 16px !important;
+  }
+
+  .css-ne2rd {
+    margin-top: 16px !important;
+  }
 }
 
 
