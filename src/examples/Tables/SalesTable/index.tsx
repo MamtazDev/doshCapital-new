@@ -55,11 +55,11 @@ function SalesTable({ title, rows, shadow }: Props): JSX.Element {
   );
 
   return (
-    <TableContainer sx={{ height: "380px", boxShadow: !shadow && "none",  }}>
+    <TableContainer sx={{ height: "380px", boxShadow: !shadow && "none" }}>
       <Table>
         {title ? (
           <TableHead>
-            <MDBox component="tr" width="max-content" display="block" mb={1.5} >
+            <MDBox component="tr" width="max-content" display="block" mb={1.5}>
               <MDTypography variant="h6" component="td">
                 {title}
               </MDTypography>

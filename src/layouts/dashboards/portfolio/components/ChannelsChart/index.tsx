@@ -47,7 +47,7 @@ function ChannelsChart(): JSX.Element {
               <MDBox mb={1}>
                 <MDBadgeDot color="primary" size="sm" badgeContent="Crypto" />
               </MDBox>
-             
+
               <MDBox mb={1}>
                 <MDBadgeDot color="dark" size="sm" badgeContent="Property" />
               </MDBox>

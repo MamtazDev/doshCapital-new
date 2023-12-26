@@ -18,7 +18,7 @@ import { useMaterialUIController } from "context";
 interface Props {
   title: string;
   count: string | number;
-  button?:boolean;
+  button?: boolean;
   percentage?: {
     color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "white";
     value: string | number;
@@ -32,15 +32,15 @@ interface Props {
   [key: string]: any;
 }
 
-function DefaultStatisticsCard({ title,button, count, percentage, dropdown }: Props): JSX.Element {
+function DefaultStatisticsCard({ title, button, count, percentage, dropdown }: Props): JSX.Element {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
   return (
     <Card>
-      <MDBox p={2} >
-        <Grid container  >
-          <Grid item xs={button?4:7}>
+      <MDBox p={2}>
+        <Grid container>
+          <Grid item xs={button ? 4 : 7}>
             <MDBox mb={0.5} lineHeight={1}>
               <MDTypography
                 variant="button"
@@ -67,22 +67,24 @@ function DefaultStatisticsCard({ title,button, count, percentage, dropdown }: Pr
               </MDTypography>
             </MDBox>
           </Grid>
-          {button&&<Grid item xs={4}>
-            <MDBox mb={0.5} lineHeight={1}>
-              <MDTypography
-                variant="button"
-                fontWeight="medium"
-                color="text"
-                textTransform="capitalize"
-              >
-                Profile Earnings
-              </MDTypography>
-            </MDBox>
-            <MDBox lineHeight={1}>
-              <Button variant="contained">$1,200</Button>
-            </MDBox>
-          </Grid>}
-          <Grid item xs={button?4:5}>
+          {button && (
+            <Grid item xs={4}>
+              <MDBox mb={0.5} lineHeight={1}>
+                <MDTypography
+                  variant="button"
+                  fontWeight="medium"
+                  color="text"
+                  textTransform="capitalize"
+                >
+                  Profile Earnings
+                </MDTypography>
+              </MDBox>
+              <MDBox lineHeight={1}>
+                <Button variant="contained">$1,200</Button>
+              </MDBox>
+            </Grid>
+          )}
+          <Grid item xs={button ? 4 : 5}>
             {dropdown && (
               <MDBox width="100%" textAlign="right" lineHeight={1}>
                 <MDTypography

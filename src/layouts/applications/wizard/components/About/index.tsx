@@ -132,7 +132,6 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             Income through consistent profits? Its Dosh Capital Investment!
           </MDTypography>
         </MDBox>
-
         <MDBox
           display="flex"
           alignItems="center"
@@ -140,8 +139,9 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           minHeight="18.75rem"
           borderRadius="xl"
           sx={{
-            backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-              ` url(${backgroundImage})`,
+            // backgroundImage:{`({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
+            // url(${backgroundImage})`},
+
             backgroundSize: "cover",
             backgroundPosition: "50%",
             overflow: "hidden",
@@ -157,9 +157,9 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             px: 2,
           }}
         >
-          <Grid container spacing={3} alignItems="center" >
+          <Grid container spacing={3} alignItems="center">
             <Grid item>
-            <MDAvatar src={dusty} alt="profile-image" size="xl" shadow="sm" />
+              <MDAvatar src={dusty} alt="profile-image" size="xl" shadow="sm" />
             </Grid>
 
             <Grid item>
@@ -216,11 +216,11 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           </MDTypography>
           <MDTypography variant="button" color="text" fontWeight="regular">
             “Greetings, I am Dusty as you may already know. It is my great pleasure to bring to you
-            the beginning of a new era in Automated Trading using our Expert Advisors also known as
-            EAs or Trading Bots. It has been my undying passion for over 13 years developing
-            Strategies, coding, testing, & failing but never giving up to ultimately Win in the
-            Forex markets. I can tell you without a shadow of a doubt, it’s hard, it’s bloody hard…
-            but not Impossible” Dusty Archer
+            the beginning of a new era in AutomatedTrading using our Expert Advisors also known as
+            EAs or Trading Bots. It has been my undying passion for over 13 years Strategies,
+            Strategies, coding, testing, & failing but never giving up to ultimately Win in the in
+            in the Forex markets. I can tell you without a shadow of a doubt, it’s hard, it’s bloody
+            not Impossible” Dusty Archer
           </MDTypography>
         </MDBox>
 

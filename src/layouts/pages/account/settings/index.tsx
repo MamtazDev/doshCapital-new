@@ -61,7 +61,7 @@ function Settings(): JSX.Element {
                   <DeleteAccount />
                 </Grid>
                 <Grid item xs={12}>
-                  <CreatePool/>
+                  <CreatePool />
                 </Grid>
               </Grid>
             </MDBox>

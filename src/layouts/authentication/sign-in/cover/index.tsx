@@ -1,4 +1,4 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 
 // react-router-dom components
 import { Link } from "react-router-dom";
@@ -19,14 +19,14 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-cover.jpeg";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { DataContext } from "context/DataContext";
 import { BASE_URL } from "config/config";
 
 function Cover(): JSX.Element {
   const [rememberMe, setRememberMe] = useState<boolean>(true);
 
-  const {setUserInfo}= useContext(DataContext)
+  const { setUserInfo } = useContext(DataContext);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -37,14 +37,13 @@ function Cover(): JSX.Element {
     color: "info",
   };
 
-  const [errorMessage, setErrorMessage]=useState<string>("")
-  const [isLoading,setIsLoading]=useState<boolean>(false)
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleSubmit =async(event:any)=>{
-    event.preventDefault()
-
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
 
     const form = event.target;
 
@@ -53,45 +52,39 @@ function Cover(): JSX.Element {
 
     const data = {
       email,
-      password
-    }
+      password,
+    };
 
     try {
+      const res = await axios.post(`${BASE_URL}/api/users/login`, data);
 
-        const res = await axios.post(`${BASE_URL}/api/users/login`, data);
+      if (res?.data?.status === 200) {
+        const userDetails = {
+          name: res?.data?.user?.name,
+          email: res?.data?.user?.email,
+          userId: res?.data?.user?._id,
+          accessToken: res?.data?.accessToken,
+        };
 
-        if (res?.data?.status === 200) {
-          const userDetails = {
-            name:res?.data?.user?.name,
-            email: res?.data?.user?.email,
-            userId: res?.data?.user?._id,
-            accessToken: res?.data?.accessToken
-          }
-          
-          setErrorMessage("")
-          setIsLoading(false)
-          
-          setUserInfo(userDetails)
-          localStorage.setItem("doshToken", JSON.stringify(userDetails));
-          navigate("/");
-        }
-      } 
-      
-   
-    catch (error:any) {
+        setErrorMessage("");
+        setIsLoading(false);
+
+        setUserInfo(userDetails);
+        localStorage.setItem("doshToken", JSON.stringify(userDetails));
+        navigate("/");
+      }
+    } catch (error: any) {
       if (error.response) {
         setErrorMessage(`${error.response.data?.message}`);
       } else if (error.request) {
-        console.error('Request error:', error.request);
+        console.error("Request error:", error.request);
       } else {
-        console.error('Error message:', error.message);
+        console.error("Error message:", error.message);
       }
-      console.error('Error:', error);
-      setIsLoading(false)
+      console.error("Error:", error);
+      setIsLoading(false);
     }
-
-
-  }
+  };
 
   return (
     <CoverLayout action={action} image={bgImage}>
@@ -117,7 +110,7 @@ function Cover(): JSX.Element {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form" onSubmit={handleSubmit}>
             <MDBox mb={2}>
-            <MDInput
+              <MDInput
                 type="email"
                 label="Email"
                 variant="standard"
@@ -153,7 +146,9 @@ function Cover(): JSX.Element {
               </MDTypography>
             </MDBox>
             <MDBox>
-            <MDTypography variant="button" color="error">{errorMessage}</MDTypography>
+              <MDTypography variant="button" color="error">
+                {errorMessage}
+              </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
               <MDButton variant="gradient" color="info" fullWidth type="submit">

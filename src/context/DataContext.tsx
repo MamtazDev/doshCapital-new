@@ -7,18 +7,17 @@ interface IUser {
   email: string;
   userId: string;
   accessToken: string;
-
 }
 
 function DataProvider({ children }: { children: ReactNode }): JSX.Element {
   const [productDatas, setProductDatas] = useState(null);
-  const [userInfo, setUserInfo]=useState<IUser|null>(null)
+  const [userInfo, setUserInfo] = useState<IUser | null>(null);
 
   const info = {
     productDatas,
     setProductDatas,
     setUserInfo,
-    userInfo
+    userInfo,
   };
   return <DataContext.Provider value={info}>{children}</DataContext.Provider>;
 }

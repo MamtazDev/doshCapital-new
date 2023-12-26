@@ -224,7 +224,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 
   .css-xw63fn {
-    padding-top: 150px !important;
+    padding-top: 90px !important;
   }
 
   .css-e3rwa0 {
@@ -249,6 +249,9 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     padding: 0 !important;
   }
 
+  .css-uob07-MuiGrid-root {
+    padding-right: 0 !important;
+  }
 
 }
 

@@ -40,7 +40,7 @@ function ContactInfo(): JSX.Element {
 
                 <MDBox sx={{ display: "flex", gap: "20px" }}>
                   <MDBox>
-                    <AddLocationIcon color="white" />
+                    <AddLocationIcon color="inherit" />
                   </MDBox>
 
                   <MDBox>
@@ -57,7 +57,7 @@ function ContactInfo(): JSX.Element {
               <MDBox>
                 <MDBox sx={{ display: "flex", gap: "20px" }}>
                   <MDBox>
-                    <CallIcon color="white" />
+                    <CallIcon color="inherit" />
                   </MDBox>
 
                   <MDBox>
@@ -73,10 +73,7 @@ function ContactInfo(): JSX.Element {
             </Grid>
 
             <Grid md={6}>
-
-
-              <ContactInfoForm/>
-
+              <ContactInfoForm />
             </Grid>
           </Grid>
         </MDBox>

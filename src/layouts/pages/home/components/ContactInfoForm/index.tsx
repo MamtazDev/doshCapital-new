@@ -14,23 +14,29 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 
 function ContactInfoForm() {
-  const form = useRef();
+  const form = useRef<any>();
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: any) => {
     e.preventDefault();
 
+    if (!form.current) {
+      console.error("Form is not defined.");
+      return;
+    }
+
     const emailInput = form.current.querySelector('input[name="user_email"]');
-    if (!emailInput.value) {
+
+    if (!emailInput || !emailInput.value) {
       Swal.fire("Please provide your email");
       return;
     }
 
     emailjs.sendForm("service_boywpgq", "template_lg16gys", form.current, "SX1ijRCETYeQPBAv8").then(
-      (result) => {
+      (result: any) => {
         Swal.fire("Please Check Your Mail");
         form.current.reset();
       },
-      (error) => {
+      (error: any) => {
         console.log(error.text);
       }
     );
@@ -40,7 +46,12 @@ function ContactInfoForm() {
     <MDBox
       bgColor="white"
       marginTop={"50px"}
-      sx={{ maxWidth: "420px", width: "100%", padding: "20px", borderRadius: "15px" }}
+      sx={{
+        maxWidth: "420px",
+        width: "100%",
+        padding: "20px",
+        borderRadius: "15px",
+      }}
     >
       <MDBox bgColor="#A13BB6" textAlign={"center"} padding={"10px"} marginTop={"-50px"}>
         <MDTypography variant="h3">Contact us</MDTypography>
@@ -50,7 +61,11 @@ function ContactInfoForm() {
         <FormGroup ref={form} onSubmit={sendEmail}>
           <MDBox paddingTop={"30px"} marginBottom={"30px"}>
             <MDBox
-              sx={{ display: "flex", justifyContent: "space-between", gap: "10px" }}
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "10px",
+              }}
               marginBottom={"30px"}
             >
               <FormControl>

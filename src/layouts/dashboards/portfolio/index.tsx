@@ -262,7 +262,7 @@ function Portfolio(): JSX.Element {
                       <MDBadgeDot color="dark" size="sm" badgeContent="Others" />
                     </MDBox>
                     <MDBox mt={-4} mr={-1} position="absolute" right="1.5rem">
-                      <MDBox sx={{display:"flex", alignItems:"center", gap: "20px"}}>
+                      <MDBox sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
                         <MDTypography>Dosh-001</MDTypography>
                         <Tooltip title="See which ads perform better" placement="left" arrow>
                           <MDButton
