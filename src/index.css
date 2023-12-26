@@ -154,58 +154,72 @@ footer {
   border-bottom: 1px solid #ddd;
 }
 
-.css-fvv6qq-MuiFormControlLabel-root .MuiFormControlLabel-label{
-  color:#ddd !important;
+.css-fvv6qq-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  color: #ddd !important;
 }
 
-svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-17ceore-MuiSvgIcon-root{
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-17ceore-MuiSvgIcon-root {
   border: 1px solid #22283f;
 }
 
-.css-1b14d7z-MuiGrid-root{
+.css-1b14d7z-MuiGrid-root {
   margin-top: unset !important;
 }
 
-.css-dg8ndu-MuiButtonBase-root-MuiButton-root{
+.css-dg8ndu-MuiButtonBase-root-MuiButton-root {
   background-color: #A13BB6 !important;
 }
 
-td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-12xa49n-MuiTableCell-root{
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-12xa49n-MuiTableCell-root {
   text-align: start !important;
 }
 
-td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-fdjidb-MuiTableCell-root{
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-fdjidb-MuiTableCell-root {
   text-align: start !important;
 }
 
-.MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root{
-padding-left: 75px;
+.MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
+  padding-left: 75px;
 }
 
 
-@media(max-width: 550px){
-  .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root{
+@media(max-width: 550px) {
+  .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
     padding-left: 0px;
   }
 }
 
 
-@media(max-width:550px){
-  .css-twwm0c{
-padding: 200px 0 0;
+@media(max-width:550px) {
+  .css-twwm0c {
+    padding: 200px 0 0;
   }
 
-    .css-xw63fn{
-      padding-top: 150px !important;
-    }
-    .css-e3rwa0{
-      padding-top: 150px !important;
-    }
+  .css-xw63fn {
+    padding-top: 150px !important;
+  }
 
-        .css-1r7reyp-MuiPaper-root-MuiCard-root{
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-        }
+  .css-e3rwa0 {
+    padding-top: 150px !important;
+  }
+
+  .css-1r7reyp-MuiPaper-root-MuiCard-root {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  .css-nkchhw {
+    padding: 0 !important;
+  }
+
+  .css-1hhr4zu {
+    padding: 0 !important;
+  }
+
+  .css-11b450n {
+    padding: 0 !important;
+  }
 
 
 }
