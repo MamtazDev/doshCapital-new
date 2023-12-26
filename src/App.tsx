@@ -1,19 +1,19 @@
-import { useState, useEffect, useMemo, JSXElementConstructor, Key, ReactElement } from "react";
+import { JSXElementConstructor, Key, ReactElement, useEffect, useMemo, useState } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 // @mui material components
-import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
+import { ThemeProvider } from "@mui/material/styles";
 
 //  React TS components
 import MDBox from "components/MDBox";
 
 //  React TS exampless
-import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
+import Sidenav from "examples/Sidenav";
 
 //  React TS themes
 import theme from "assets/theme";
@@ -24,22 +24,21 @@ import themeDark from "assets/theme-dark";
 import themeDarkRTL from "assets/theme-dark/theme-rtl";
 
 // RTL plugins
-import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
+import rtlPlugin from "stylis-plugin-rtl";
 
 //  React TS routes
 import routes from "routes";
 
 //  React TS contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator, setDarkMode } from "context";
+import { setDarkMode, setMiniSidenav, setOpenConfigurator, useMaterialUIController } from "context";
 
 // Images
-import brandWhite from "assets/images/dosh/doshLogo.png";
-import brandDark from "assets/images/dosh/doshLogo.png";
+import { default as brandDark, default as brandWhite } from "assets/images/dosh/doshLogo.png";
 import useAuthCheck from "hooks/useAuthCheck";
 
-export default function App() {
+export default function App(){
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -83,7 +82,8 @@ export default function App() {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -113,7 +113,13 @@ export default function App() {
         }
 
         if (route.route) {
-          return <Route path={route.route} element={route.component} key={route.key} />;
+          return (
+            <Route
+              path={route.route}
+              element={route.component}
+              key={route.key}
+            />
+          );
         }
 
         return null;
@@ -155,7 +161,11 @@ export default function App() {
             <>
               <Sidenav
                 color={sidenavColor}
-                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                brand={
+                  (transparentSidenav && !darkMode) || whiteSidenav
+                    ? brandDark
+                    : brandWhite
+                }
                 brandName="Dosh Capital Investment"
                 routes={routes}
                 onMouseEnter={handleOnMouseEnter}
@@ -179,7 +189,11 @@ export default function App() {
           <>
             <Sidenav
               color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brand={
+                (transparentSidenav && !darkMode) || whiteSidenav
+                  ? brandDark
+                  : brandWhite
+              }
               brandName={null}
               routes={routes}
               onMouseEnter={handleOnMouseEnter}

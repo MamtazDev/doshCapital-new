@@ -6,7 +6,7 @@ import {
   FormControlLabel,
   FormGroup,
   Input,
-  TextareaAutosize
+  TextareaAutosize,
 } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -19,7 +19,6 @@ function ContactInfoForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Validate email before sending
     const emailInput = form.current.querySelector('input[name="user_email"]');
     if (!emailInput.value) {
       Swal.fire("Please provide your email");
@@ -29,7 +28,7 @@ function ContactInfoForm() {
     emailjs.sendForm("service_boywpgq", "template_lg16gys", form.current, "SX1ijRCETYeQPBAv8").then(
       (result) => {
         Swal.fire("Please Check Your Mail");
-        form.current.reset(); // Clear the form after successful submission
+        form.current.reset();
       },
       (error) => {
         console.log(error.text);
@@ -94,7 +93,6 @@ function ContactInfoForm() {
               <Button type="submit" value="Send" variant="contained">
                 Send Message
               </Button>
-              {/* <input type="submit" value="Send" /> */}
             </MDBox>
           </MDBox>
         </FormGroup>

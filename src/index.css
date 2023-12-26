@@ -189,4 +189,25 @@ padding-left: 75px;
   }
 }
 
+
+@media(max-width:550px){
+  .css-twwm0c{
+padding: 200px 0 0;
+  }
+
+    .css-xw63fn{
+      padding-top: 150px !important;
+    }
+    .css-e3rwa0{
+      padding-top: 150px !important;
+    }
+
+        .css-1r7reyp-MuiPaper-root-MuiCard-root{
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+
+}
+
 /* revision css /-end */
