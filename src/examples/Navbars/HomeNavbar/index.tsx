@@ -47,7 +47,15 @@ interface Props {
   action?: {
     type: "external" | "internal";
     route: string;
-    color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "light";
+    color:
+      | "primary"
+      | "secondary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "dark"
+      | "light";
     label: string;
     icon: any;
   };
@@ -62,7 +70,13 @@ function NewGrow(props: NewGrowTypes) {
   return <Grow {...props} />;
 }
 
-function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.Element {
+function HomeNavbar({
+  routes,
+  brand,
+  transparent,
+  light,
+  action,
+}: Props): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
   const { darkMode, openConfigurator } = controller;
   const { white } = colors;
@@ -105,27 +119,30 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
-  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }: any) => (
-    <HomeNavbarDropdown
-      key={name}
-      name={name}
-      icon={icon}
-      href={href}
-      route={route}
-      collapse={false}
-      onMouseEnter={({ currentTarget }: any) => {
-        if (collapse) {
-          setDropdown(currentTarget);
-          setDropdownEl(currentTarget);
-          setDropdownName(name);
-        }
-      }}
-      onMouseLeave={() => collapse && setDropdown(null)}
-      light={light}
-    />
-  ));
+  const renderNavbarItems = routes.map(
+    ({ name, icon, href, route, collapse }: any) => (
+      <HomeNavbarDropdown
+        key={name}
+        name={name}
+        icon={icon}
+        href={href}
+        route={route}
+        collapse={false}
+        onMouseEnter={({ currentTarget }: any) => {
+          if (collapse) {
+            setDropdown(currentTarget);
+            setDropdownEl(currentTarget);
+            setDropdownName(name);
+          }
+        }}
+        onMouseLeave={() => collapse && setDropdown(null)}
+        light={light}
+      />
+    )
+  );
 
   const navRef = useRef(null);
 
@@ -136,6 +153,8 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
         // navRef.current.style.backgroundColor = `#171F30`;
         navRef.current.style.backgroundColor = `black`;
         navRef.current.style.borderRadius = `20px`;
+        navRef.current.style.width = `98.1%`;
+        navRef.current.style.margin = `16px`;
       }
       if (window.scrollY === 0) {
         navRef.current.style.backdropFilter = `none`;
@@ -172,7 +191,11 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
           backgroundColor: transparentColor.main,
         }) */}
         <Container>
-          <Grid display={"flex"} alignItems="center" justifyContent="space-between">
+          <Grid
+            display={"flex"}
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <MDBox
               component={Link}
               to="/"
@@ -181,9 +204,18 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
               pl={{ xs: 0, lg: 1 }}
               flex={1}
             >
-              <img src={doshLogo} alt="logo of doshcapital" width={mobileView ? "200" : "300"} />
+              <img
+                src={doshLogo}
+                alt="logo of doshcapital"
+                width={mobileView ? "200" : "300"}
+              />
             </MDBox>
-            <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
+            <MDBox
+              color="inherit"
+              display={{ xs: "none", lg: "flex" }}
+              m={0}
+              p={0}
+            >
               {renderNavbarItems}
             </MDBox>
             {!mobileView && (
@@ -219,7 +251,9 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
               <MDTypography color="white">
                 <Icon>menu</Icon>
               </MDTypography>
-              {mobileView && <HomeNavbarMobile routes={routes} open={mobileNavbar} />}
+              {mobileView && (
+                <HomeNavbarMobile routes={routes} open={mobileNavbar} />
+              )}
             </MDBox>
           </Grid>
         </Container>

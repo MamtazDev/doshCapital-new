@@ -36,27 +36,35 @@ import DefaultCard from "./components/DefaultCard/DefaultCard";
 
 function Portfolio(): JSX.Element {
   // DefaultStatisticsCard state for the dropdown value
-  const [salesDropdownValue, setSalesDropdownValue] = useState<string>("6 May - 7 May");
-  const [customersDropdownValue, setCustomersDropdownValue] = useState<string>("6 May - 7 May");
-  const [revenueDropdownValue, setRevenueDropdownValue] = useState<string>("6 May - 7 May");
+  const [salesDropdownValue, setSalesDropdownValue] =
+    useState<string>("6 May - 7 May");
+  const [customersDropdownValue, setCustomersDropdownValue] =
+    useState<string>("6 May - 7 May");
+  const [revenueDropdownValue, setRevenueDropdownValue] =
+    useState<string>("6 May - 7 May");
 
   // DefaultStatisticsCard state for the dropdown action
   const [salesDropdown, setSalesDropdown] = useState<string | null>(null);
-  const [customersDropdown, setCustomersDropdown] = useState<string | null>(null);
+  const [customersDropdown, setCustomersDropdown] = useState<string | null>(
+    null
+  );
   const [revenueDropdown, setRevenueDropdown] = useState<string | null>(null);
 
   // DefaultStatisticsCard handler for the dropdown action
-  const openSalesDropdown = ({ currentTarget }: any) => setSalesDropdown(currentTarget);
+  const openSalesDropdown = ({ currentTarget }: any) =>
+    setSalesDropdown(currentTarget);
   const closeSalesDropdown = ({ currentTarget }: any) => {
     setSalesDropdown(null);
     setSalesDropdownValue(currentTarget.innerText || salesDropdownValue);
   };
-  const openCustomersDropdown = ({ currentTarget }: any) => setCustomersDropdown(currentTarget);
+  const openCustomersDropdown = ({ currentTarget }: any) =>
+    setCustomersDropdown(currentTarget);
   const closeCustomersDropdown = ({ currentTarget }: any) => {
     setCustomersDropdown(null);
     setCustomersDropdownValue(currentTarget.innerText || salesDropdownValue);
   };
-  const openRevenueDropdown = ({ currentTarget }: any) => setRevenueDropdown(currentTarget);
+  const openRevenueDropdown = ({ currentTarget }: any) =>
+    setRevenueDropdown(currentTarget);
   const closeRevenueDropdown = ({ currentTarget }: any) => {
     setRevenueDropdown(null);
     setRevenueDropdownValue(currentTarget.innerText || salesDropdownValue);
@@ -83,14 +91,19 @@ function Portfolio(): JSX.Element {
   const [userDepositesData, setUserDepositesData] = useState([]);
 
   const getUserDeposites = async () => {
-    const response = await axios.get(`${BASE_URL}/api/pools/userDeposites/${userInfo?.userId}`);
+    const response = await axios.get(
+      `${BASE_URL}/api/pools/userDeposites/${userInfo?.userId}`
+    );
     setUserDepositesData(response?.data);
   };
 
   console.log(userDepositesData, "usss");
 
   const handleBounce = (maxNumberPeople: any, depositedPeoples: any) => {
-    const bounce = `${((depositedPeoples?.length / maxNumberPeople) * 100).toFixed(2)}%`;
+    const bounce = `${(
+      (depositedPeoples?.length / maxNumberPeople) *
+      100
+    ).toFixed(2)}%`;
     return bounce;
   };
 
@@ -206,7 +219,10 @@ function Portfolio(): JSX.Element {
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Account Balance"
-                count={`$${userDepositesData?.reduce((total, item) => total + item?.amount, 0)}`}
+                count={`$${userDepositesData?.reduce(
+                  (total, item) => total + item?.amount,
+                  0
+                )}`}
                 percentage={{
                   color: "success",
                   value: "+12%",
@@ -258,13 +274,31 @@ function Portfolio(): JSX.Element {
                 description={
                   <MDBox display="flex" justifyContent="space-between">
                     <MDBox display="flex" ml={-1}>
-                      <MDBadgeDot color="info" size="sm" badgeContent="Do$h Capital" />
-                      <MDBadgeDot color="dark" size="sm" badgeContent="Others" />
+                      <MDBadgeDot
+                        color="info"
+                        size="sm"
+                        badgeContent="Do$h Capital"
+                      />
+                      <MDBadgeDot
+                        color="dark"
+                        size="sm"
+                        badgeContent="Others"
+                      />
                     </MDBox>
                     <MDBox mt={-4} mr={-1} position="absolute" right="1.5rem">
-                      <MDBox sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+                      <MDBox
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "20px",
+                        }}
+                      >
                         <MDTypography>Dosh-001</MDTypography>
-                        <Tooltip title="See which ads perform better" placement="left" arrow>
+                        <Tooltip
+                          title="See which ads perform better"
+                          placement="left"
+                          arrow
+                        >
                           <MDButton
                             variant="outlined"
                             color="secondary"
@@ -287,7 +321,10 @@ function Portfolio(): JSX.Element {
         <MDBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={8}>
-              <HorizontalBarChart title="Break Down by Growth" chart={horizontalBarChartData} />
+              <HorizontalBarChart
+                title="Break Down by Growth"
+                chart={horizontalBarChartData}
+              />
             </Grid>
             <Grid item xs={12} lg={4}>
               <SalesTable title="Pool Revenue by Name" rows={pools} />

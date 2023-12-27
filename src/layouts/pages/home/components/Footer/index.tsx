@@ -226,7 +226,7 @@ function Footer(): JSX.Element {
                   Product
                 </MDTypography>
               </MDBox>
-              <MDBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              {/* <MDBox mr={{ xs: 2, lg: 3, xl: 6 }}>
                 <MDTypography
                   component="a"
                   href="#"
@@ -236,7 +236,7 @@ function Footer(): JSX.Element {
                 >
                   MT4/MQL Training
                 </MDTypography>
-              </MDBox>
+              </MDBox> */}
             </MDBox>
           </Grid>
           <Grid item xs={12} lg={8}>

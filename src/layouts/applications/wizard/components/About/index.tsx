@@ -124,12 +124,14 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           </MDTypography>{" "}
           <br />
           <MDTypography variant="button" color="text" fontWeight="regular">
-            At Dosh we come together to fix one common problem by providing a Solution and Service
-            to Financial Freedom. We provide this through Automated Trading, Networking & DoshCoin
+            At Dosh we come together to fix one common problem by providing a
+            Solution and Service to Financial Freedom. We provide this through
+            Automated Trading, Networking & DoshCoin
           </MDTypography>{" "}
           <MDTypography variant="button" color="text" fontWeight="regular">
-            Ever hard of a company that provides great Service a Robust Product and Reliable steady
-            Income through consistent profits? Its Dosh Capital Investment!
+            Ever hard of a company that provides great Service a Robust Product
+            and Reliable steady Income through consistent profits? Its Dosh
+            Capital Investment!
           </MDTypography>
         </MDBox>
         <MDBox
@@ -141,7 +143,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           sx={{
             // backgroundImage:{`({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
             // url(${backgroundImage})`},
-
+            backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "50%",
             overflow: "hidden",
@@ -167,7 +169,11 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                 <MDTypography variant="h5" fontWeight="medium">
                   Duston Archer
                 </MDTypography>
-                <MDTypography variant="button" color="text" fontWeight="regular">
+                <MDTypography
+                  variant="button"
+                  color="text"
+                  fontWeight="regular"
+                >
                   Founder / Director
                 </MDTypography>
               </MDBox>
@@ -175,7 +181,11 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
 
             <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
               <AppBar position="static">
-                <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
+                <Tabs
+                  orientation={tabsOrientation}
+                  value={tabValue}
+                  onChange={handleSetTabValue}
+                >
                   <Tab
                     label="App"
                     icon={
@@ -215,12 +225,14 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             About the Author
           </MDTypography>
           <MDTypography variant="button" color="text" fontWeight="regular">
-            “Greetings, I am Dusty as you may already know. It is my great pleasure to bring to you
-            the beginning of a new era in AutomatedTrading using our Expert Advisors also known as
-            EAs or Trading Bots. It has been my undying passion for over 13 years Strategies,
-            Strategies, coding, testing, & failing but never giving up to ultimately Win in the in
-            in the Forex markets. I can tell you without a shadow of a doubt, it’s hard, it’s bloody
-            not Impossible” Dusty Archer
+            “Greetings, I am Dusty as you may already know. It is my great
+            pleasure to bring to you the beginning of a new era in
+            AutomatedTrading using our Expert Advisors also known as EAs or
+            Trading Bots. It has been my undying passion for over 13 years
+            Strategies, Strategies, Strategies, coding, testing, & failing but
+            failing but up to ultimately Win in the in in the Forex markets. I
+            can tell you without a shadow of a doubt, it’s hard, it’s bloody not
+            Dusty Archer
           </MDTypography>
         </MDBox>
 
@@ -255,7 +267,10 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   members={[team1, team2, team3]}
                   dropdown={{
                     action: openPremiumSupportMenu,
-                    menu: renderMenu(premiumSupportMenu, closePremiumSupportMenu),
+                    menu: renderMenu(
+                      premiumSupportMenu,
+                      closePremiumSupportMenu
+                    ),
                   }}
                 />
               </MDBox>
