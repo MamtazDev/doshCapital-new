@@ -9,6 +9,7 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import MDBox from "components/MDBox";
+import MDInput from "components/MDInput";
 import MDTypography from "components/MDTypography";
 import { useRef } from "react";
 import Swal from "sweetalert2";
@@ -31,15 +32,22 @@ function ContactInfoForm() {
       return;
     }
 
-    emailjs.sendForm("service_boywpgq", "template_lg16gys", form.current, "SX1ijRCETYeQPBAv8").then(
-      (result: any) => {
-        Swal.fire("Please Check Your Mail");
-        form.current.reset();
-      },
-      (error: any) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_boywpgq",
+        "template_lg16gys",
+        form.current,
+        "SX1ijRCETYeQPBAv8"
+      )
+      .then(
+        (result: any) => {
+          Swal.fire("Please Check Your Mail");
+          form.current.reset();
+        },
+        (error: any) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -53,7 +61,12 @@ function ContactInfoForm() {
         borderRadius: "15px",
       }}
     >
-      <MDBox bgColor="#A13BB6" textAlign={"center"} padding={"10px"} marginTop={"-50px"}>
+      <MDBox
+        bgColor="#A13BB6"
+        textAlign={"center"}
+        padding={"10px"}
+        marginTop={"-50px"}
+      >
         <MDTypography variant="h3">Contact us</MDTypography>
       </MDBox>
 
@@ -79,18 +92,18 @@ function ContactInfoForm() {
 
             <MDBox marginBottom={"30px"}>
               <FormControl sx={{ display: "flex", gap: "20px" }}>
-                <Input id="email" type="email" placeholder="Email" name="user_email" />
-              </FormControl>
-            </MDBox>
-
-            <MDBox marginBottom={"30px"}>
-              <FormControl sx={{ display: "flex", gap: "20px" }}>
-                <Input id="textArea" type="text" placeholder="Your Message" />
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  name="user_email"
+                />
               </FormControl>
             </MDBox>
 
             <FormControl>
               <TextareaAutosize
+                id="message"
                 name="message"
                 aria-label="minimum height"
                 minRows={5}
@@ -101,7 +114,11 @@ function ContactInfoForm() {
 
           <MDBox sx={{ display: "flex", justifyContent: "space-between" }}>
             <MDBox>
-              <FormControlLabel control={<Checkbox />} color="green" label="I am not a robot" />
+              <FormControlLabel
+                control={<Checkbox />}
+                color="green"
+                label="I am not a robot"
+              />
             </MDBox>
 
             <MDBox>

@@ -8,6 +8,10 @@
   margin-left: 1%; */
 }
 
+.css-18v3f6a {
+  border: 0 !important;
+}
+
 .css-1vcu4nh-MuiGrid-root {
   padding-top: 100px !important;
   padding-bottom: 62px !important;
@@ -29,6 +33,23 @@
   }
 }
 
-.css-yjwis{
+.css-yjwis {
   z-index: unset !important;
+}
+
+#fname::placeholder {
+  color: #22283f !important
+}
+
+#lname::placeholder {
+  color: #22283f !important
+}
+
+#email::placeholder {
+  color: #22283f !important
+}
+
+#message::placeholder {
+  color: #22283f !important;
+    width:100%
 }
