@@ -11,6 +11,7 @@ import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 
 // Images
+import dusty from "assets/images/Me.jpg";
 import burceMars from "assets/images/bruce-mars.jpg";
 
 function Header(): JSX.Element {
@@ -23,15 +24,21 @@ function Header(): JSX.Element {
       <MDBox p={2}>
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar src={burceMars} alt="profile-image" size="xl" shadow="sm" />
+            <MDAvatar
+              src={dusty}
+              // src={burceMars}
+              alt="profile-image"
+              size="xl"
+              shadow="sm"
+            />
           </Grid>
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Alex Thompson
+                Duston Archer
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="medium">
-                CEO / Co-Founder
+                Founder / Director
               </MDTypography>
             </MDBox>
           </Grid>

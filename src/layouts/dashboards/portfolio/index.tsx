@@ -33,6 +33,7 @@ import { DataContext } from "context/DataContext";
 import dataTableData from "layouts/dashboards/portfolio/data/dataTableData";
 import horizontalBarChartData from "layouts/dashboards/portfolio/data/horizontalBarChartData";
 import DefaultCard from "./components/DefaultCard/DefaultCard";
+import defaultLineChartData from "./data/defaultLineChartData";
 
 function Portfolio(): JSX.Element {
   // DefaultStatisticsCard state for the dropdown value
@@ -197,7 +198,7 @@ function Portfolio(): JSX.Element {
                 count={`$${
                   userDepositesData[userDepositesData?.length - 1]?.amount
                     ? userDepositesData[userDepositesData?.length - 1]?.amount
-                    : 0
+                    : 10
                 }`}
                 percentage={{
                   color: "success",
@@ -221,7 +222,7 @@ function Portfolio(): JSX.Element {
                 title="Account Balance"
                 count={`$${userDepositesData?.reduce(
                   (total, item) => total + item?.amount,
-                  0
+                  10
                 )}`}
                 percentage={{
                   color: "success",
@@ -313,7 +314,8 @@ function Portfolio(): JSX.Element {
                     </MDBox>
                   </MDBox>
                 }
-                chart={poolsTableData}
+                // chart={poolsTableData}
+                chart={defaultLineChartData}
               />
             </Grid>
           </Grid>

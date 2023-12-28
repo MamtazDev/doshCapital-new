@@ -22,9 +22,24 @@ interface Props {
   count2: string | number;
   button: boolean;
   belowText: boolean;
-  buttonVarient: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  buttonVarient:
+    | "inherit"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "error"
+    | "info"
+    | "warning";
   percentage?: {
-    color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "white";
+    color:
+      | "primary"
+      | "secondary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "dark"
+      | "white";
     value: string | number;
     label: string;
   };
@@ -73,7 +88,9 @@ function DefaultCard({
                   size="medium"
                   sx={{
                     display: "block",
-                    backgroundColor: `${buttonVarient === "success" && "#70ad47"}`,
+                    backgroundColor: `${
+                      buttonVarient === "success" && "#70ad47"
+                    }`,
                   }}
                 >
                   {count}
@@ -82,7 +99,7 @@ function DefaultCard({
                 <MDTypography
                   variant="h5"
                   fontWeight="bold"
-                  //  sx={{fontSize:"16px"}}
+                  sx={{ fontSize: "16px", padding: "8px" }}
                 >
                   {count}
                 </MDTypography>
@@ -118,7 +135,11 @@ function DefaultCard({
               </MDTypography>
             </MDBox>
             <MDBox lineHeight={1}>
-              <MDTypography variant="h5" fontWeight="bold" sx={{ fontSize: "16px" }}>
+              <MDTypography
+                variant="h5"
+                fontWeight="bold"
+                sx={{ fontSize: "16px" }}
+              >
                 {count2}
               </MDTypography>
             </MDBox>

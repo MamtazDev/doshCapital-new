@@ -46,7 +46,9 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
   const [designToolsMenu, setDesignToolsMenu] = useState(null);
   const [lookingGreatMenu, setLookingGreatMenu] = useState(null);
   const [developerFirstMenu, setDeveloperFirstMenu] = useState(null);
-  const [tabsOrientation, setTabsOrientation] = useState<"horizontal" | "vertical">("horizontal");
+  const [tabsOrientation, setTabsOrientation] = useState<
+    "horizontal" | "vertical"
+  >("horizontal");
   const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
@@ -69,16 +71,21 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
     return () => window.removeEventListener("resize", handleTabsOrientation);
   }, [tabsOrientation]);
 
-  const handleSetTabValue = (event: any, newValue: any) => setTabValue(newValue);
+  const handleSetTabValue = (event: any, newValue: any) =>
+    setTabValue(newValue);
   const openSlackBotMenu = (event: any) => setSlackBotMenu(event.currentTarget);
   const closeSlackBotMenu = () => setSlackBotMenu(null);
-  const openPremiumSupportMenu = (event: any) => setPremiumSupportMenu(event.currentTarget);
+  const openPremiumSupportMenu = (event: any) =>
+    setPremiumSupportMenu(event.currentTarget);
   const closePremiumSupportMenu = () => setPremiumSupportMenu(null);
-  const openDesignToolsMenu = (event: any) => setDesignToolsMenu(event.currentTarget);
+  const openDesignToolsMenu = (event: any) =>
+    setDesignToolsMenu(event.currentTarget);
   const closeDesignToolsMenu = () => setDesignToolsMenu(null);
-  const openLookingGreatMenu = (event: any) => setLookingGreatMenu(event.currentTarget);
+  const openLookingGreatMenu = (event: any) =>
+    setLookingGreatMenu(event.currentTarget);
   const closeLookingGreatMenu = () => setLookingGreatMenu(null);
-  const openDeveloperFirstMenu = (event: any) => setDeveloperFirstMenu(event.currentTarget);
+  const openDeveloperFirstMenu = (event: any) =>
+    setDeveloperFirstMenu(event.currentTarget);
   const closeDeveloperFirstMenu = () => setDeveloperFirstMenu(null);
   const renderMenu = (state: any, close: any) => (
     <Menu
@@ -144,6 +151,8 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             // backgroundImage:{`({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
             // url(${backgroundImage})`},
             backgroundImage: `url(${backgroundImage})`,
+            backgroundBlendMode: "overlay",
+            backgroundColor: "#373232",
             backgroundSize: "cover",
             backgroundPosition: "50%",
             overflow: "hidden",
