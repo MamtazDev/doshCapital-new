@@ -34,6 +34,29 @@ import dataTableData from "layouts/dashboards/portfolio/data/dataTableData";
 import horizontalBarChartData from "layouts/dashboards/portfolio/data/horizontalBarChartData";
 import DefaultCard from "./components/DefaultCard/DefaultCard";
 import defaultLineChartData from "./data/defaultLineChartData";
+import US from "assets/images/icons/flags/US.png";
+import DE from "assets/images/icons/flags/DE.png";
+import GB from "assets/images/icons/flags/GB.png";
+import BR from "assets/images/icons/flags/BR.png";
+import AU from "assets/images/icons/flags/AU.png";
+
+const handleIcon = (index: number) => {
+  switch (index) {
+    case 0:
+      return US;
+    case 1:
+      return DE;
+    case 2:
+      return GB;
+    case 3:
+      return BR;
+    case 4:
+      return AU;
+
+    default:
+      return;
+  }
+};
 
 function Portfolio(): JSX.Element {
   // DefaultStatisticsCard state for the dropdown value
@@ -125,10 +148,14 @@ function Portfolio(): JSX.Element {
       const response = await axios.get(`${BASE_URL}/api/pools/`);
       if (response?.data) {
         console.log(response?.data, "pools");
-        const poolsData = response?.data.map((item: any) => {
+        const poolsData = response?.data.map((item: any, idx: number) => {
           console.log(item, "i");
           const newItem = {
-            [`${item?.name}`]: `Members - ${item?.maxNumberPeople}`,
+            // [`${item?.name}`]: `Members - ${item?.maxNumberPeople}`,
+            [`Dosh-00${idx + 1}`]: [
+              handleIcon(idx),
+              `Members - ${item?.maxNumberPeople}`,
+            ],
             amount: item?.amount,
             "Acc. Balance": handleAccountBalance(item?.depositedPeoples),
           };

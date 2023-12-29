@@ -30,7 +30,7 @@ const pageRoutes = [
   },
   {
     name: "Dashboard",
-    route: "/pages/products",
+    route: "/dashboards/portfolio",
   },
   {
     name: "About",

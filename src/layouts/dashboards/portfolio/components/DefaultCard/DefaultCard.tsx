@@ -140,7 +140,7 @@ function DefaultCard({
               <MDTypography
                 variant="h5"
                 fontWeight="bold"
-                sx={{ fontSize: "16px" }}
+                sx={{ fontSize: "16px", padding: "4px" }}
               >
                 {count2}
               </MDTypography>

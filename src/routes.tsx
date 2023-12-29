@@ -57,7 +57,8 @@ import MDAvatar from "components/MDAvatar";
 import Icon from "@mui/material/Icon";
 
 // Images
-import profilePicture from "assets/images/team-3.jpg";
+// import profilePicture from "assets/images/team-3.jpg";
+import dusty from "assets/images/Me.jpg";
 import HomePage from "./layouts/pages/home";
 import Products from "layouts/pages/products";
 import About from "layouts/applications/wizard/components/About";
@@ -67,9 +68,9 @@ import Portfolio from "layouts/dashboards/portfolio";
 const routes = [
   {
     type: "collapse",
-    name: "Brooklyn Alice",
+    name: "Duston Archer",
     key: "brooklyn-alice",
-    icon: <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />,
+    icon: <MDAvatar src={dusty} alt="Brooklyn Alice" size="sm" />,
     collapse: [
       {
         name: "My Profile",
@@ -217,8 +218,18 @@ const routes = [
         component: <PricingPage />,
       },
       { name: "RTL", key: "rtl", route: "/pages/rtl", component: <RTL /> },
-      { name: "Widgets", key: "widgets", route: "/pages/widgets", component: <Widgets /> },
-      { name: "Charts", key: "charts", route: "/pages/charts", component: <Charts /> },
+      {
+        name: "Widgets",
+        key: "widgets",
+        route: "/pages/widgets",
+        component: <Widgets />,
+      },
+      {
+        name: "Charts",
+        key: "charts",
+        route: "/pages/charts",
+        component: <Charts />,
+      },
       {
         name: "Notfications",
         key: "notifications",

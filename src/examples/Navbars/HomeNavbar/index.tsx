@@ -221,7 +221,7 @@ function HomeNavbar({
             {!mobileView && (
               <MDBox display="flex">
                 <MDBox pr={1}>
-                  <MDInput label="Search here" />
+                  <MDInput label="Search here " />
                 </MDBox>
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
                   <Icon sx={{ color: grey[50] }}>account_circle</Icon>
