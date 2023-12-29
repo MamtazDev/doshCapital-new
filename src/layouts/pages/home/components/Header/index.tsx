@@ -103,14 +103,18 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               container
               spacing={3}
               justifyContent="flex-end"
-              sx={{ position: "relative", zIndex: "1", py: 22, textAlign: "left" }}
+              sx={{
+                position: "relative",
+                zIndex: "1",
+                py: 22,
+                textAlign: "left",
+              }}
             >
               <Grid item xs={12} lg={6} sx={{ px: { xs: 4, lg: 0 } }}>
                 <MDBox mb={0} mt={mobileView ? 6 : 6}>
                   <MDTypography
                     className="cross"
-                    sx={{ fontSize: "12px" }}
-                    color="white"
+                    sx={{ fontSize: "10px", color: "#A6A6A6" }}
                     align="right"
                   >
                     CROSSOVER TO WHAT WE DO <EastIcon />
@@ -118,7 +122,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                 </MDBox>
                 <MDBox mb={1}>
                   <MDTypography
-                    variant="h3"
+                    variant="h2"
                     color="white"
                     fontWeight="bold"
                     align="right"
@@ -128,7 +132,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     AUTOMATED TRADING
                   </MDTypography>
                   <MDTypography
-                    variant="h3"
+                    variant="h2"
                     color="white"
                     fontWeight="bold"
                     align="right"
@@ -138,7 +142,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     NETWORKING
                   </MDTypography>
                   <MDTypography
-                    variant="h3"
+                    variant="h2"
                     color="white"
                     fontWeight="bold"
                     align="right"
@@ -151,7 +155,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                 <MDBox mt={4} mb={2}>
                   <MDTypography
                     variant="body2"
-                    color="white"
+                    sx={{ fontSize: "14px", color: "#A6A6A6" }}
                     fontWeight="light"
                     align="right"
                     style={{ fontFamily: "footlight-mt-light-regular" }}
@@ -160,7 +164,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                   </MDTypography>
                   <MDTypography
                     variant="body2"
-                    color="white"
+                    sx={{ fontSize: "14px", color: "#A6A6A6" }}
                     fontWeight="light"
                     align="right"
                     style={{ fontFamily: "footlight-mt-light-regular" }}
@@ -190,7 +194,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                         border: "none",
                         backgroundColor: "#247DEA",
                         color: "white",
-                        padding: "15px 25px",
+                        padding: "10px 15px",
                         borderRadius: "5px",
                         display: "flex",
                         alignItems: "center",

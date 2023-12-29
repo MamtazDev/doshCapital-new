@@ -7,7 +7,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import logo from "../../../../../assets/images/dosh/DustyzTrans.png";
+import logo from "../../../../../assets/images/footer-logo.png";
 
 //  React TS components
 import MDBox from "components/MDBox";

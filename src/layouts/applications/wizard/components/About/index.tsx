@@ -154,6 +154,8 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             backgroundBlendMode: "overlay",
             backgroundColor: "#373232",
             backgroundSize: "cover",
+            backgroundBlendMode: "overlay",
+            backgroundColor: "#373232",
             backgroundPosition: "50%",
             overflow: "hidden",
           }}
