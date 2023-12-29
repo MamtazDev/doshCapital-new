@@ -6,6 +6,7 @@ import {
   FormControlLabel,
   FormGroup,
   Input,
+  TextField,
   TextareaAutosize,
 } from "@mui/material";
 import MDBox from "components/MDBox";
@@ -102,13 +103,20 @@ function ContactInfoForm() {
             </MDBox>
 
             <FormControl>
-              <TextareaAutosize
+              {/* <TextareaAutosize
                 id="message"
                 name="message"
                 aria-label="minimum height"
                 minRows={5}
                 placeholder="Your Message"
-              ></TextareaAutosize>
+              ></TextareaAutosize> */}
+
+              <TextField
+                id="standard-basic"
+                label="description"
+                variant="standard"
+                color="secondary"
+              />
             </FormControl>
           </MDBox>
 

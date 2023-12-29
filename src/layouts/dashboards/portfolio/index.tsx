@@ -34,24 +34,24 @@ import dataTableData from "layouts/dashboards/portfolio/data/dataTableData";
 import horizontalBarChartData from "layouts/dashboards/portfolio/data/horizontalBarChartData";
 import DefaultCard from "./components/DefaultCard/DefaultCard";
 import defaultLineChartData from "./data/defaultLineChartData";
-import US from "assets/images/icons/flags/US.png";
-import DE from "assets/images/icons/flags/DE.png";
-import GB from "assets/images/icons/flags/GB.png";
-import BR from "assets/images/icons/flags/BR.png";
-import AU from "assets/images/icons/flags/AU.png";
+import one from "assets/images/number-icon/one.png";
+import two from "assets/images/number-icon/two.png";
+import three from "assets/images/number-icon/three.png";
+import four from "assets/images/number-icon/four.png";
+import five from "assets/images/number-icon/five.png";
 
 const handleIcon = (index: number) => {
   switch (index) {
     case 0:
-      return US;
+      return one;
     case 1:
-      return DE;
+      return two;
     case 2:
-      return GB;
+      return three;
     case 3:
-      return BR;
+      return four;
     case 4:
-      return AU;
+      return five;
 
     default:
       return;

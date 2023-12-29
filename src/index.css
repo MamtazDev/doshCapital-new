@@ -7,6 +7,10 @@
   padding: "0px 80px" !important;
 }
 
+.css-twwm0c {
+  padding: 0 !important;
+}
+
 @media screen and (max-width:767px) {
   #paddingResponsive {
     padding: "0px 0px" !important;
@@ -285,3 +289,8 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 }
 
 /* revision css /-end */
+
+
+.css-1dlgr83-MuiFormLabel-root-MuiInputLabel-root {
+  color: #000000!important;
+}
