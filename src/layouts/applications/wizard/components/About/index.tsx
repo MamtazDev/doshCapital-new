@@ -145,6 +145,8 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             // url(${backgroundImage})`},
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
+            backgroundBlendMode: "overlay",
+            backgroundColor: "#373232",
             backgroundPosition: "50%",
             overflow: "hidden",
           }}
