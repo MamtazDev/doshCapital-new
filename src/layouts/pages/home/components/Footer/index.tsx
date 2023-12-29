@@ -18,8 +18,8 @@ function Footer(): JSX.Element {
   return (
     <MDBox component="footer" py={6}>
       <Container>
-        <Grid container justifyContent="center">
-          <Grid item xs={10} lg={3} container justifyContent="center">
+        <Grid container>
+          <Grid item xs={10} lg={3} container>
             <MDBox mr={{ xs: 2, lg: 3, xl: 6 }}>
               {/* <MDTypography
                 component="a"
@@ -33,7 +33,7 @@ function Footer(): JSX.Element {
               <img width={200} src={logo} alt="" />
             </MDBox>
           </Grid>
-          <Grid item xs={10} lg={3} container justifyContent="center">
+          <Grid item xs={10} lg={3} container>
             <MDBox
               display="flex"
               flexDirection="column"
@@ -98,7 +98,7 @@ function Footer(): JSX.Element {
               </MDBox>
             </MDBox>
           </Grid>
-          <Grid item xs={10} lg={3} container justifyContent="center">
+          <Grid item xs={6} lg={3} container justifyContent="center">
             <MDBox
               display="flex"
               flexDirection="column"
@@ -163,7 +163,7 @@ function Footer(): JSX.Element {
               </MDBox>
             </MDBox>
           </Grid>
-          <Grid item xs={10} lg={3} container justifyContent="center">
+          <Grid item xs={6} lg={3} container justifyContent="center">
             <MDBox
               display="flex"
               flexDirection="column"

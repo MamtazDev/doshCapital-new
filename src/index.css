@@ -200,6 +200,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
   .css-1602fiz-MuiPaper-root-MuiCard-root {
     margin-top: -30px !important;
+
   }
 
   .css-10fw84t {
@@ -225,16 +226,22 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   .css-ne2rd {
     margin-top: 16px !important;
   }
-  .css-bq11r7{
+
+  .css-bq11r7 {
     padding: 18px !important;
   }
-  .css-1xzqqmo-MuiGrid-root{
+
+  .css-1xzqqmo-MuiGrid-root {
     padding: 10px !important;
   }
-  .css-1uci8p7-MuiTypography-root,.css-1f4od06-MuiTypography-root{
+
+  .css-1uci8p7-MuiTypography-root,
+  .css-1f4od06-MuiTypography-root {
     font-size: 12px !important;
   }
-  .css-15ti2lr-MuiTypography-root,.css-lgoxd2-MuiTypography-root{
+
+  .css-15ti2lr-MuiTypography-root,
+  .css-lgoxd2-MuiTypography-root {
     font-size: 10px !important;
   }
 }

@@ -166,8 +166,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             position: "relative",
             mt: -8,
             mx: 3,
-            py: 1,
-            px: 2,
+            p: 2,
           }}
         >
           <Grid container spacing={3} alignItems="center">
@@ -178,7 +177,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
             <Grid item>
               <MDBox height="100%" mt={0.5} lineHeight={1}>
                 <MDTypography variant="h5" fontWeight="medium">
-                  Duston Archer
+                  Duston Archer pp
                 </MDTypography>
                 <MDTypography
                   variant="button"
