@@ -215,6 +215,11 @@ function Portfolio(): JSX.Element {
                 button={false}
                 belowText={false}
                 buttonVarient={"inherit"}
+                percentage2={{
+                  color: "success",
+                  value: "$200",
+                  label: " Initial Investment",
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={4}>
@@ -239,6 +244,11 @@ function Portfolio(): JSX.Element {
                 button={true}
                 belowText={false}
                 buttonVarient={"info"}
+                percentage2={{
+                  color: "success",
+                  value: "$126",
+                  label: " Contributions",
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={4}>
@@ -260,6 +270,11 @@ function Portfolio(): JSX.Element {
                 button={true}
                 belowText={true}
                 buttonVarient={"success"}
+                percentage2={{
+                  color: "success",
+                  value: "$126",
+                  label: " Contributions",
+                }}
               />
             </Grid>
           </Grid>

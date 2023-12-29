@@ -55,6 +55,7 @@ function DefaultCard({
   title,
   count,
   percentage,
+  percentage2,
   title2,
   count2,
   button,
@@ -85,9 +86,10 @@ function DefaultCard({
               {button ? (
                 <Button
                   variant="contained"
-                  size="medium"
+                  size="small"
                   sx={{
                     display: "block",
+                    padding: "0 30px",
                     backgroundColor: `${
                       buttonVarient === "success" && "#70ad47"
                     }`,
@@ -99,7 +101,7 @@ function DefaultCard({
                 <MDTypography
                   variant="h5"
                   fontWeight="bold"
-                  sx={{ fontSize: "16px", padding: "8px" }}
+                  sx={{ fontSize: "16px", padding: "4px" }}
                 >
                   {count}
                 </MDTypography>
@@ -181,17 +183,17 @@ function DefaultCard({
               <MDTypography
                 variant="button"
                 fontWeight="bold"
-                color={percentage.color}
+                color={percentage2.color}
                 //  sx={{fontSize:"10px"}}
               >
-                {percentage.value}&nbsp;
+                {percentage2.value}
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   color={darkMode ? "text" : "secondary"}
                   // sx={{fontSize:"10px"}}
                 >
-                  {percentage.label}
+                  {percentage2.label}
                 </MDTypography>
               </MDTypography>
             </MDBox>
@@ -201,7 +203,7 @@ function DefaultCard({
     </Card>
   );
 }
-
+// dustyarcher@yahoo.com
 // Setting default values for the props of DefaultStatisticsCard
 DefaultCard.defaultProps = {
   percentage: {
