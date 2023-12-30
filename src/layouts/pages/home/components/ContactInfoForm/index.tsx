@@ -111,14 +111,17 @@ function ContactInfoForm() {
             </MDBox>
 
             <FormControl>
-              <TextField
-                id="standard-basic"
-                label="Your Message"
-                variant="standard"
-                color="secondary"
-                multiline
-                rows={6}
-              />
+              <MDBox>
+                <TextField
+                  fullWidth
+                  id="standard-basic"
+                  label="Your Message"
+                  variant="standard"
+                  color="secondary"
+                  multiline
+                  rows={6}
+                />
+              </MDBox>
             </FormControl>
           </MDBox>
 

@@ -302,7 +302,9 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 
 .css-1q1k6n-MuiInputBase-root-MuiInput-root:after,
-.css-16ugujf-MuiInputBase-root-MuiInput-root:after {
+.css-16ugujf-MuiInputBase-root-MuiInput-root:after,
+.css-9bjbn6::after,
+.css-n00w46::after {
   border-color: #A13BB6 !important;
 }
 
