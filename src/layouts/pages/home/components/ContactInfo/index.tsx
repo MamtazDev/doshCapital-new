@@ -48,7 +48,10 @@ function ContactInfo(): JSX.Element {
 
                 <MDBox sx={{ display: "flex", gap: "20px" }}>
                   <MDBox mt={1}>
-                    <AddLocationIcon color="white" fontSize="large" />
+                    <AddLocationIcon
+                      style={{ color: "white" }}
+                      fontSize="large"
+                    />
                   </MDBox>
 
                   <MDBox>
@@ -65,11 +68,10 @@ function ContactInfo(): JSX.Element {
                   </MDBox>
                 </MDBox>
               </MDBox>
-
               <MDBox>
                 <MDBox sx={{ display: "flex", gap: "20px" }}>
                   <MDBox mt={1}>
-                    <CallIcon color="white" fontSize="large" />
+                    <CallIcon style={{ color: "white" }} fontSize="large" />
                   </MDBox>
 
                   <MDBox>

@@ -292,10 +292,20 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 
 .css-1dlgr83-MuiFormLabel-root-MuiInputLabel-root {
-  color: #000000!important;
+  color: #000000 !important;
 }
 
 
-#standard-basic-label{
-  color: #A13BB6 !important;
+#standard-basic-label {
+  color: gray !important;
+}
+
+
+.css-1q1k6n-MuiInputBase-root-MuiInput-root:after,
+.css-16ugujf-MuiInputBase-root-MuiInput-root:after {
+  border-color: #A13BB6 !important;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
+  border-bottom: 0 !important;
 }

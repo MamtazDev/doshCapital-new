@@ -36,10 +36,18 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
   const { openConfigurator } = controller;
 
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
   const renderNavbarItems = routes.map(
-    ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }: any) => (
+    ({
+      name,
+      icon,
+      collapse: routeCollapses,
+      href,
+      route,
+      collapse: navCollapse,
+    }: any) => (
       <HomeNavbarDropdown
         key={name}
         name={name}
@@ -50,7 +58,9 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
         route={route}
         collapse={Boolean(navCollapse)}
       >
-        <MDBox sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}>
+        <MDBox
+          sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}
+        >
           {routeCollapses &&
             routeCollapses.map((item: any) => (
               <MDBox key={item.name} px={2}>
@@ -82,7 +92,10 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
                         fontWeight="regular"
                         py={0.625}
                         px={2}
-                        sx={({ palette: { grey, dark }, borders: { borderRadius } }: Theme) => ({
+                        sx={({
+                          palette: { grey, dark },
+                          borders: { borderRadius },
+                        }: Theme) => ({
                           borderRadius: borderRadius.md,
                           cursor: "pointer",
                           transition: "all 300ms linear",
@@ -106,7 +119,10 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
                     href={item.href ? item.href : ""}
                     target={item.href ? "_blank" : ""}
                     rel={item.href ? "noreferrer" : "noreferrer"}
-                    sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+                    sx={({
+                      palette: { grey, dark },
+                      borders: { borderRadius },
+                    }) => ({
                       borderRadius: borderRadius.md,
                       cursor: "pointer",
                       transition: "all 300ms linear",

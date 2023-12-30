@@ -6,7 +6,7 @@ import {
   FormControlLabel,
   FormGroup,
   Input,
-  TextField
+  TextField,
 } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -81,17 +81,15 @@ function ContactInfoForm() {
               marginBottom={"30px"}
             >
               <FormControl>
-                {/* <Input id="fname" placeholder="First Name" name="user_name" /> */}
                 <TextField
                   id="standard-basic"
-                  name="user_name"
+                  name="first_name"
                   label="First Name"
                   variant="standard"
                 />
               </FormControl>
 
               <FormControl>
-                {/* <Input id="lname" placeholder="Last Name" /> */}
                 <TextField
                   id="standard-basic"
                   name="last_name"
@@ -103,35 +101,23 @@ function ContactInfoForm() {
 
             <MDBox marginBottom={"30px"}>
               <FormControl sx={{ display: "flex", gap: "20px" }}>
-                {/* <Input
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  name="user_email"
-                /> */}
                 <TextField
                   id="standard-basic"
                   name="user_email"
-                  label="Last Name"
+                  label="Email Address"
                   variant="standard"
                 />
               </FormControl>
             </MDBox>
 
             <FormControl>
-              {/* <TextareaAutosize
-                id="message"
-                name="message"
-                aria-label="minimum height"
-                minRows={5}
-                placeholder="Your Message"
-              ></TextareaAutosize> */}
-
               <TextField
                 id="standard-basic"
-                label="description"
+                label="Your Message"
                 variant="standard"
                 color="secondary"
+                multiline
+                rows={6}
               />
             </FormControl>
           </MDBox>
