@@ -33,10 +33,10 @@ function ContactInfoForm() {
 
     emailjs
       .sendForm(
-        "service_boywpgq",
-        "template_lg16gys",
+        "service_r3l1m8c",
+        "template_klh7aac",
         form.current,
-        "SX1ijRCETYeQPBAv8"
+        "I02wa_bvgVYL4ZndX"
       )
       .then(
         (result: any) => {
