@@ -7,10 +7,12 @@
   padding: "0px 80px" !important;
 }
 
-.css-twwm0c {
+/* .css-twwm0c {
   padding: 0 !important;
+} */
+.css-1rqwpyb {
+  width: 90% !important;
 }
-
 @media screen and (max-width:767px) {
   #paddingResponsive {
     padding: "0px 0px" !important;
@@ -121,6 +123,7 @@
 .css-h3u91m {
   margin-left: 0 !important;
   margin-right: 0 !important;
+  text-align: center !important;
 }
 
 .css-9lrh2m {
@@ -198,6 +201,10 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 
 @media(max-width: 550px) {
+  .css-1rqwpyb {
+    width: 100% !important;
+  }
+
   .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
     padding-left: 0px;
   }
@@ -288,6 +295,13 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 }
 
+
+
+
+.unknowncss {
+  text-align: center;
+}
+
 /* revision css /-end */
 
 
@@ -311,3 +325,4 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
   border-bottom: 0 !important;
 }
+
