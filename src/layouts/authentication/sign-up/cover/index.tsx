@@ -37,7 +37,8 @@ function Cover(): JSX.Element {
 
   const navigate = useNavigate();
 
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -118,7 +119,14 @@ function Cover(): JSX.Element {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form" onSubmit={handleSubmit}>
             <MDBox mb={2}>
-              <MDInput type="text" label="Name" variant="standard" fullWidth name="name" required />
+              <MDInput
+                type="text"
+                label="Name"
+                variant="standard"
+                fullWidth
+                name="name"
+                required
+              />
             </MDBox>
             <MDBox mb={2}>
               <MDInput

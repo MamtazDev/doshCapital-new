@@ -20,7 +20,15 @@ import colors from "assets/theme/base/colors";
 // Declaring props types for HorizontalBarChart
 interface Props {
   icon?: {
-    color?: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "light" | "dark";
+    color?:
+      | "primary"
+      | "secondary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "light"
+      | "dark";
     component: ReactNode;
   };
   title?: string;
@@ -30,14 +38,28 @@ interface Props {
     labels: string[];
     datasets: {
       label: string;
-      color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "light" | "dark";
+      color:
+        | "primary"
+        | "secondary"
+        | "info"
+        | "success"
+        | "warning"
+        | "error"
+        | "light"
+        | "dark";
       data: number[];
     }[];
   };
   [key: string]: any;
 }
 
-function VerticalBarChart({ icon, title, description, height, chart }: Props): JSX.Element {
+function VerticalBarChart({
+  icon,
+  title,
+  description,
+  height,
+  chart,
+}: Props): JSX.Element {
   const chartDatasets = chart.datasets
     ? chart.datasets.map((dataset) => ({
         ...dataset,

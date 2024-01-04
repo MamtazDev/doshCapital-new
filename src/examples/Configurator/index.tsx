@@ -113,11 +113,15 @@ function Configurator(): JSX.Element {
     palette: { white, gradients, background },
   }: Theme | any) => ({
     height: pxToRem(39),
-    background: darkMode ? white.main : linearGradient(gradients.dark.main, gradients.dark.state),
+    background: darkMode
+      ? white.main
+      : linearGradient(gradients.dark.main, gradients.dark.state),
     color: darkMode ? background.sidenav : white.main,
 
     "&:hover, &:focus, &:focus:not(:hover)": {
-      background: darkMode ? white.main : linearGradient(gradients.dark.main, gradients.dark.state),
+      background: darkMode
+        ? white.main
+        : linearGradient(gradients.dark.main, gradients.dark.state),
       color: darkMode ? background.sidenav : white.main,
     },
   });
@@ -172,7 +176,9 @@ function Configurator(): JSX.Element {
                   width: "24px",
                   height: "24px",
                   padding: 0,
-                  border: `${borderWidth[1]} solid ${darkMode ? background.sidenav : white.main}`,
+                  border: `${borderWidth[1]} solid ${
+                    darkMode ? background.sidenav : white.main
+                  }`,
                   borderColor: () => {
                     let borderColorValue = sidenavColor === color && dark.main;
 
@@ -186,8 +192,14 @@ function Configurator(): JSX.Element {
                     easing: transitions.easing.sharp,
                     duration: transitions.duration.shorter,
                   }),
-                  backgroundImage: ({ functions: { linearGradient }, palette: { gradients } }) =>
-                    linearGradient(gradients[color].main, gradients[color].state),
+                  backgroundImage: ({
+                    functions: { linearGradient },
+                    palette: { gradients },
+                  }) =>
+                    linearGradient(
+                      gradients[color].main,
+                      gradients[color].state
+                    ),
 
                   "&:not(:last-child)": {
                     mr: 1,
@@ -274,13 +286,23 @@ function Configurator(): JSX.Element {
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
         </MDBox>
         <Divider />
-        <MDBox display="flex" justifyContent="space-between" alignItems="center" lineHeight={1}>
+        <MDBox
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          lineHeight={1}
+        >
           <MDTypography variant="h6">Sidenav Mini</MDTypography>
 
           <Switch checked={miniSidenav} onChange={handleMiniSidenav} />
         </MDBox>
         <Divider />
-        <MDBox display="flex" justifyContent="space-between" alignItems="center" lineHeight={1}>
+        <MDBox
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          lineHeight={1}
+        >
           <MDTypography variant="h6">Light / Dark</MDTypography>
 
           <Switch checked={darkMode} onChange={handleDarkMode} />

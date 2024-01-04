@@ -45,7 +45,12 @@ function Analytics(): JSX.Element {
         </MDTypography>
       </Tooltip>
       <Tooltip title="Edit" placement="bottom">
-        <MDTypography variant="body1" color="info" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
+        <MDTypography
+          variant="body1"
+          color="info"
+          lineHeight={1}
+          sx={{ cursor: "pointer", mx: 3 }}
+        >
           <Icon color="inherit">edit</Icon>
         </MDTypography>
       </Tooltip>

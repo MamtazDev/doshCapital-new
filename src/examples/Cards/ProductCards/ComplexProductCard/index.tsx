@@ -20,7 +20,15 @@ import { DataContext } from "context/DataContext";
 
 // Declaring prop types for the ComplexProjectCard
 interface Props {
-  color?: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "light";
+  color?:
+    | "primary"
+    | "secondary"
+    | "info"
+    | "success"
+    | "warning"
+    | "error"
+    | "dark"
+    | "light";
   image: string;
   title: string;
   dateTime?: string;
@@ -61,7 +69,10 @@ function ComplexProductCard({
             mt={-5}
           />
           <MDBox lineHeight={0} mt={-1}>
-            <MDTypography sx={{ fontSize: "1.6rem" }} textTransform="capitalize">
+            <MDTypography
+              sx={{ fontSize: "1.6rem" }}
+              textTransform="capitalize"
+            >
               {title}
             </MDTypography>
           </MDBox>
@@ -71,13 +82,29 @@ function ComplexProductCard({
             {description}
           </MDTypography>
         </MDBox>
-        <MDBox display="flex" alignItems="center" justifyContent="space-between" mt={2} px={1}>
-          <MDButton variant="outlined" color="info" size="small" sx={{ padding: ".5rem 1.2rem" }}>
+        <MDBox
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          mt={2}
+          px={1}
+        >
+          <MDButton
+            variant="outlined"
+            color="info"
+            size="small"
+            sx={{ padding: ".5rem 1.2rem" }}
+          >
             Test Drive
             <Icon sx={{ marginLeft: ".3rem" }}>query_stats</Icon>
           </MDButton>
           <MDBox>
-            <MDTypography variant="subtitle2" fontWeight="bold" display="flex" alignItems="center">
+            <MDTypography
+              variant="subtitle2"
+              fontWeight="bold"
+              display="flex"
+              alignItems="center"
+            >
               <span style={{ marginRight: "-5px" }}>⭐</span>
               <span style={{ marginRight: "-5px" }}>⭐</span>
               <span style={{ marginRight: "-5px" }}>⭐</span>
@@ -102,12 +129,19 @@ function ComplexProductCard({
               color="info"
               size="small"
               sx={{ padding: ".5rem 1.9rem" }}
-              onClick={() => setProductDatas({ image, title, description, price: "1000" })}
+              onClick={() =>
+                setProductDatas({ image, title, description, price: "1000" })
+              }
             >
               Buy: $1000
             </MDButton>
           </Link>
-          <MDButton variant="contained" color="info" size="small" sx={{ padding: ".5rem 1.2rem" }}>
+          <MDButton
+            variant="contained"
+            color="info"
+            size="small"
+            sx={{ padding: ".5rem 1.2rem" }}
+          >
             Rent: $200/M
           </MDButton>
         </MDBox>

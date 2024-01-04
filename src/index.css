@@ -13,6 +13,7 @@
 .css-1rqwpyb {
   width: 90% !important;
 }
+
 @media screen and (max-width:767px) {
   #paddingResponsive {
     padding: "0px 0px" !important;
@@ -317,6 +318,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 .css-1q1k6n-MuiInputBase-root-MuiInput-root:after,
 .css-16ugujf-MuiInputBase-root-MuiInput-root:after,
+.css-3mxn9g-MuiInputBase-root-MuiInput-root:after,
 .css-9bjbn6::after,
 .css-n00w46::after {
   border-color: #A13BB6 !important;
@@ -325,4 +327,3 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
   border-bottom: 0 !important;
 }
-

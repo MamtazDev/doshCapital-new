@@ -19,7 +19,14 @@ interface Props {
   [key: string]: any;
 }
 
-function BookingCard({ image, title, header, nature, description, action }: Props): JSX.Element {
+function BookingCard({
+  image,
+  title,
+  header,
+  nature,
+  description,
+  action,
+}: Props): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -86,7 +93,12 @@ function BookingCard({ image, title, header, nature, description, action }: Prop
         >
           {title}
         </MDTypography>
-        <MDTypography sx={{ fontSize: ".7rem" }} align="center" fontWeight="regular" fontSize="8px">
+        <MDTypography
+          sx={{ fontSize: ".7rem" }}
+          align="center"
+          fontWeight="regular"
+          fontSize="8px"
+        >
           {nature}
         </MDTypography>
         <MDBox

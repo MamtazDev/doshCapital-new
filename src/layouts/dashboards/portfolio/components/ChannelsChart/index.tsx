@@ -23,10 +23,22 @@ function ChannelsChart(): JSX.Element {
 
   return (
     <Card sx={{ height: "100%" }}>
-      <MDBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
+      <MDBox
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        pt={2}
+        px={2}
+      >
         <MDTypography variant="h6">Slice of the pie</MDTypography>
         <Tooltip title="See traffic channels" placement="bottom" arrow>
-          <MDButton variant="outlined" color="secondary" size="small" circular iconOnly>
+          <MDButton
+            variant="outlined"
+            color="secondary"
+            size="small"
+            circular
+            iconOnly
+          >
             <Icon>priority_high</Icon>
           </MDButton>
         </Tooltip>
@@ -52,7 +64,11 @@ function ChannelsChart(): JSX.Element {
                 <MDBadgeDot color="dark" size="sm" badgeContent="Property" />
               </MDBox>
               <MDBox mb={1}>
-                <MDBadgeDot color="secondary" size="sm" badgeContent="Do$h Capital" />
+                <MDBadgeDot
+                  color="secondary"
+                  size="sm"
+                  badgeContent="Do$h Capital"
+                />
               </MDBox>
             </MDBox>
           </Grid>
@@ -68,11 +84,15 @@ function ChannelsChart(): JSX.Element {
       >
         <MDBox width={{ xs: "100%", sm: "60%" }} lineHeight={1}>
           <MDTypography variant="button" color="text" fontWeight="light">
-            More than <strong>1,200,000</strong> sales are made using referral marketing, and{" "}
-            <strong>700,000</strong> are from social media.
+            More than <strong>1,200,000</strong> sales are made using referral
+            marketing, and <strong>700,000</strong> are from social media.
           </MDTypography>
         </MDBox>
-        <MDBox width={{ xs: "100%", sm: "40%" }} textAlign="right" mt={{ xs: 2, sm: "auto" }}>
+        <MDBox
+          width={{ xs: "100%", sm: "40%" }}
+          textAlign="right"
+          mt={{ xs: 2, sm: "auto" }}
+        >
           <MDButton color={darkMode ? "white" : "light"}>read more</MDButton>
         </MDBox>
       </MDBox>

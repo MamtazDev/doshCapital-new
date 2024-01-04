@@ -43,7 +43,8 @@ function SidenavCollapse({
   ...rest
 }: Props): JSX.Element {
   const [controller] = useMaterialUIController();
-  const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } = controller;
+  const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } =
+    controller;
 
   return (
     <>
@@ -51,14 +52,27 @@ function SidenavCollapse({
         <MDBox
           {...rest}
           sx={(theme: any) =>
-            collapseItem(theme, { active, transparentSidenav, whiteSidenav, darkMode })
+            collapseItem(theme, {
+              active,
+              transparentSidenav,
+              whiteSidenav,
+              darkMode,
+            })
           }
         >
           <ListItemIcon
-            sx={(theme) => collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode })}
+            sx={(theme) =>
+              collapseIconBox(theme, {
+                transparentSidenav,
+                whiteSidenav,
+                darkMode,
+              })
+            }
           >
             {typeof icon === "string" ? (
-              <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
+              <Icon sx={(theme) => collapseIcon(theme, { active })}>
+                {icon}
+              </Icon>
             ) : (
               icon
             )}

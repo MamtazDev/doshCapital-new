@@ -43,7 +43,8 @@ function DataTables(): JSX.Element {
                 Datatable Simple
               </MDTypography>
               <MDTypography variant="button" color="text">
-                A lightweight, extendable, dependency-free javascript HTML table plugin.
+                A lightweight, extendable, dependency-free javascript HTML table
+                plugin.
               </MDTypography>
             </MDBox>
             <DataTable table={gg} />
@@ -55,7 +56,8 @@ function DataTables(): JSX.Element {
               Datatable Search
             </MDTypography>
             <MDTypography variant="button" color="text">
-              A lightweight, extendable, dependency-free javascript HTML table plugin.
+              A lightweight, extendable, dependency-free javascript HTML table
+              plugin.
             </MDTypography>
           </MDBox>
           {/* <DataTable table={dataTableData} canSearch /> */}

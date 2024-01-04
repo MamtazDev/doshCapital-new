@@ -51,7 +51,9 @@ const Deposite = () => {
 
     const filteredPool = allPools?.find((i) => i.name === event.target.value);
     setSelectedPoolInfo(filteredPool);
-    const amount = (filteredPool?.amount / filteredPool?.maxNumberPeople).toFixed(2);
+    const amount = (
+      filteredPool?.amount / filteredPool?.maxNumberPeople
+    ).toFixed(2);
     setSelectedAmount(amount);
   };
 

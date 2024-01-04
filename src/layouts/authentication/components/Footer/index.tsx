@@ -34,14 +34,23 @@ function Footer({ light }: { light?: boolean }): JSX.Element {
             fontSize={size.sm}
           >
             &copy; {new Date().getFullYear()}, made with
-            <MDBox fontSize={size.md} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}>
+            <MDBox
+              fontSize={size.md}
+              color={light ? "white" : "dark"}
+              mb={-0.5}
+              mx={0.25}
+            >
               <Icon color="inherit" fontSize="inherit">
                 favorite
               </Icon>
             </MDBox>
             by
             <Link href="https://www.creative-tim.com/" target="_blank">
-              <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
+              <MDTypography
+                variant="button"
+                fontWeight="medium"
+                color={light ? "white" : "dark"}
+              >
                 &nbsp;Dustyz&nbsp;
               </MDTypography>
             </Link>
@@ -76,7 +85,10 @@ function Footer({ light }: { light?: boolean }): JSX.Element {
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/presentation" target="_blank">
+              <Link
+                href="https://www.creative-tim.com/presentation"
+                target="_blank"
+              >
                 <MDTypography
                   variant="button"
                   fontWeight="regular"

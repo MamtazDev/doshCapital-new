@@ -61,14 +61,21 @@ function Invoice(): JSX.Element {
                     </MDBox>
                   </Grid>
                   <Grid item xs={12} md={7} lg={3}>
-                    <MDBox width="100%" textAlign={{ xs: "left", md: "right" }} mt={6}>
+                    <MDBox
+                      width="100%"
+                      textAlign={{ xs: "left", md: "right" }}
+                      mt={6}
+                    >
                       <MDBox mt={1}>
                         <MDTypography variant="h6" fontWeight="medium">
                           Billed to: John Doe
                         </MDTypography>
                       </MDBox>
                       <MDBox mb={1}>
-                        <MDTypography variant="body2" color={darkMode ? "text" : "secondary"}>
+                        <MDTypography
+                          variant="body2"
+                          color={darkMode ? "text" : "secondary"}
+                        >
                           4006 Locust View Drive
                           <br />
                           San Francisco CA
@@ -158,7 +165,11 @@ function Invoice(): JSX.Element {
                           textAlign="left"
                           sx={borderBottom}
                         >
-                          <MDTypography variant="h6" color="text" fontWeight="medium">
+                          <MDTypography
+                            variant="h6"
+                            color="text"
+                            fontWeight="medium"
+                          >
                             Item
                           </MDTypography>
                         </MDBox>
@@ -170,7 +181,11 @@ function Invoice(): JSX.Element {
                           textAlign="left"
                           sx={borderBottom}
                         >
-                          <MDTypography variant="h6" color="text" fontWeight="medium">
+                          <MDTypography
+                            variant="h6"
+                            color="text"
+                            fontWeight="medium"
+                          >
                             Qty
                           </MDTypography>
                         </MDBox>
@@ -182,7 +197,11 @@ function Invoice(): JSX.Element {
                           textAlign="left"
                           sx={borderBottom}
                         >
-                          <MDTypography variant="h6" color="text" fontWeight="medium">
+                          <MDTypography
+                            variant="h6"
+                            color="text"
+                            fontWeight="medium"
+                          >
                             Rate
                           </MDTypography>
                         </MDBox>
@@ -194,7 +213,11 @@ function Invoice(): JSX.Element {
                           textAlign="left"
                           sx={borderBottom}
                         >
-                          <MDTypography variant="h6" color="text" fontWeight="medium">
+                          <MDTypography
+                            variant="h6"
+                            color="text"
+                            fontWeight="medium"
+                          >
                             Amount
                           </MDTypography>
                         </MDBox>
@@ -202,8 +225,17 @@ function Invoice(): JSX.Element {
                     </MDBox>
                     <TableBody>
                       <TableRow>
-                        <MDBox component="td" textAlign="left" p={1} sx={borderBottom}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          p={1}
+                          sx={borderBottom}
+                        >
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             Premium Support
                           </MDTypography>
                         </MDBox>
@@ -215,7 +247,11 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             1
                           </MDTypography>
                         </MDBox>
@@ -227,7 +263,11 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 9.00
                           </MDTypography>
                         </MDBox>
@@ -239,13 +279,22 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 9.00
                           </MDTypography>
                         </MDBox>
                       </TableRow>
                       <TableRow>
-                        <MDBox component="td" textAlign="left" p={1} sx={borderBottom}>
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          p={1}
+                          sx={borderBottom}
+                        >
                           <MDTypography
                             variant="body2"
                             color="text"
@@ -260,7 +309,11 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             3
                           </MDTypography>
                         </MDBox>
@@ -272,7 +325,11 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 100.00
                           </MDTypography>
                         </MDBox>
@@ -284,35 +341,78 @@ function Invoice(): JSX.Element {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 300.00
                           </MDTypography>
                         </MDBox>
                       </TableRow>
                       <TableRow>
                         <MDBox component="td" textAlign="left" p={1}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             Parts for service
                           </MDTypography>
                         </MDBox>
-                        <MDBox component="td" textAlign="left" py={1} pr={1} pl={3}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          py={1}
+                          pr={1}
+                          pl={3}
+                        >
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             1
                           </MDTypography>
                         </MDBox>
-                        <MDBox component="td" textAlign="left" py={1} pr={1} pl={3}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          py={1}
+                          pr={1}
+                          pl={3}
+                        >
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 89.00
                           </MDTypography>
                         </MDBox>
-                        <MDBox component="td" textAlign="left" py={1} pr={1} pl={3}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          py={1}
+                          pr={1}
+                          pl={3}
+                        >
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          >
                             $ 89.00
                           </MDTypography>
                         </MDBox>
                       </TableRow>
                       <TableRow>
-                        <MDBox component="td" textAlign="left" p={1} sx={borderBottom} />
+                        <MDBox
+                          component="td"
+                          textAlign="left"
+                          p={1}
+                          sx={borderBottom}
+                        />
                         <MDBox
                           component="td"
                           textAlign="left"
@@ -355,8 +455,12 @@ function Invoice(): JSX.Element {
                       Thank you!
                     </MDTypography>
                     <MDBox mt={1} mb={2} lineHeight={0}>
-                      <MDTypography variant="button" color={darkMode ? "text" : "secondary"}>
-                        If you encounter any issues related to the invoice you can contact us at:
+                      <MDTypography
+                        variant="button"
+                        color={darkMode ? "text" : "secondary"}
+                      >
+                        If you encounter any issues related to the invoice you
+                        can contact us at:
                       </MDTypography>
                     </MDBox>
                     <MDTypography
@@ -366,7 +470,11 @@ function Invoice(): JSX.Element {
                       color={darkMode ? "text" : "secondary"}
                     >
                       email:{" "}
-                      <MDTypography component="span" variant="h6" fontWeight="regular">
+                      <MDTypography
+                        component="span"
+                        variant="h6"
+                        fontWeight="regular"
+                      >
                         support@creative-tim.com
                       </MDTypography>
                     </MDTypography>
@@ -380,7 +488,11 @@ function Invoice(): JSX.Element {
                       alignItems="flex-end"
                       mt={{ xs: 2, md: 0 }}
                     >
-                      <MDButton variant="gradient" color="info" onClick={() => window.print()}>
+                      <MDButton
+                        variant="gradient"
+                        color="info"
+                        onClick={() => window.print()}
+                      >
                         print
                       </MDButton>
                     </MDBox>

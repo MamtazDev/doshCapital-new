@@ -56,7 +56,8 @@ function Account(): JSX.Element {
           </MDTypography>
         </MDBox>
         <MDTypography variant="body2" color="text">
-          Give us more details about you. What do you enjoy doing in your spare time?
+          Give us more details about you. What do you enjoy doing in your spare
+          time?
         </MDTypography>
       </MDBox>
       <MDBox mt={2}>
@@ -84,7 +85,9 @@ function Account(): JSX.Element {
                 onClick={handleSetCode}
                 sx={customButtonStyles}
               >
-                <Icon sx={{ color: design ? "white" : "inherit" }}>integration_instructions</Icon>
+                <Icon sx={{ color: design ? "white" : "inherit" }}>
+                  integration_instructions
+                </Icon>
               </MDButton>
               <MDTypography variant="h6" sx={{ mt: 1 }}>
                 Code
@@ -99,7 +102,9 @@ function Account(): JSX.Element {
                 onClick={handleSetDevelop}
                 sx={customButtonStyles}
               >
-                <Icon sx={{ color: design ? "white" : "inherit" }}>developer_mode</Icon>
+                <Icon sx={{ color: design ? "white" : "inherit" }}>
+                  developer_mode
+                </Icon>
               </MDButton>
               <MDTypography variant="h6" sx={{ mt: 1 }}>
                 Develop

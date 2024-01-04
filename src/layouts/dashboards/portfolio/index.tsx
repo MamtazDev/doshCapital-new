@@ -121,7 +121,7 @@ function Portfolio(): JSX.Element {
     setUserDepositesData(response?.data);
   };
 
-  console.log(userDepositesData, "usss");
+  console.log(userInfo, "usss");
 
   const handleBounce = (maxNumberPeople: any, depositedPeoples: any) => {
     const bounce = `${(
@@ -142,6 +142,7 @@ function Portfolio(): JSX.Element {
   const [pools, setPools] = useState<any>([]);
   const [poolsTableData, setPoolsTableData] = useState<any>([]);
   console.log(poolsTableData, "dfdfsfksfj");
+
 
   const getAllPools = async () => {
     try {

@@ -65,7 +65,13 @@ const CreatePool = () => {
       </MDBox>
       <MDBox component="form" pb={3} px={3} onSubmit={handleSubmit}>
         <MDBox mb={2}>
-          <MDInput type="text" label="Pool Name" fullWidth name="name" required />
+          <MDInput
+            type="text"
+            label="Pool Name"
+            fullWidth
+            name="name"
+            required
+          />
         </MDBox>
         <MDBox mb={2}>
           <MDInput
@@ -90,13 +96,21 @@ const CreatePool = () => {
             onChange={handleMaxPeopleChange}
           />
           {depositedAmount && (
-            <Typography sx={{ textAlign: "end", fontSize: "12px", color: "green" }}>
+            <Typography
+              sx={{ textAlign: "end", fontSize: "12px", color: "green" }}
+            >
               Per person can deposite ${depositedAmount}
             </Typography>
           )}
         </MDBox>
         <MDBox mt={4} mb={1}>
-          <MDButton size="small" variant="gradient" color="info" fullWidth type="submit">
+          <MDButton
+            size="small"
+            variant="gradient"
+            color="info"
+            fullWidth
+            type="submit"
+          >
             Create
           </MDButton>
         </MDBox>

@@ -17,7 +17,14 @@ import configs from "examples/Charts/LineCharts/ProgressLineChart/config";
 
 // Declaring props types for GradientLineChart
 interface Props {
-  color?: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark";
+  color?:
+    | "primary"
+    | "secondary"
+    | "info"
+    | "success"
+    | "warning"
+    | "error"
+    | "dark";
   icon: ReactNode;
   title: string;
   count?: string | number;
@@ -39,7 +46,12 @@ function ProgressLineChart({
   height,
   chart,
 }: Props): JSX.Element {
-  const { data, options } = configs(color, chart.labels || [], title, chart.data || []);
+  const { data, options } = configs(
+    color,
+    chart.labels || [],
+    title,
+    chart.data || []
+  );
 
   return (
     <Card>
@@ -74,7 +86,12 @@ function ProgressLineChart({
           ) : null}
         </MDBox>
         <MDBox width="25%" ml="auto">
-          <MDTypography display="block" variant="caption" fontWeight="medium" color="text">
+          <MDTypography
+            display="block"
+            variant="caption"
+            fontWeight="medium"
+            color="text"
+          >
             {progress}%
           </MDTypography>
           <MDBox mt={0.25}>

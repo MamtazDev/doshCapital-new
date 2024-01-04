@@ -7,7 +7,10 @@ const stripe = new Stripe(
   }
 );
 
-const CreatePaymentIntent = async (amountInCents: number, description: string): Promise<string> => {
+const CreatePaymentIntent = async (
+  amountInCents: number,
+  description: string
+): Promise<string> => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amountInCents,

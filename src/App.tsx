@@ -1,4 +1,11 @@
-import { JSXElementConstructor, Key, ReactElement, useEffect, useMemo, useState } from "react";
+import {
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 // react-router components
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
@@ -32,10 +39,18 @@ import rtlPlugin from "stylis-plugin-rtl";
 import routes from "routes";
 
 //  React TS contexts
-import { setDarkMode, setMiniSidenav, setOpenConfigurator, useMaterialUIController } from "context";
+import {
+  setDarkMode,
+  setMiniSidenav,
+  setOpenConfigurator,
+  useMaterialUIController,
+} from "context";
 
 // Images
-import { default as brandDark, default as brandWhite } from "assets/images/dosh/doshLogo.png";
+import {
+  default as brandDark,
+  default as brandWhite,
+} from "assets/images/dosh/doshLogo.png";
 import useAuthCheck from "hooks/useAuthCheck";
 
 export default function App() {
@@ -82,7 +97,8 @@ export default function App() {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -112,7 +128,13 @@ export default function App() {
         }
 
         if (route.route) {
-          return <Route path={route.route} element={route.component} key={route.key} />;
+          return (
+            <Route
+              path={route.route}
+              element={route.component}
+              key={route.key}
+            />
+          );
         }
 
         return null;
@@ -154,7 +176,11 @@ export default function App() {
             <>
               <Sidenav
                 color={sidenavColor}
-                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                brand={
+                  (transparentSidenav && !darkMode) || whiteSidenav
+                    ? brandDark
+                    : brandWhite
+                }
                 brandName="Dosh Capital Investment"
                 routes={routes}
                 onMouseEnter={handleOnMouseEnter}
@@ -178,7 +204,11 @@ export default function App() {
           <>
             <Sidenav
               color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brand={
+                (transparentSidenav && !darkMode) || whiteSidenav
+                  ? brandDark
+                  : brandWhite
+              }
               brandName={null}
               routes={routes}
               onMouseEnter={handleOnMouseEnter}

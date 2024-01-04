@@ -25,7 +25,10 @@ const PaymentForm = ({ amount, userInfo, handleSubmit }: any) => {
 
     let description = "Your custom order is here.";
 
-    const clientSecret = await CreatePaymentIntent(Number(amount) * 100, description);
+    const clientSecret = await CreatePaymentIntent(
+      Number(amount) * 100,
+      description
+    );
     const {
       error,
       paymentIntent,

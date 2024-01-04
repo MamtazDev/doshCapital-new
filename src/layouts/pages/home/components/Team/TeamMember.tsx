@@ -30,7 +30,11 @@ const TeamMember = ({
           height="100%"
           mt={0.5}
           lineHeight={1}
-          sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
           <MDTypography variant="h5" fontWeight="medium" align="center">
             {name}
@@ -39,7 +43,12 @@ const TeamMember = ({
             {post}
           </MDTypography>
           <MDBox mt={4}>
-            <MDTypography variant="body2" color="text" fontWeight="regular" align="center">
+            <MDTypography
+              variant="body2"
+              color="text"
+              fontWeight="regular"
+              align="center"
+            >
               {desc}
             </MDTypography>
           </MDBox>

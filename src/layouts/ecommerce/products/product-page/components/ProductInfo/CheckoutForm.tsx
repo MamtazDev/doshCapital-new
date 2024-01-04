@@ -73,7 +73,12 @@ const PaymentForm = ({ product, oldprice, quantity, color, material }: any) => {
       {/* Payment Sheet trigger */}
 
       {/* <button onClick={handlePayment}>Pay with Stripe</button> */}
-      <MDButton onClick={handleClickOpen} variant="gradient" color="info" fullWidth>
+      <MDButton
+        onClick={handleClickOpen}
+        variant="gradient"
+        color="info"
+        fullWidth
+      >
         pay now
       </MDButton>
 

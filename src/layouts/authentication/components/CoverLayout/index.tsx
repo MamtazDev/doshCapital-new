@@ -25,7 +25,12 @@ interface Props {
   action: any;
 }
 
-function CoverLayout({ coverHeight, image, children, action }: Props): JSX.Element {
+function CoverLayout({
+  coverHeight,
+  image,
+  children,
+  action,
+}: Props): JSX.Element {
   return (
     <PageLayout>
       <DefaultNavbar routes={pageRoutes} action={action} transparent light />
@@ -52,7 +57,12 @@ function CoverLayout({ coverHeight, image, children, action }: Props): JSX.Eleme
           backgroundRepeat: "no-repeat",
         }}
       />
-      <MDBox mt={{ xs: -20, lg: -18 }} px={1} width="calc(100% - 2rem)" mx="auto">
+      <MDBox
+        mt={{ xs: -20, lg: -18 }}
+        px={1}
+        width="calc(100% - 2rem)"
+        mx="auto"
+      >
         <Grid container spacing={1} justifyContent="center">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             {children}

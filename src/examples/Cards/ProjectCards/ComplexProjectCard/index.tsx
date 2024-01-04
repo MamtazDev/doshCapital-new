@@ -14,7 +14,15 @@ import MDAvatar from "components/MDAvatar";
 
 // Declaring prop types for the ComplexProjectCard
 interface Props {
-  color?: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "light";
+  color?:
+    | "primary"
+    | "secondary"
+    | "info"
+    | "success"
+    | "warning"
+    | "error"
+    | "dark"
+    | "light";
   image: string;
   title: string;
   dateTime?: string;
@@ -74,10 +82,18 @@ function ComplexProjectCard({
             size="lg"
             variant="rounded"
             bgColor={color}
-            sx={{ p: 1, mt: -6, borderRadius: ({ borders: { borderRadius } }) => borderRadius.xl }}
+            sx={{
+              p: 1,
+              mt: -6,
+              borderRadius: ({ borders: { borderRadius } }) => borderRadius.xl,
+            }}
           />
           <MDBox ml={2} mt={-2} lineHeight={0}>
-            <MDTypography variant="h5" textTransform="capitalize" fontWeight="medium">
+            <MDTypography
+              variant="h5"
+              textTransform="capitalize"
+              fontWeight="medium"
+            >
               {title}
             </MDTypography>
             <MDTypography
@@ -99,7 +115,9 @@ function ComplexProjectCard({
                 py: 1.25,
               }}
             >
-              <Icon sx={{ cursor: "pointer", fontWeight: "bold" }}>more_vert</Icon>
+              <Icon sx={{ cursor: "pointer", fontWeight: "bold" }}>
+                more_vert
+              </Icon>
             </MDTypography>
           )}
           {dropdown.menu}

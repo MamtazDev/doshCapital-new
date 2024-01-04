@@ -92,12 +92,15 @@ function Products(): JSX.Element {
         <Grid container alignItems="center">
           <Grid item xs={12} md={7}>
             <MDBox mb={1}>
-              <MDTypography variant="h5">Some of Our Awesome Products</MDTypography>
+              <MDTypography variant="h5">
+                Some of Our Awesome Products
+              </MDTypography>
             </MDBox>
             <MDBox mb={2}>
               <MDTypography variant="body2" color="text">
-                This is the paragraph where you can write more details about your products. Keep you
-                user engaged by providing meaningful information.
+                This is the paragraph where you can write more details about
+                your products. Keep you user engaged by providing meaningful
+                information.
               </MDTypography>
             </MDBox>
           </Grid>

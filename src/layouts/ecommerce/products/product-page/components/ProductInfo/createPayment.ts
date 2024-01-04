@@ -22,7 +22,10 @@ const stripe = new Stripe("sk_test_pggpOl1FECwCoLsgXDTQjtjF00An8mKwrj", {
   apiVersion: "2022-11-15", // Ensure you set the API version you're using
 });
 
-const createPaymentIntent = async (amountInCents: number, description: string): Promise<string> => {
+const createPaymentIntent = async (
+  amountInCents: number,
+  description: string
+): Promise<string> => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amountInCents,

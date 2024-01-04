@@ -15,7 +15,9 @@ const MyDepositedPool = () => {
   const [userDepositedPool, setUserDepositedPool] = useState([]);
 
   const getUserDeposites = async () => {
-    const response = await axios.get(`${BASE_URL}/api/pools/userDeposites/${userInfo?.userId}`);
+    const response = await axios.get(
+      `${BASE_URL}/api/pools/userDeposites/${userInfo?.userId}`
+    );
 
     if (response?.data) {
       const poolInfoArray = response?.data?.map((i: any) => {

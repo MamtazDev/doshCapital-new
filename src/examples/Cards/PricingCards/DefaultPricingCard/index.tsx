@@ -23,7 +23,15 @@ interface Props {
     | "dark"
     | "white";
   badge: {
-    color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "light" | "dark";
+    color:
+      | "primary"
+      | "secondary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "light"
+      | "dark";
     label: string;
   };
   price: {
@@ -39,7 +47,15 @@ interface Props {
     type: "external" | "internal";
     route: string;
     label: string;
-    color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "light" | "dark";
+    color:
+      | "primary"
+      | "secondary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "light"
+      | "dark";
   };
   shadow?: boolean;
   [key: string]: any;
@@ -83,7 +99,9 @@ function DefaultPricingCard({
   ));
 
   return (
-    <Card sx={{ boxShadow: ({ boxShadows: { lg } }) => (shadow ? lg : "none") }}>
+    <Card
+      sx={{ boxShadow: ({ boxShadows: { lg } }) => (shadow ? lg : "none") }}
+    >
       <MDBox
         bgColor={color}
         variant={color === "white" ? "contained" : "gradient"}
@@ -111,7 +129,10 @@ function DefaultPricingCard({
         </MDBox>
         <MDBox pt={3} pb={2} px={2} textAlign="center">
           <MDBox my={1}>
-            <MDTypography variant="h1" color={color === "white" ? "dark" : "white"}>
+            <MDTypography
+              variant="h1"
+              color={color === "white" ? "dark" : "white"}
+            >
               <MDTypography
                 display="inline"
                 component="small"
@@ -122,7 +143,12 @@ function DefaultPricingCard({
                 {price.currency}
               </MDTypography>
               {price.value}
-              <MDTypography display="inline" component="small" variant="h5" color="inherit">
+              <MDTypography
+                display="inline"
+                component="small"
+                variant="h5"
+                color="inherit"
+              >
                 /{price.type}
               </MDTypography>
             </MDTypography>
