@@ -5,7 +5,6 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
-  Input,
   TextField,
 } from "@mui/material";
 import MDBox from "components/MDBox";
@@ -33,10 +32,13 @@ function ContactInfoForm() {
 
     emailjs
       .sendForm(
-        "service_r3l1m8c",
-        "template_klh7aac",
+        // serviceID
+        "service_boywpgq",
+        // templateID
+        "template_lg16gys",
         form.current,
-        "I02wa_bvgVYL4ZndX"
+        // public Key
+        "SX1ijRCETYeQPBAv8"
       )
       .then(
         (result: any) => {
@@ -114,6 +116,7 @@ function ContactInfoForm() {
               <MDBox>
                 <TextField
                   fullWidth
+                  name="message"
                   id="standard-basic"
                   label="Your Message"
                   variant="standard"
