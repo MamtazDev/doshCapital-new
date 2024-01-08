@@ -327,3 +327,23 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
   border-bottom: 0 !important;
 }
+
+.css-3mxn9g-MuiInputBase-root-MuiInput-root {
+  width: 100% !important;
+}
+
+.css-vdakgy .MuiFormControlLabel-label {
+  color: #ddd !important;
+}
+
+.css-1bqwuzc .MuiSvgIcon-root {
+  border: 0.0625rem solid rgb(26 26 26 / 40%) !important;
+}
+
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-colorSecondary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-multiline.css-ir432g {
+  width: 380px !important;
+}
+
+.css-9bjbn6 input{
+  color: #000 !important;
+}

@@ -52,7 +52,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 490,
     bgcolor: "transparant",
     border: "2px solid #000",
     boxShadow: 24,

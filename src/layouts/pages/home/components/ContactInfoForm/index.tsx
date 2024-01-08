@@ -132,7 +132,6 @@ function ContactInfoForm() {
             <MDBox>
               <FormControlLabel
                 control={<Checkbox />}
-                color="green"
                 label="I am not a robot"
               />
             </MDBox>

@@ -27,6 +27,11 @@ import SalesTable from "examples/Tables/SalesTable";
 import ChannelsChart from "layouts/dashboards/portfolio/components/ChannelsChart";
 
 // Data
+import five from "assets/images/number-icon/five.png";
+import four from "assets/images/number-icon/four.png";
+import one from "assets/images/number-icon/one.png";
+import three from "assets/images/number-icon/three.png";
+import two from "assets/images/number-icon/two.png";
 import axios from "axios";
 import { BASE_URL } from "config/config";
 import { DataContext } from "context/DataContext";
@@ -34,11 +39,6 @@ import dataTableData from "layouts/dashboards/portfolio/data/dataTableData";
 import horizontalBarChartData from "layouts/dashboards/portfolio/data/horizontalBarChartData";
 import DefaultCard from "./components/DefaultCard/DefaultCard";
 import defaultLineChartData from "./data/defaultLineChartData";
-import one from "assets/images/number-icon/one.png";
-import two from "assets/images/number-icon/two.png";
-import three from "assets/images/number-icon/three.png";
-import four from "assets/images/number-icon/four.png";
-import five from "assets/images/number-icon/five.png";
 
 const handleIcon = (index: number) => {
   switch (index) {
@@ -142,7 +142,6 @@ function Portfolio(): JSX.Element {
   const [pools, setPools] = useState<any>([]);
   const [poolsTableData, setPoolsTableData] = useState<any>([]);
   console.log(poolsTableData, "dfdfsfksfj");
-
 
   const getAllPools = async () => {
     try {
