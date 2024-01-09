@@ -36,6 +36,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
   const [mobileView, setMobileView] = useState(false);
   const videoRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [formVisible, setFormVisible] = useState(null);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -57,29 +58,6 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-
-    const form = event.target;
-
-    const name = form.name.value;
-    const email = form.email.value;
-
-    const data = {
-      name,
-      email,
-    };
-
-    try {
-      const res = await axios.post(`${BASE_URL}/api/send-email`, data);
-      if (res.data.status === 200) {
-        setOpen(false);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
   };
 
   return (
@@ -172,18 +150,6 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     And, how do we do it…while we sleep?
                   </MDTypography>
                   <MDBox display="flex" justifyContent={"flex-end"} mt={2}>
-                    {/* <MDButton
-                      onClick={handleOpen}
-                      component={Link}
-                      to={"/authentication/sign-up/cover"}
-                      variant="gradient"
-                      color={"info"}
-                      size="small"
-                      sx={{ mb: 2 }}
-                    >
-                      <span style={{ marginRight: "15px" }}>Tell me more</span>
-                      <EastIcon />
-                    </MDButton>{" "} */}
                     <br />
                     <button
                       onClick={() => setOpen(true)}
@@ -209,89 +175,13 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                       open={open}
                       onClose={handleClose}
                       closeAfterTransition
-                      // slots={{ backdrop: Backdrop }}
-                      // slotProps={{
-                      //   backdrop: {
-                      //     timeout: 500,
-                      //   },
-                      // }}
                     >
                       {/* <Fade in={open}> */}
                       <Box sx={style}>
-                        {/* <MDBox pt={4} pb={3} px={3}>
-                            <MDBox component="form" role="form" onSubmit={handleSubmit}>
-                              <MDBox mb={2}>
-                                <MDInput
-                                  type="text"
-                                  label="Name"
-                                  variant="standard"
-                                  fullWidth
-                                  name="name"
-                                />
-                              </MDBox>
-                              <MDBox mb={2}>
-                                <MDInput
-                                  type="email"
-                                  label="Email"
-                                  variant="standard"
-                                  fullWidth
-                                  name="email"
-                                />
-                              </MDBox>
-
-                              <MDBox mt={4} mb={1}>
-                                <MDButton
-                                  onClick={childModal}
-                                  variant="gradient"
-                                  color="info"
-                                  fullWidth
-                                >
-                                  Submit
-                                </MDButton>
-                              </MDBox>
-                            </MDBox>
-                          </MDBox> */}
                         <ContactInfoForm />
                       </Box>
                       {/* </Fade> */}
                     </Modal>
-                    {/* <Modal
-                      open={childopen}
-                      onClose={childhandleClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <Box sx={style}>
-                        <Typography
-                          id="modal-modal-title"
-                          variant="h6"
-                          component="h2"
-                          align="center"
-                        >
-                          Email sent successFull
-                        </Typography>
-                        <MDBox mt={4} mb={1}>
-                          <MDButton
-                            onClick={childhandleClose}
-                            variant="gradient"
-                            color="info"
-                            fullWidth
-                          >
-                            Ok
-                          </MDButton>
-                        </MDBox>
-                      </Box>
-                    </Modal> */}
-                    {/* <MDButton
-                      component={Link}
-                      to={"/"}
-                      variant="gradient"
-                      color={"info"}
-                      size="small"
-                      sx={{ mb: 2 }}
-                    >
-                      {"Sign Up"}
-                    </MDButton> */}
                   </MDBox>
                 </MDBox>
               </Grid>

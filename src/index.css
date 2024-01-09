@@ -366,3 +366,15 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 .css-l20l52 {
   border-radius: 20px !important;
 }
+
+.css-1v3hexh{
+  border: none !important;
+}
+
+.swal2-popup.swal2-modal.swal2-show{
+  z-index: 999 !important;
+}
+
+.swal2-container.swal2-center.swal2-backdrop-show{
+  z-index: 99999;
+}
