@@ -35,7 +35,7 @@ function ContactInfoForm() {
         // serviceID
         "service_r3l1m8c",
         // templateID
-        "template_klh7aac",
+        "template_jc202g8",
         form.current,
         // public Key
         "I02wa_bvgVYL4ZndX"
@@ -85,7 +85,7 @@ function ContactInfoForm() {
               <FormControl>
                 <TextField
                   id="standard-basic"
-                  name="first_name"
+                  name="from_name"
                   label="First Name"
                   variant="standard"
                 />
@@ -94,7 +94,7 @@ function ContactInfoForm() {
               <FormControl>
                 <TextField
                   id="standard-basic"
-                  name="last_name"
+                  name="from_name"
                   label="Last Name"
                   variant="standard"
                 />

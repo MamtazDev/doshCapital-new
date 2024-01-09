@@ -344,6 +344,25 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   width: 380px !important;
 }
 
-.css-9bjbn6 input{
+.css-9bjbn6 input {
   color: #000 !important;
+}
+
+/* .css-ir432g::before {
+  border-color: #a13bb6 !important;
+} */
+
+.css-ir432g::after {
+  border-color: #a13bb6 !important;
+}
+
+.css-1x5xr51{
+  background-color: #a13bb6 !important;;
+}
+
+.css-17b4eun{
+  border-radius: 10px;
+}
+.css-l20l52 {
+  border-radius: 20px !important;
 }
