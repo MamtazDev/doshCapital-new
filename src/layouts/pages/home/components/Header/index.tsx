@@ -20,8 +20,6 @@ import pageRoutes from "page.routes";
 import { Box, Modal } from "@mui/material";
 import { Container } from "@mui/system";
 import homeBgTwo from "assets/images/dosh/homeBg-2.png";
-import axios from "axios";
-import { BASE_URL } from "config/config";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import ContactInfoForm from "../ContactInfoForm";
 

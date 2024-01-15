@@ -212,7 +212,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
   .css-1602fiz-MuiPaper-root-MuiCard-root {
     margin-top: -30px !important;
-
   }
 
   .css-10fw84t {
@@ -258,7 +257,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 }
 
-
 @media(max-width:550px) {
   .css-twwm0c {
     padding: 200px 0 0;
@@ -276,7 +274,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-
 
   .css-nkchhw {
     padding: 0 !important;
@@ -296,25 +293,19 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 }
 
-
-
-
 .unknowncss {
   text-align: center;
 }
 
 /* revision css /-end */
 
-
 .css-1dlgr83-MuiFormLabel-root-MuiInputLabel-root {
   color: #000000 !important;
 }
 
-
 #standard-basic-label {
   color: gray !important;
 }
-
 
 .css-1q1k6n-MuiInputBase-root-MuiInput-root:after,
 .css-16ugujf-MuiInputBase-root-MuiInput-root:after,
@@ -377,4 +368,18 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 .swal2-container.swal2-center.swal2-backdrop-show{
   z-index: 99999;
+}
+
+.css-1clepfi-MuiTypography-root{
+  font-family: 'EB Garamond', serif !important;
+}
+.css-mr5mm8-MuiTypography-root{
+  font-family: 'EB Garamond', serif !important;
+}
+
+.css-1i2rerj-MuiButtonBase-root-MuiButton-root{
+  font-weight: 400 !important;
+}
+.css-192bpsw-MuiButtonBase-root-MuiButton-root{
+  font-weight: 400 !important;
 }

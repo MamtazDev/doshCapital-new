@@ -3,16 +3,16 @@ import Grid from "@mui/material/Grid";
 
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "../../../../../assets/images/footer-logo.png";
 
 //  React TS components
+import { Container } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import { Container } from "@mui/material";
 
 function Footer(): JSX.Element {
   return (
@@ -226,19 +226,10 @@ function Footer(): JSX.Element {
                   Product
                 </MDTypography>
               </MDBox>
-              {/* <MDBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-                <MDTypography
-                  component="a"
-                  href="#"
-                  variant="body2"
-                  fontWeight="regular"
-                  color="secondary"
-                >
-                  MT4/MQL Training
-                </MDTypography>
-              </MDBox> */}
             </MDBox>
           </Grid>
+        </Grid>
+        <MDBox>
           <Grid item xs={12} lg={8}>
             <MDBox display="flex" justifyContent="center" mt={1} mb={3}>
               <MDBox mr={3} color="secondary">
@@ -258,6 +249,7 @@ function Footer(): JSX.Element {
               </MDBox>
             </MDBox>
           </Grid>
+
           <Grid item xs={12} lg={8} sx={{ textAlign: "center" }}>
             <MDTypography variant="body2" color="secondary">
               Dosh Capital Investment, Australia.
@@ -266,7 +258,7 @@ function Footer(): JSX.Element {
               Copyright &copy; All Rights Reserved.
             </MDTypography>
           </Grid>
-        </Grid>
+        </MDBox>
       </Container>
     </MDBox>
   );

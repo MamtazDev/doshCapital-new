@@ -80,7 +80,6 @@ function HomeNavbar({
   const [controller, dispatch] = useMaterialUIController();
   const { darkMode, openConfigurator } = controller;
   const { white } = colors;
-
   const [dropdown, setDropdown] = useState<any>("");
   const [dropdownEl, setDropdownEl] = useState<any>("");
   const [dropdownName, setDropdownName] = useState<any>("");
@@ -90,11 +89,9 @@ function HomeNavbar({
   const [arrowRef, setArrowRef] = useState<any>(null);
   const [mobileNavbar, setMobileNavbar] = useState<boolean>(false);
   const [mobileView, setMobileView] = useState<boolean>(false);
-
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
   useEffect(() => {
-    // A function that sets the display state for the HomeNavbarMobile.
     function displayMobileNavbar() {
       if (window.innerWidth < breakpoints.values.lg) {
         setMobileView(true);
@@ -149,14 +146,11 @@ function HomeNavbar({
   useEffect(() => {
     function handleScroll(e: any) {
       if (window.scrollY > 100) {
-        navRef.current.style.backdropFilter = `saturate(200%) blur(30px)`;
-        // navRef.current.style.backgroundColor = `#171F30`;
         navRef.current.style.backgroundColor = `black`;
         navRef.current.style.borderRadius = `20px`;
         navRef.current.style.width = `98.1%`;
-        navRef.current.style.margin = `16px`;
-      }
-      if (window.scrollY === 0) {
+        navRef.current.style.marginLeft = `16px`;
+      } else {
         navRef.current.style.backdropFilter = `none`;
         navRef.current.style.backgroundColor = `transparent`;
       }
@@ -191,71 +185,73 @@ function HomeNavbar({
           backgroundColor: transparentColor.main,
         }) */}
         <Container>
-          <Grid
-            display={"flex"}
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <MDBox
-              component={Link}
-              to="/"
-              py={transparent ? 1.5 : 0.75}
-              lineHeight={1}
-              pl={{ xs: 0, lg: 1 }}
-              flex={1}
+          <MDBox mt={4}>
+            <Grid
+              display={"flex"}
+              alignItems="center"
+              justifyContent="space-between"
             >
-              <img
-                src={doshLogo}
-                alt="logo of doshcapital"
-                width={mobileView ? "200" : "300"}
-              />
-            </MDBox>
-            <MDBox
-              color="inherit"
-              display={{ xs: "none", lg: "flex" }}
-              m={0}
-              p={0}
-            >
-              {renderNavbarItems}
-            </MDBox>
-            {!mobileView && (
-              <MDBox display="flex">
-                <MDBox pr={1}>
-                  <MDInput label="Search here " />
-                </MDBox>
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={{ color: grey[50] }}>account_circle</Icon>
-                </IconButton>
-                <IconButton
-                  onClick={handleConfiguratorOpen}
-                  sx={navbarIconButton}
-                  size="small"
-                  disableRipple
-                >
-                  <Icon sx={{ color: grey[50] }}>settings</Icon>
-                </IconButton>
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={{ color: grey[50] }}>notifications</Icon>
-                </IconButton>
+              <MDBox
+                component={Link}
+                to="/"
+                // py={transparent ? 1.5 : 0.75}
+                lineHeight={1}
+                pl={{ xs: 0, lg: 1 }}
+                flex={1}
+              >
+                <img
+                  src={doshLogo}
+                  alt="logo of doshcapital"
+                  width={mobileView ? "200" : "300"}
+                />
               </MDBox>
-            )}
-            <MDBox
-              display={{ xs: "inline-block", lg: "none" }}
-              lineHeight={0}
-              py={1.5}
-              pl={1.5}
-              color="inherit"
-              sx={{ cursor: "pointer" }}
-              onClick={openMobileNavbar}
-            >
-              <MDTypography color="white">
-                <Icon>menu</Icon>
-              </MDTypography>
-              {mobileView && (
-                <HomeNavbarMobile routes={routes} open={mobileNavbar} />
+              <MDBox
+                color="inherit"
+                display={{ xs: "none", lg: "flex" }}
+                m={0}
+                p={0}
+              >
+                {renderNavbarItems}
+              </MDBox>
+              {!mobileView && (
+                <MDBox display="flex">
+                  <MDBox pr={1}>
+                    <MDInput label="Search here " />
+                  </MDBox>
+                  <IconButton sx={navbarIconButton} size="small" disableRipple>
+                    <Icon sx={{ color: grey[50] }}>account_circle</Icon>
+                  </IconButton>
+                  <IconButton
+                    onClick={handleConfiguratorOpen}
+                    sx={navbarIconButton}
+                    size="small"
+                    disableRipple
+                  >
+                    <Icon sx={{ color: grey[50] }}>settings</Icon>
+                  </IconButton>
+                  <IconButton sx={navbarIconButton} size="small" disableRipple>
+                    <Icon sx={{ color: grey[50] }}>notifications</Icon>
+                  </IconButton>
+                </MDBox>
               )}
-            </MDBox>
-          </Grid>
+              <MDBox
+                display={{ xs: "inline-block", lg: "none" }}
+                lineHeight={0}
+                py={1.5}
+                pl={1.5}
+                color="inherit"
+                sx={{ cursor: "pointer" }}
+                onClick={openMobileNavbar}
+              >
+                <MDTypography color="white">
+                  <Icon>menu</Icon>
+                </MDTypography>
+                {mobileView && (
+                  <HomeNavbarMobile routes={routes} open={mobileNavbar} />
+                )}
+              </MDBox>
+            </Grid>
+          </MDBox>
         </Container>
       </MDBox>
     </>

@@ -198,12 +198,23 @@ function Portfolio(): JSX.Element {
     getUserDeposites();
   }, []);
 
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox py={3}>
         <MDBox mb={3}>
+            <MDBox>
+              <p style={{textAlign: 'right', fontSize: "14px", color:"#a6a6a6", marginRight: '10px'}}>{formattedDate}</p>
+            </MDBox>
           <Grid container spacing={3}>
+
             <Grid item xs={12} sm={4}>
               {/* <DefaultStatisticsCard
                 title="Initial Investment"
@@ -249,6 +260,7 @@ function Portfolio(): JSX.Element {
                 }}
               />
             </Grid>
+
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Account Balance"
@@ -278,6 +290,7 @@ function Portfolio(): JSX.Element {
                 }}
               />
             </Grid>
+
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Profit Earnings"
@@ -306,6 +319,7 @@ function Portfolio(): JSX.Element {
             </Grid>
           </Grid>
         </MDBox>
+
         <MDBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} lg={4}>
