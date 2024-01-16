@@ -33,12 +33,12 @@ function ContactInfoForm() {
     emailjs
       .sendForm(
         // serviceID
-        "service_r3l1m8c",
+        "service_boywpgq",
         // templateID
-        "template_jc202g8",
+        "template_lg16gys",
         form.current,
         // public Key
-        "I02wa_bvgVYL4ZndX"
+        "SX1ijRCETYeQPBAv8"
       )
       .then(
         (result: any) => {

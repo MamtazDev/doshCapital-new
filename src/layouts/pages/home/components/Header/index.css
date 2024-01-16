@@ -23,6 +23,7 @@
 
 @media screen and (max-width:667px) {
   .homebg {
+    display: none;
     width: unset !important;
     object-fit: contain;
     height: 500px !important;
@@ -32,6 +33,23 @@
     margin-top: 20px !important;
   }
 }
+.homebgThree{
+  display: none;
+}
+@media screen and (max-width:667px) {
+  .homebgThree {
+    display: block;
+    width:600px;
+    /* object-fit: contain; */
+    height: 550px !important;
+  }
+
+  .css-suj8vv {
+    margin-top: 20px !important;
+  }
+}
+
+
 
 .css-yjwis {
   z-index: unset !important;

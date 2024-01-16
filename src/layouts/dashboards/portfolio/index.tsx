@@ -210,11 +210,19 @@ function Portfolio(): JSX.Element {
       <DashboardNavbar />
       <MDBox py={3}>
         <MDBox mb={3}>
-            <MDBox>
-              <p style={{textAlign: 'right', fontSize: "14px", color:"#a6a6a6", marginRight: '10px'}}>{formattedDate}</p>
-            </MDBox>
+          <MDBox>
+            <p
+              style={{
+                textAlign: "right",
+                fontSize: "14px",
+                color: "#a6a6a6",
+                marginRight: "10px",
+              }}
+            >
+              {formattedDate}
+            </p>
+          </MDBox>
           <Grid container spacing={3}>
-
             <Grid item xs={12} sm={4}>
               {/* <DefaultStatisticsCard
                 title="Initial Investment"

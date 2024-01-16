@@ -20,6 +20,7 @@ import pageRoutes from "page.routes";
 import { Box, Modal } from "@mui/material";
 import { Container } from "@mui/system";
 import homeBgTwo from "assets/images/dosh/homeBg-2.png";
+import homeBgThree from "assets/images/bg_img.png";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import ContactInfoForm from "../ContactInfoForm";
 
@@ -196,6 +197,11 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
             }}
           >
             <img className="homebg" src={homeBgTwo} alt="home background" />
+            <img
+              className="homebgThree"
+              src={homeBgThree}
+              alt="home background"
+            />
 
             {/* <video
               ref={videoRef}

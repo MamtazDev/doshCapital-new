@@ -235,12 +235,12 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           </MDTypography>
           <MDTypography variant="button" color="text" fontWeight="regular">
             “Greetings, I am Dusty as you may already know. It is my great
-            pleasure to bring to you the beginning of a new era in
-            AutomatedTrading using our Expert Advisors also known as EAs or
-            Trading Bots. It has been my undying passion for over 13 years
-            Strategies, Strategies, Strategies, coding, testing, & failing but
-            failing but up to ultimately Win in the in in the Forex markets. I
-            can tell you without a shadow of a doubt, it’s hard, it’s bloody not
+            pleasure to bring to you the beginning of a new era in Automated
+            Trading using our Expert Advisors also known as EAs or Trading Bots.
+            It has been my undying passion for over 13 years developing
+            Strategies, coding, testing & failing but never giving up to
+            ultimately Win in the Forex markets. I can tell you without a shadow
+            of a doubt, it’s hard… it’s bloody hard.. but not... I’mpossible.”
             Dusty Archer
           </MDTypography>
         </MDBox>
@@ -270,8 +270,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   image={vision}
                   title="Our Vision"
                   subtitle="What we see"
-                  description="Is to grow our client database and network to over one million in the next 5 years with an ROI of over 100% per annum.
-                    "
+                  description="We operate with the intension of our customer's satisfaction and growth through – Integrity, Excellence & Trust"
                   dateTime="22.11.21"
                   members={[team1, team2, team3]}
                   dropdown={{
