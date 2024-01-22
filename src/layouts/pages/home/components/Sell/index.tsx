@@ -1,13 +1,13 @@
-import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import MDBox from "components/MDBox";
+import { useState } from "react";
 
-import "./index.css";
 import BookingCard from "examples/Cards/BookingCard";
+import "./index.css";
 
 // Images
-import networkImage from "assets/images/dosh/network.png";
 import doshCoainImage from "assets/images/dosh/doshcoin.png";
+import networkImage from "assets/images/dosh/network.png";
 import robotsImage from "assets/images/dosh/robots.png";
 
 function Sell(): JSX.Element {

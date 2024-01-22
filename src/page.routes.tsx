@@ -1,4 +1,4 @@
-/** 
+/**
   All of the routes for the Material Kit 2 PRO React React are added here,
   You can add a new route, customize the routes and delete the routes here.
 
@@ -21,13 +21,13 @@
 */
 
 // @mui material components
-import Icon from "@mui/material/Icon";
 
 const pageRoutes = [
   {
     name: "Home",
     route: "/",
   },
+
   {
     name: "Dashboard",
     route: "/dashboards/portfolio",
@@ -35,6 +35,11 @@ const pageRoutes = [
   {
     name: "About",
     route: "/about",
+  },
+  {
+    name: "Email",
+    route: "/email-confirm",
+    // component: <EamilConfirm />,
   },
 
   // {

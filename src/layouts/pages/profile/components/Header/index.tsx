@@ -18,7 +18,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 // Images
 import backgroundImage from "assets/images/bg-profile.jpeg";
-import burceMars from "assets/images/bruce-mars.jpg";
+import dustyImg from "assets/images/Me.jpg";
 
 function Header({ children }: { children?: ReactNode }): JSX.Element {
   const [tabsOrientation, setTabsOrientation] = useState<
@@ -79,7 +79,7 @@ function Header({ children }: { children?: ReactNode }): JSX.Element {
         <Grid container spacing={3} alignItems="center">
           <Grid item>
             <MDAvatar
-              src={burceMars}
+              src={dustyImg}
               alt="profile-image"
               size="xl"
               shadow="sm"

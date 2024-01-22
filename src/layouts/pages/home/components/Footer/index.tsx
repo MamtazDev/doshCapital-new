@@ -98,7 +98,7 @@ function Footer(): JSX.Element {
               </MDBox>
             </MDBox>
           </Grid>
-          <Grid item xs={6} lg={3} container justifyContent="center">
+          <Grid item xs={12} lg={3} container justifyContent="start">
             <MDBox
               display="flex"
               flexDirection="column"
@@ -163,7 +163,7 @@ function Footer(): JSX.Element {
               </MDBox>
             </MDBox>
           </Grid>
-          <Grid item xs={6} lg={3} container justifyContent="center">
+          <Grid item xs={12} lg={3} container justifyContent="start">
             <MDBox
               display="flex"
               flexDirection="column"

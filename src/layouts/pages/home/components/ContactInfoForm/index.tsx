@@ -59,16 +59,18 @@ function ContactInfoForm() {
         maxWidth: "420px",
         width: "100%",
         padding: "20px",
-        borderRadius: "15px",
+        borderRadius: "8px",
       }}
     >
       <MDBox
         bgColor="#A13BB6"
         textAlign={"center"}
-        padding={"10px"}
+        padding={"25px"}
+        borderRadius="5px"
         marginTop={"-50px"}
+        shadow="xl"
       >
-        <MDTypography variant="h3">Contact us</MDTypography>
+        <MDTypography variant="h6">Contact us</MDTypography>
       </MDBox>
 
       <form ref={form} onSubmit={sendEmail}>

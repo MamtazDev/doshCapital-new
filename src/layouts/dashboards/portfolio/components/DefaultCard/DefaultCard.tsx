@@ -77,7 +77,6 @@ function DefaultCard({
                 fontWeight="medium"
                 color="text"
                 textTransform="capitalize"
-                // sx={{fontSize:"12px"}}
               >
                 {title}
               </MDTypography>
@@ -86,10 +85,11 @@ function DefaultCard({
               {button ? (
                 <Button
                   variant="contained"
-                  size="small"
+                  size="large"
                   sx={{
                     display: "block",
                     padding: "0 30px",
+                    fontSize: "18px",
                     backgroundColor: `${
                       buttonVarient === "success" && "#70ad47"
                     }`,

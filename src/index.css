@@ -200,7 +200,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   padding-left: 75px;
 }
 
-
 @media(max-width: 550px) {
   .css-1rqwpyb {
     width: 100% !important;
@@ -243,7 +242,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 
   .css-1xzqqmo-MuiGrid-root {
-    padding: 10px !important;
+    padding: 20px !important;
   }
 
   .css-1uci8p7-MuiTypography-root,
@@ -347,47 +346,92 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   border-color: #a13bb6 !important;
 }
 
-.css-1x5xr51{
-  background-color: #a13bb6 !important;;
+.css-1x5xr51 {
+  background-color: #a13bb6 !important;
+  ;
 }
 
-.css-17b4eun{
+.css-17b4eun {
   border-radius: 10px;
 }
+
 .css-l20l52 {
   border-radius: 20px !important;
 }
 
-.css-1v3hexh{
+.css-1v3hexh {
   border: none !important;
 }
 
-.swal2-popup.swal2-modal.swal2-show{
+.swal2-popup.swal2-modal.swal2-show {
   z-index: 999 !important;
 }
 
-.swal2-container.swal2-center.swal2-backdrop-show{
+.swal2-container.swal2-center.swal2-backdrop-show {
   z-index: 99999;
 }
 
-.css-1clepfi-MuiTypography-root{
-  font-family: 'EB Garamond', serif !important;
-}
-.css-mr5mm8-MuiTypography-root{
+.css-1clepfi-MuiTypography-root {
   font-family: 'EB Garamond', serif !important;
 }
 
-.css-1i2rerj-MuiButtonBase-root-MuiButton-root{
-  font-weight: 400 !important;
+.css-mr5mm8-MuiTypography-root {
+  font-family: 'EB Garamond', serif !important;
 }
-.css-192bpsw-MuiButtonBase-root-MuiButton-root{
+
+.css-q25wk7-MuiTypography-root {
+  font-family: 'EB Garamond', serif !important;
+  color: white !important;
+}
+
+.css-1349kmb-MuiTypography-root {
+  font-family: 'EB Garamond', serif !important;
+  color: white !important;
+}
+
+.css-s68t5q {
+  background-color: rgb(161, 59, 182) !important;
+}
+
+.css-1i2rerj-MuiButtonBase-root-MuiButton-root {
   font-weight: 400 !important;
 }
 
-.css-1f4od06-MuiTypography-root{
+.css-192bpsw-MuiButtonBase-root-MuiButton-root {
+  font-weight: 400 !important;
+}
+
+.css-1f4od06-MuiTypography-root {
   text-align: right !important;
 }
 
-.css-1neevca-MuiIcon-root{
+.css-1neevca-MuiIcon-root {
   color: #8e6c1f !important;
+}
+
+h5.MuiTypography-root.MuiTypography-h5.css-xmfo17 {
+  text-align: right !important;
+}
+
+h1.MuiTypography-root.MuiTypography-h1.css-acx4kb {
+  font-family: 'EB Garamond', serif !important;
+  color: white !important;
+}
+
+h3.MuiTypography-root.MuiTypography-h3.css-19064t5 {
+  font-family: 'EB Garamond', serif !important;
+  color: white !important;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-s68t5q {
+  color: white !important;
+}
+
+span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-6m0tds {
+  color: #a7770c !important;
+}
+
+.css-1burjyh{
+  background-color: unset !important;
+  box-shadow: unset !important;
 }

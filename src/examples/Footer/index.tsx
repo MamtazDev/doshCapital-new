@@ -1,6 +1,6 @@
 // @mui material components
-import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
+import Link from "@mui/material/Link";
 
 //  React TS components
 import MDBox from "components/MDBox";

@@ -24,7 +24,7 @@ function ContactInfo(): JSX.Element {
           padding: "100px 0",
           backgroundBlendMode: "overlay",
           backgroundColor: "#373232",
-          borderRadius: "50px",
+          borderRadius: "20px",
         }}
       >
         <Container>

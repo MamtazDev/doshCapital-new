@@ -8,17 +8,16 @@ import Container from "@mui/material/Container";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Pricing page components
-import Header from "layouts/pages/home/components/Header";
-import Footer from "layouts/pages/home/components/Footer";
-import Sell from "./components/Sell";
-import ContactInfo from "./components/ContactInfo";
-import Team from "./components/Team";
-import Bots from "./components/Bots";
-import Card from "@mui/material/Card";
-import Configurator from "../../../examples/Configurator";
-import { Box, useMediaQuery } from "@mui/material";
 import { useTheme } from "@emotion/react";
+import { Box, useMediaQuery } from "@mui/material";
+import Card from "@mui/material/Card";
 import { useMaterialUIController } from "context";
+import Footer from "layouts/pages/home/components/Footer";
+import Header from "layouts/pages/home/components/Header";
+import Configurator from "../../../examples/Configurator";
+import ContactInfo from "./components/ContactInfo";
+import Sell from "./components/Sell";
+import Team from "./components/Team";
 // import useMediaQuery from '@mui/material/useMediaQuery';
 
 function HomePage(): JSX.Element {

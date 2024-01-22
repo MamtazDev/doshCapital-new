@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { DataContext } from 'context/DataContext';
 import React,{useContext} from 'react';
 import { Navigate } from 'react-router';
