@@ -32,6 +32,11 @@ const pageRoutes = [
     name: "Dashboard",
     route: "/dashboards/portfolio",
   },
+
+  {
+    name: "Dashboard",
+    route: "/dashboards/dihan",
+  },
   {
     name: "About",
     route: "/about",

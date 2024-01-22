@@ -61,6 +61,7 @@ import Icon from "@mui/material/Icon";
 import dusty from "assets/images/Me.jpg";
 import About from "layouts/applications/wizard/components/About";
 import Portfolio from "layouts/dashboards/portfolio";
+import EamilConfirm from "layouts/pages/emailConfirm";
 import Products from "layouts/pages/products";
 import HomePage from "./layouts/pages/home";
 
@@ -118,7 +119,28 @@ const routes = [
       },
     ],
   },
-  { type: "title", title: "Pages", key: "title-pages" },
+  // { type: "title", title: "Pages", key: "title-pages" },
+  {
+    type: "home",
+    title: "Pages",
+    key: "title-pages",
+
+    icon: <Icon fontSize="medium">image</Icon>,
+    collapse: [
+      {
+        name: "Profile",
+        key: "profile",
+        collapse: [
+          {
+            name: "Profile Overview",
+            key: "profile-overview",
+            route: "/ashiq",
+            component: <EamilConfirm />,
+          },
+        ],
+      },
+    ],
+  },
   {
     type: "collapse",
     name: "Pages",
@@ -151,6 +173,12 @@ const routes = [
             name: "New User",
             key: "new-user",
             route: "/pages/users/new-user",
+            component: <NewUser />,
+          },
+          {
+            name: "New User",
+            key: "new-user",
+            route: "/pages/users/verify",
             component: <NewUser />,
           },
         ],
@@ -341,6 +369,12 @@ const routes = [
             route: "/authentication/sign-in/basic",
             component: <SignInBasic />,
           },
+          // {
+          //   name: "Basic",
+          //   key: "basic",
+          //   route: "/authentication/asiq",
+          //   component: <EamilConfirm />,
+          // },
           {
             name: "Cover",
             key: "cover",
