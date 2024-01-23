@@ -369,12 +369,6 @@ const routes = [
             route: "/authentication/sign-in/basic",
             component: <SignInBasic />,
           },
-          // {
-          //   name: "Basic",
-          //   key: "basic",
-          //   route: "/authentication/asiq",
-          //   component: <EamilConfirm />,
-          // },
           {
             name: "Cover",
             key: "cover",
