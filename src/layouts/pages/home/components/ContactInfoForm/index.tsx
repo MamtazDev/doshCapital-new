@@ -87,7 +87,7 @@ function ContactInfoForm() {
               <FormControl>
                 <TextField
                   id="standard-basic"
-                  name="from_name"
+                  name="user_name"
                   label="First Name"
                   variant="standard"
                 />
