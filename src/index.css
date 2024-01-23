@@ -431,7 +431,15 @@ span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-6
   color: #a7770c !important;
 }
 
-.css-1burjyh{
+.css-1burjyh {
   background-color: unset !important;
   box-shadow: unset !important;
+}
+
+.css-5cgavb {
+  padding: 15px !important;
+}
+
+.css-u65kbm{
+  text-align: right !important;
 }

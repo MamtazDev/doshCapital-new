@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 
 import { ReactNode } from "react";
@@ -77,6 +78,7 @@ function DefaultCard({
                 fontWeight="medium"
                 color="text"
                 textTransform="capitalize"
+                textAlign="left"
               >
                 {title}
               </MDTypography>
@@ -90,6 +92,7 @@ function DefaultCard({
                     display: "block",
                     padding: "0 30px",
                     fontSize: "18px",
+                    textAlign: "right",
                     backgroundColor: `${
                       buttonVarient === "success" && "#70ad47"
                     }`,
@@ -101,7 +104,7 @@ function DefaultCard({
                 <MDTypography
                   variant="h5"
                   fontWeight="bold"
-                  sx={{ fontSize: "16px", padding: "4px" }}
+                  sx={{ fontSize: "16px", padding: "4px", textAlign: "left" }}
                 >
                   {count}
                 </MDTypography>
@@ -125,13 +128,13 @@ function DefaultCard({
             </MDBox>
           </Grid>
           <Grid item>
-            <MDBox mb={0.5} lineHeight={1}>
+            <MDBox mb={0.5} lineHeight={1} sx={{textAlign: "right"}}>
               <MDTypography
                 variant="button"
                 fontWeight="medium"
                 color="text"
                 textTransform="capitalize"
-                // sx={{fontSize:"12px"}}
+                textAlign="right"
               >
                 {title2}
               </MDTypography>
@@ -140,7 +143,8 @@ function DefaultCard({
               <MDTypography
                 variant="h5"
                 fontWeight="bold"
-                sx={{ fontSize: "16px", padding: "4px" }}
+                textAlign="right"
+                sx={{ fontSize: "16px", padding: "4px", }}
               >
                 {count2}
               </MDTypography>
