@@ -34,17 +34,8 @@ const pageRoutes = [
   },
 
   {
-    name: "Dashboard",
-    route: "/dashboards/dihan",
-  },
-  {
     name: "About",
     route: "/about",
-  },
-  {
-    name: "Email",
-    route: "/email-confirm",
-    // component: <EamilConfirm />,
   },
 
   // {
