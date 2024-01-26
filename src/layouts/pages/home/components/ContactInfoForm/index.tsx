@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import emailjs from "@emailjs/browser";
 import {
   Button,
@@ -70,7 +71,9 @@ function ContactInfoForm() {
         marginTop={"-50px"}
         shadow="xl"
       >
-        <MDTypography variant="h6">Contact us</MDTypography>
+        <MDTypography variant="h6" sx={{ color: "white" }}>
+          Contact us
+        </MDTypography>
       </MDBox>
 
       <form ref={form} onSubmit={sendEmail}>

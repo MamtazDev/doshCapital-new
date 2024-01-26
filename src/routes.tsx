@@ -61,7 +61,6 @@ import Icon from "@mui/material/Icon";
 import dusty from "assets/images/Me.jpg";
 import About from "layouts/applications/wizard/components/About";
 import Portfolio from "layouts/dashboards/portfolio";
-import EamilConfirm from "layouts/pages/emailConfirm";
 import Products from "layouts/pages/products";
 import HomePage from "./layouts/pages/home";
 
@@ -116,28 +115,6 @@ const routes = [
         key: "sales",
         route: "/dashboards/sales",
         component: <Sales />,
-      },
-    ],
-  },
-  // { type: "title", title: "Pages", key: "title-pages" },
-  {
-    type: "home",
-    title: "Pages",
-    key: "title-pages",
-
-    icon: <Icon fontSize="medium">image</Icon>,
-    collapse: [
-      {
-        name: "Profile",
-        key: "profile",
-        collapse: [
-          {
-            name: "Profile Overview",
-            key: "profile-overview",
-            route: "/ashiq",
-            component: <EamilConfirm />,
-          },
-        ],
       },
     ],
   },

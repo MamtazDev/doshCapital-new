@@ -67,16 +67,18 @@ function DefaultCard({
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
+  console.log(darkMode, "sdfjkaklsdfj");
+
   return (
     <Card>
-      <MDBox p={2}>
+      <MDBox px={2}>
         <Grid container justifyContent="space-between">
           <Grid item>
             <MDBox mb={0.5} lineHeight={1}>
               <MDTypography
                 variant="button"
                 fontWeight="medium"
-                color="text"
+                color={"text"}
                 textTransform="capitalize"
                 textAlign="left"
               >
@@ -87,7 +89,7 @@ function DefaultCard({
               {button ? (
                 <Button
                   variant="contained"
-                  size="large"
+                  size="small"
                   sx={{
                     display: "block",
                     padding: "0 30px",
@@ -104,7 +106,13 @@ function DefaultCard({
                 <MDTypography
                   variant="h5"
                   fontWeight="bold"
-                  sx={{ fontSize: "16px", padding: "4px", textAlign: "left" }}
+                  sx={{
+                    fontSize: "16px",
+                    padding: "4px",
+                    textAlign: "left",
+                    display: "block",
+                    backgroundColor: "transparent",
+                  }}
                 >
                   {count}
                 </MDTypography>
@@ -128,7 +136,7 @@ function DefaultCard({
             </MDBox>
           </Grid>
           <Grid item>
-            <MDBox mb={0.5} lineHeight={1} sx={{textAlign: "right"}}>
+            <MDBox mb={0.5} lineHeight={1} sx={{ textAlign: "right" }}>
               <MDTypography
                 variant="button"
                 fontWeight="medium"
@@ -144,7 +152,7 @@ function DefaultCard({
                 variant="h5"
                 fontWeight="bold"
                 textAlign="right"
-                sx={{ fontSize: "16px", padding: "4px", }}
+                sx={{ fontSize: "16px", padding: "4px" }}
               >
                 {count2}
               </MDTypography>

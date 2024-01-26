@@ -188,6 +188,13 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-17ceore-MuiSvgIcon-root {
   background-color: #A13BB6 !important;
 }
 
+.css-1jpt7oq-MuiButtonBase-root-MuiButton-root {
+  background-color: #A13BB6 !important;
+  color: #fff !important;
+  line-height: unset !important;
+  min-height: 1.4rem !important;
+}
+
 td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-12xa49n-MuiTableCell-root {
   text-align: start !important;
 }
@@ -262,7 +269,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 
   .css-xw63fn {
-    padding-top: 90px !important;
+    padding-top: 290px !important;
   }
 
   .css-e3rwa0 {
@@ -440,6 +447,59 @@ span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-6
   padding: 15px !important;
 }
 
-.css-u65kbm{
+.css-u65kbm {
   text-align: right !important;
+}
+
+.css-sa3w6d {
+  padding: 20px !important;
+}
+
+.css-1avclyg-MuiTypography-root {
+  color: #FFF !important;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-1663t47-MuiButtonBase-root-MuiButton-root {
+  color: #FFF !important;
+}
+
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-15r4lj3-MuiButtonBase-root-MuiButton-root {
+  color: #fff !important;
+}
+
+
+@media(min-width: 992px) {
+  .css-11b450n {
+    height: 125px !important;
+  }
+}
+
+@media(max-width: 578px) {
+  .MuiBox-root.css-hgn5yn {
+    margin-left: 4px !important;
+  }
+}
+
+@media(max-width: 578px) {
+  .css-1u2wc6v {
+    padding-left: 35px !important;
+  }
+}
+
+.css-1991oeq {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.css-121ioyh-MuiTypography-root {
+  color: #fff !important;
+}
+
+.css-1a49fuf-MuiTypography-root {
+  color: #fff !important;
+}
+
+.css-5b84dx-MuiTypography-root {
+  color: #fff !important;
 }
