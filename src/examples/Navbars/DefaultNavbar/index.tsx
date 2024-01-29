@@ -1,41 +1,34 @@
 /* eslint-disable no-param-reassign */
-
-import { useState, useEffect, ReactNode, Fragment, useRef } from "react";
+import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
 
 // @mui material components
-import Icon from "@mui/material/Icon";
-import Popper from "@mui/material/Popper";
-import Grow, { GrowProps } from "@mui/material/Grow";
-import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
-import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
+import Grow, { GrowProps } from "@mui/material/Grow";
+import Icon from "@mui/material/Icon";
+import MuiLink from "@mui/material/Link";
+import Popper from "@mui/material/Popper";
 import { Theme } from "@mui/material/styles";
 
 //  React TS components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDTypography from "components/MDTypography";
 
 //  React TS examples components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
 //  React TS Base Styles
-import breakpoints from "assets/theme/base/breakpoints";
 import doshLogo from "assets/images/DoshLogo.png";
+import breakpoints from "assets/theme/base/breakpoints";
 
 //  React context
-import {
-  useMaterialUIController,
-  setTransparentNavbar,
-  setMiniSidenav,
-  setOpenConfigurator,
-} from "context";
-import zIndex from "@mui/material/styles/zIndex";
+import { useMaterialUIController } from "context";
 
 // Declaring props types for DefaultNavbar
 interface Props {
@@ -109,8 +102,8 @@ function DefaultNavbar({
       }
     }
 
-    /** 
-     The event listener that's calling the displayMobileNavbar function when 
+    /**
+     The event listener that's calling the displayMobileNavbar function when
      resizing the window.
     */
     window.addEventListener("resize", displayMobileNavbar);
@@ -135,10 +128,10 @@ function DefaultNavbar({
         navRef.current.style.backgroundColor = `transparent`;
       }
     }
-    /** 
-         The event listener that's calling the handleTransparentNavbar function when 
-         scrolling the window.
-        */
+    /**
+        The event listener that's calling the handleTransparentNavbar function when
+        scrolling the window.
+    */
     window.addEventListener("scroll", handleScroll);
 
     return () => {

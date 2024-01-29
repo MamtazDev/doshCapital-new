@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 
 import { ReactNode, useRef, useState } from "react";
@@ -19,8 +20,8 @@ import pageRoutes from "page.routes";
 // Images
 import { Box, Modal } from "@mui/material";
 import { Container } from "@mui/system";
-import homeBgTwo from "assets/images/dosh/homeBg-2.png";
 import homeBgThree from "assets/images/bg_img.png";
+import homeBgTwo from "assets/images/dosh/homeBg-2.png";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import ContactInfoForm from "../ContactInfoForm";
 
@@ -56,7 +57,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
     bgcolor: "transparant",
     border: "2px solid #000",
     boxShadow: 24,
-    p: 4,
+    p: 4
   };
 
   return (

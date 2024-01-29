@@ -94,6 +94,7 @@ function DefaultCard({
                     display: "block",
                     padding: "0 30px",
                     fontSize: "18px",
+                    color: "#fff",
                     textAlign: "right",
                     backgroundColor: `${
                       buttonVarient === "success" && "#70ad47"

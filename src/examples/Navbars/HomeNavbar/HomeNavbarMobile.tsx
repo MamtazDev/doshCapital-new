@@ -13,13 +13,12 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 //  React TS exampless
-import HomeNavbarDropdown from "examples/Navbars/HomeNavbar/HomeNavbarDropdown";
 import { Icon, IconButton } from "@mui/material";
-import MDButton from "components/MDButton";
-import MDInput from "components/MDInput";
-import { navbarIconButton } from "../DashboardNavbar/styles";
 import { grey } from "@mui/material/colors";
+import MDInput from "components/MDInput";
+import HomeNavbarDropdown from "examples/Navbars/HomeNavbar/HomeNavbarDropdown";
 import { setOpenConfigurator, useMaterialUIController } from "../../../context";
+import { navbarIconButton } from "../DashboardNavbar/styles";
 
 // Declaring props types for HomeNavbarMobile
 interface Props {

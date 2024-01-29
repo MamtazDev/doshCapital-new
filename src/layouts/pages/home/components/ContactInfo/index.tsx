@@ -17,7 +17,7 @@ import ContactInfoForm from "../ContactInfoForm";
 function ContactInfo(): JSX.Element {
   return (
     <MDBox sx={{ display: "flex", justifyContent: "center" }}>
-      <MDBox paddingBottom={"50px"} sx={{ width: "80%" }}>
+      <MDBox paddingBottom={"50px"} sx={{ width: "70%" }}>
         <MDBox
           sx={{
             backgroundImage: `url(${contactImg})`,

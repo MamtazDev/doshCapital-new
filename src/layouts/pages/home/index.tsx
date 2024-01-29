@@ -12,6 +12,7 @@ import { useTheme } from "@emotion/react";
 import { Box, useMediaQuery } from "@mui/material";
 import Card from "@mui/material/Card";
 import { useMaterialUIController } from "context";
+import BottomNavbar from "examples/Navbars/HomeNavbar/BottomNavbar";
 import Footer from "layouts/pages/home/components/Footer";
 import Header from "layouts/pages/home/components/Header";
 import Configurator from "../../../examples/Configurator";
@@ -61,6 +62,7 @@ function HomePage(): JSX.Element {
         <ContactInfo />
       </Box>
       <Footer />
+      {isMobile ? <BottomNavbar /> : ""}
       <Configurator />
     </PageLayout>
   );

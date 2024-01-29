@@ -443,17 +443,17 @@ span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-6
   box-shadow: unset !important;
 }
 
-.css-5cgavb {
+/* .css-5cgavb {
   padding: 15px !important;
-}
+} */
 
 .css-u65kbm {
   text-align: right !important;
 }
 
-.css-sa3w6d {
+/* .css-sa3w6d {
   padding: 20px !important;
-}
+} */
 
 .css-1avclyg-MuiTypography-root {
   color: #FFF !important;
@@ -492,14 +492,12 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   padding-bottom: 10px !important;
 }
 
-.css-121ioyh-MuiTypography-root {
-  color: #fff !important;
-}
+@media(max-width: 550px) {
+  .css-nzxbvp {
+    width: 85% !important;
+  }
 
-.css-1a49fuf-MuiTypography-root {
-  color: #fff !important;
-}
-
-.css-5b84dx-MuiTypography-root {
-  color: #fff !important;
+  .css-1mo8qo7 {
+    padding: 35px 0 !important;
+  }
 }

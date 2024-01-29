@@ -13,6 +13,7 @@ import logo from "../../../../../assets/images/footer-logo.png";
 import { Container } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import BottomNavbar from "examples/Navbars/HomeNavbar/BottomNavbar";
 
 function Footer(): JSX.Element {
   return (

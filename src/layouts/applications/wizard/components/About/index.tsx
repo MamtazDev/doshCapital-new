@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ReactNode, useEffect, useState } from "react";
 import "./index.css";
 
@@ -123,19 +124,19 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           lineHeight={1}
           className="mmmmmmmm"
         >
-          <MDTypography variant="h5" fontWeight="medium">
+          <MDTypography variant="h5" sx={{color: "#fff"}} fontWeight="medium">
             About Us
           </MDTypography>
-          <MDTypography variant="button" color="text" fontWeight="bold">
+          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="bold">
             “Helping Others, make money while you sleep”
           </MDTypography>{" "}
           <br />
-          <MDTypography variant="button" color="text" fontWeight="regular">
+          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="regular">
             At Dosh we come together to fix one common problem by providing a
             Solution and Service to Financial Freedom. We provide this through
             Automated Trading, Networking & DoshCoin
           </MDTypography>{" "}
-          <MDTypography variant="button" color="text" fontWeight="regular">
+          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="regular">
             Ever hard of a company that provides great Service a Robust Product
             and Reliable steady Income through consistent profits? Its Dosh
             Capital Investment!
