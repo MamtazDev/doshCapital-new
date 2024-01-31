@@ -17,9 +17,9 @@ const BottomNavbar = () => {
         bottom: "0",
         zIndex: "99",
         width: "100%",
-        borderTopLeftRadius: "40px",
-        borderTopRightRadius: "40px",
-        padding: "20px 20px 10px",
+        borderTopLeftRadius: "25px",
+        borderTopRightRadius: "25px",
+        padding: "15px 20px 10px",
         background: "linear-gradient(104deg, #2B2B2B 0%, #0D0D0D 100%)",
       }}
     >
@@ -47,7 +47,7 @@ const BottomNavbar = () => {
         <MDBox
           sx={{
             textAlign: "center",
-            width: "100px",
+            width: "70px",
             height: "100px",
             marginTop: "-100px",
             borderRadius: "50%",

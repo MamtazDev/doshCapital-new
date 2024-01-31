@@ -153,58 +153,25 @@ function DefaultCard({
                 variant="h5"
                 fontWeight="bold"
                 textAlign="right"
-                sx={{ fontSize: "16px", padding: "4px" }}
+                sx={{ fontSize: "16px" }}
               >
                 {count2}
               </MDTypography>
             </MDBox>
-            {/* {belowText && (
-              <MDTypography variant="button" fontWeight="bold" color={percentage.color}>
-                {percentage.value}&nbsp;
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={darkMode ? "text" : "secondary"}
-                >
-                  {percentage.label}
-                </MDTypography>
-              </MDTypography>
-            )} */}
+
             <MDBox lineHeight={1}>
-              {/* {button ? (
-                <Button
-                  variant="contained"
-                  size="medium"
-                  sx={{
-                    display: "block",
-                    backgroundColor: `${buttonVarient === "success" && "#70ad47"}`,
-                  }}
-                >
-                  {count}
-                </Button>
-              ) :  */}
-              {/* ( */}
-              <MDTypography
-                variant="h5"
-                fontWeight="bold"
-                //  sx={{fontSize:"16px"}}
-              >
-                {/* {count} */}
-              </MDTypography>
-              {/* ) */}
-              {/* } */}
+              <MDTypography variant="h5" fontWeight="bold"></MDTypography>
+
               <MDTypography
                 variant="button"
                 fontWeight="bold"
                 color={percentage2.color}
-                //  sx={{fontSize:"10px"}}
               >
                 {percentage2.value}
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   color={darkMode ? "text" : "secondary"}
-                  // sx={{fontSize:"10px"}}
                 >
                   {percentage2.label}
                 </MDTypography>

@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import emailjs from "@emailjs/browser";
 import {
   Button,
   Checkbox,
@@ -10,46 +9,46 @@ import {
 } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Swal from "sweetalert2";
 
 function ContactInfoForm() {
   const form = useRef<any>();
 
+  const [loading, setLoading] = useState<boolean>(false);
+  const [formValue, setFormvalue] = useState<any>({});
+
+  console.log(formValue, "fff");
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormvalue({ ...formValue, [name]: value });
+  };
+
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    if (!form.current) {
-      console.error("Form is not defined.");
-      return;
-    }
+    // Disable the button
+    setLoading(true);
 
-    const emailInput = form.current.querySelector('input[name="user_email"]');
-
-    if (!emailInput || !emailInput.value) {
-      Swal.fire("Please provide your email");
-      return;
-    }
-
-    emailjs
-      .sendForm(
-        // serviceID
-        "service_jipq7mi",
-        // templateID
-        "template_cnwma4l",
-        form.current,
-        // public Key
-        "zjnqxStilPuphOWrd"
-      )
-      .then(
-        (result: any) => {
-          Swal.fire("Please Check Your Mail");
-          form.current.reset();
-        },
-        (error: any) => {
-          console.log(error.text);
-        }
-      );
+    fetch("http://localhost:8000/api/send-email", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formValue),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // Re-enable the button
+        setLoading(false);
+        Swal.fire("Please check your mail");
+      })
+      .catch((error) => {
+        // Handle error if necessary
+        console.error("Error sending email:", error);
+        setLoading(false); // Make sure to re-enable the button even if there's an error
+      });
   };
 
   return (
@@ -90,7 +89,8 @@ function ContactInfoForm() {
               <FormControl>
                 <TextField
                   id="standard-basic"
-                  name="user_name"
+                  name="firstName"
+                  onChange={handleInputChange}
                   label="First Name"
                   variant="standard"
                 />
@@ -99,9 +99,10 @@ function ContactInfoForm() {
               <FormControl>
                 <TextField
                   id="standard-basic"
-                  name="from_name"
+                  name="lastName"
                   label="Last Name"
                   variant="standard"
+                  onChange={handleInputChange}
                 />
               </FormControl>
             </MDBox>
@@ -110,9 +111,11 @@ function ContactInfoForm() {
               <FormControl sx={{ display: "flex", gap: "20px" }}>
                 <TextField
                   id="standard-basic"
-                  name="user_email"
+                  name="email"
                   label="Email Address"
                   variant="standard"
+                  onChange={handleInputChange}
+                  required
                 />
               </FormControl>
             </MDBox>
@@ -126,6 +129,7 @@ function ContactInfoForm() {
                   label="Your Message"
                   variant="standard"
                   color="secondary"
+                  onChange={handleInputChange}
                   multiline
                   rows={6}
                 />
@@ -142,8 +146,8 @@ function ContactInfoForm() {
             </MDBox>
 
             <MDBox>
-              <Button type="submit" value="Send" variant="contained">
-                Send Message
+              <Button type="submit" variant="contained" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </MDBox>
           </MDBox>
