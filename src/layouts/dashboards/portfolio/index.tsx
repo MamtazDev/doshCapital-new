@@ -244,7 +244,7 @@ function Portfolio(): JSX.Element {
                 count={`$${
                   userDepositesData[userDepositesData?.length - 1]?.amount
                     ? userDepositesData[userDepositesData?.length - 1]?.amount
-                    : 10
+                    : 250
                 }`}
                 percentage={{
                   color: "success",
@@ -263,7 +263,7 @@ function Portfolio(): JSX.Element {
                 buttonVarient={"inherit"}
                 percentage2={{
                   color: "success",
-                  value: "$200",
+                  value: "$250",
                   label: " Initial Investment",
                 }}
               />
@@ -274,7 +274,7 @@ function Portfolio(): JSX.Element {
                 title="Account Balance"
                 count={`$${userDepositesData?.reduce(
                   (total, item) => total + item?.amount,
-                  10
+                  365
                 )}`}
                 percentage={{
                   color: "success",
@@ -302,7 +302,7 @@ function Portfolio(): JSX.Element {
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Profit Earnings"
-                count="$1,200"
+                count="$150"
                 percentage={{
                   color: "secondary",
                   value: "+213%",
@@ -314,7 +314,7 @@ function Portfolio(): JSX.Element {
                   value: salesDropdownValue,
                 }}
                 title2={"Avg. Revenue"}
-                count2={"$1,200"}
+                count2={"$333.33"}
                 button={true}
                 belowText={true}
                 buttonVarient={"success"}
