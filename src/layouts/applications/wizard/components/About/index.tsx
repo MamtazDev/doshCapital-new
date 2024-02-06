@@ -124,19 +124,31 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           lineHeight={1}
           className="mmmmmmmm"
         >
-          <MDTypography variant="h5" sx={{color: "#fff"}} fontWeight="medium">
+          <MDTypography variant="h5" sx={{ color: "#fff" }} fontWeight="medium">
             About Us
           </MDTypography>
-          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="bold">
+          <MDTypography
+            variant="button"
+            sx={{ color: "#fff" }}
+            fontWeight="bold"
+          >
             “Helping Others, make money while you sleep”
           </MDTypography>{" "}
           <br />
-          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="regular">
+          <MDTypography
+            variant="button"
+            sx={{ color: "#fff" }}
+            fontWeight="regular"
+          >
             At Dosh we come together to fix one common problem by providing a
             Solution and Service to Financial Freedom. We provide this through
             Automated Trading, Networking & DoshCoin
           </MDTypography>{" "}
-          <MDTypography variant="button" sx={{color: "#fff"}} fontWeight="regular">
+          <MDTypography
+            variant="button"
+            sx={{ color: "#fff" }}
+            fontWeight="regular"
+          >
             Ever hard of a company that provides great Service a Robust Product
             and Reliable steady Income through consistent profits? Its Dosh
             Capital Investment!
@@ -271,7 +283,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   image={vision}
                   title="Our Vision"
                   subtitle="What we see"
-                  description="We operate with the intension of our customer's satisfaction and growth through – Integrity, Excellence & Trust"
+                  description="Is to grow our client database and network to over one million in the next 5 years with an ROI of over 100% per annum."
                   dateTime="22.11.21"
                   members={[team1, team2, team3]}
                   dropdown={{

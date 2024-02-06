@@ -33,15 +33,20 @@
     margin-top: 20px !important;
   }
 }
-.homebgThree{
+
+.homebgThree {
   display: none;
 }
+
 @media screen and (max-width:667px) {
   .homebgThree {
+    position: absolute;
+    left: -30px;
+    overflow: hidden;
     display: block;
-    width:455px;
-    /* object-fit: contain; */
-    height: 100vh !important;
+    width: 450px;
+    object-fit: cover;
+    /* height: 90vh !important; */
   }
 
   .css-suj8vv {
@@ -74,5 +79,5 @@
 
 #message {
   width: 300px !important;
-  border-color: none!important;
+  border-color: none !important;
 }

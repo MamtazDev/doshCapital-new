@@ -274,7 +274,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 
   .css-e3rwa0 {
-    padding-top: 150px !important;
+    padding-top: 440px !important;
   }
 
   .css-1r7reyp-MuiPaper-root-MuiCard-root {
@@ -283,7 +283,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 
   .css-1vcu4nh-MuiGrid-root>.MuiGrid-item {
-    padding-top: 70px !important;
+    padding-top: 200px !important;
   }
 
   .css-nkchhw {
@@ -505,4 +505,9 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   .css-1mo8qo7 {
     padding: 35px 0 !important;
   }
+}
+
+
+.css-x4ry9f {
+  height: 0px !important;
 }

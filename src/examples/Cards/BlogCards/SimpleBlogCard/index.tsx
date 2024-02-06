@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // react-router components
 import { Link } from "react-router-dom";
 

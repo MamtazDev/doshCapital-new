@@ -167,11 +167,12 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
   return (
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MDBox
-        pl={8}
+        pl={6}
+        pb={6}
         sx={({ palette: { grey, dark } }: Theme) => ({
           position: "absolute",
           left: 0,
-          top: "70px",
+          top: "85px",
           background: dark.main,
           width: "100%",
         })}
@@ -179,7 +180,7 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
         <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
           {renderNavbarItems}
         </MDBox>
-        <MDBox pr={1}>
+        <MDBox pr={1} pb={2}>
           <MDInput label="Search here" />
         </MDBox>
         <IconButton sx={navbarIconButton} size="small" disableRipple>

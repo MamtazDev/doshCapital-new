@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import { BASE_URL } from "config/config";
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -18,7 +19,7 @@ function ContactInfoForm() {
   const [loading, setLoading] = useState<boolean>(false);
   const [formValue, setFormvalue] = useState<any>({});
 
-  console.log(formValue, "fff");
+  // console.log(formValue, "fff");
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
@@ -31,7 +32,7 @@ function ContactInfoForm() {
     // Disable the button
     setLoading(true);
 
-    fetch("http://localhost:8000/api/send-email", {
+    fetch(`${BASE_URL}/api/send-email`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,13 +41,14 @@ function ContactInfoForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        // Re-enable the button
+        // Re-enable the button.
+        // console.log(data);
         setLoading(false);
         Swal.fire("Please check your mail");
       })
       .catch((error) => {
         // Handle error if necessary
-        console.error("Error sending email:", error);
+        // console.error("Error sending email:", error);
         setLoading(false); // Make sure to re-enable the button even if there's an error
       });
   };

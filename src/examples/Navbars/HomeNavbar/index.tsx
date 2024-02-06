@@ -243,8 +243,9 @@ function HomeNavbar({
                 sx={{ cursor: "pointer" }}
                 onClick={openMobileNavbar}
               >
-                <MDTypography color="white">
-                  <Icon>menu</Icon>
+                <MDTypography sx={{ color: "#8e6c1f", fontWeight: "bold" }}>
+                  {/* menu open */}
+                  {mobileNavbar ? "X" : <Icon>menu</Icon>}
                 </MDTypography>
                 {mobileView && (
                   <HomeNavbarMobile routes={routes} open={mobileNavbar} />
