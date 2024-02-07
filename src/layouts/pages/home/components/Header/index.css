@@ -41,12 +41,12 @@
 @media screen and (max-width:667px) {
   .homebgThree {
     position: absolute;
-    left: -30px;
+    left: -18px;
     overflow: hidden;
     display: block;
     width: 450px;
     object-fit: cover;
-    /* height: 90vh !important; */
+    height: 90vh !important;
   }
 
   .css-suj8vv {

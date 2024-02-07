@@ -59,7 +59,6 @@ function ComplexProjectCard({
           border: `${borderWidth[2]} solid ${white.main}`,
           cursor: "pointer",
           position: "relative",
-
           "&:not(:first-of-type)": {
             ml: -1.25,
           },
