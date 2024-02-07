@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"  # Specify the build command for your project
+  publish = "dist"           # Specify the directory to deploy (the output of the build process)
+
+[[redirects]]                # Define redirect rules
+  from = "/*"                # Match all paths
+  to = "/index.html"         # Redirect to index.html for client-side routing
+  status = 200               # Set the status code for the redirect
+
+[headers]                    # Define headers configuration
+  # Cache control headers for certain file types
+  # For example, cache HTML files for 1 hour, JS/CSS for 7 days
+  "/*.html"
+    Cache-Control = "public, max-age=3600"
+  "/*.js"
+    Cache-Control = "public, max-age=604800"
+  "/*.css"
+    Cache-Control = "public, max-age=604800"
