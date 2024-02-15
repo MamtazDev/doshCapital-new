@@ -56,7 +56,7 @@ function ContactInfoForm() {
   return (
     <MDBox
       bgColor="white"
-      marginTop={"50px"}
+      marginTop={"40px"}
       sx={{
         maxWidth: "420px",
         width: "100%",
@@ -133,7 +133,7 @@ function ContactInfoForm() {
                   color="secondary"
                   onChange={handleInputChange}
                   multiline
-                  rows={6}
+                  rows={4}
                 />
               </MDBox>
             </FormControl>

@@ -72,7 +72,7 @@ function BookingCard({
           }}
         />
       </MDBox>
-      <MDBox textAlign="left" pt={3} px={3}>
+      <MDBox textAlign="left" pt={3} px={4}>
         {/* <MDBox display="flex" justifyContent="center" alignItems="center" mt={action ? -8 : -4.25}>
           {action}
         </MDBox> */}

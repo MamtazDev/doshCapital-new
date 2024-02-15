@@ -23,7 +23,7 @@ function ContactInfo(): JSX.Element {
             backgroundImage: `url(${contactImg})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "100px 0",
+            padding: "30px 0",
             backgroundBlendMode: "overlay",
             backgroundColor: "#373232",
             borderRadius: "20px",

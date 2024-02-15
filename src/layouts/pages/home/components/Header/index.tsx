@@ -21,7 +21,7 @@ import pageRoutes from "page.routes";
 import { Box, Modal } from "@mui/material";
 import { Container } from "@mui/system";
 import homeBgThree from "assets/images/bg_img.png";
-import homeBgTwo from "assets/images/dosh/homeBg-2.png";
+import homeBgFour from "assets/images/dosh/drake_new.png";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import ContactInfoForm from "../ContactInfoForm";
 
@@ -88,7 +88,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                 textAlign: "left",
               }}
             >
-              <Grid item xs={12} lg={6} sx={{ px: { xs: 4, lg: 0 } }}>
+              <Grid item xs={12} lg={6} mt={5} sx={{ px: { xs: 4, lg: 0 } }}>
                 <MDBox mb={0} mt={mobileView ? 6 : 6}>
                   <MDTypography
                     className="cross"
@@ -197,7 +197,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               zIndex: "-1",
             }}
           >
-            <img className="homebg" src={homeBgTwo} alt="home background" />
+            <img className="homebg" src={homeBgFour} alt="home background" />
             <img
               className="homebgThree"
               src={homeBgThree}
