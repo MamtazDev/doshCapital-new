@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useContext, useEffect, useState } from "react";
 
 // @mui material components
@@ -205,6 +206,44 @@ function Portfolio(): JSX.Element {
     year: "numeric",
   });
 
+
+
+  const [poolValue, setPoolValue] = useState(5000);
+  const [poolYtdBalance, setPoolYtdBalance] = useState(8000);
+  const [poolProfit, setPoolProfit] = useState(3000);
+  const [initalInvestment, setInvestment] = useState(250);
+  const [members, setMembers] = useState(20);
+  const [ytdInvestMent, setYtdInvestment] = useState(0);
+  const [monthlyDeposit, setMonthlyDeposit] = useState(0);
+  const [monthYtd, setmonthYtd] = useState(9);
+  const [totalIn, setTotalIn] = useState(400);
+  const [totalOut, setTotalOut] = useState(35);
+  const [profitEarning, setProfitEarning] = useState(250);
+  const [withdrawal, setWithdrawal] = useState(0);
+  const [networkContributos, setNetworkContributos] = useState(0);
+  const [otherPoolIncome, setOtherPoolIncome] = useState(0);
+  const [networkIncome, setNetworkIncome] = useState(0);
+  const [comissions, setComissions] = useState(15);
+  const [fee, setFee] = useState(0);
+  const [accountBalance, setAccountBalance] = useState(365);
+  const [ytdWithdrawals, setYtdWithdrawals] = useState(0);
+  const [avgMonthlyProfit,setAvgMonthlyProfit] = useState(0);
+
+
+  useEffect(() => {
+    setInvestment(poolValue / members);
+    setYtdInvestment(initalInvestment + ( monthlyDeposit * monthYtd));
+    setPoolProfit(poolYtdBalance - poolValue);
+    setTotalIn(profitEarning + ytdInvestMent + otherPoolIncome + networkIncome);
+    setNetworkContributos(totalIn*.05);
+    setComissions(0.10 * profitEarning);
+    setFee(0.02 * withdrawal);
+    setTotalOut(withdrawal + networkContributos + comissions + fee);
+    setAccountBalance(totalIn - totalOut);
+    setProfitEarning(poolProfit / members)
+    setAvgMonthlyProfit(poolProfit / monthYtd);
+  }, [poolValue]);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -224,28 +263,14 @@ function Portfolio(): JSX.Element {
           </MDBox>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4}>
-              {/* <DefaultStatisticsCard
-                title="Initial Investment"
-                count="$230,220"
-                percentage={{
-                  color: "success",
-                  value: "+55%",
-                  label: "since last month",
-                }}
-                dropdown={{
-                  action: openSalesDropdown,
-                  menu: renderMenu(salesDropdown, closeSalesDropdown),
-                  value: salesDropdownValue,
-                }}
-              /> */}
-
               <DefaultCard
                 title="YTD Investment"
-                count={`$${
-                  userDepositesData[userDepositesData?.length - 1]?.amount
-                    ? userDepositesData[userDepositesData?.length - 1]?.amount
-                    : 250
-                }`}
+                // count={`$${
+                //   userDepositesData[userDepositesData?.length - 1]?.amount
+                //     ? userDepositesData[userDepositesData?.length - 1]?.amount
+                //     : 250
+                // }`}
+                count={ytdInvestMent}
                 percentage={{
                   color: "success",
                   value: "+55%",
@@ -257,7 +282,7 @@ function Portfolio(): JSX.Element {
                   value: salesDropdownValue,
                 }}
                 title2={"Monthly Investment"}
-                count2={"$200"}
+                count2={"$250"}
                 button={false}
                 belowText={false}
                 buttonVarient={"inherit"}
@@ -272,10 +297,11 @@ function Portfolio(): JSX.Element {
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Account Balance"
-                count={`$${userDepositesData?.reduce(
-                  (total, item) => total + item?.amount,
-                  365
-                )}`}
+                count={accountBalance}
+                // count={`$${userDepositesData?.reduce(
+                //   (total, item) => total + item?.amount,
+                //   365
+                // )}`}
                 percentage={{
                   color: "success",
                   value: "+12%",
@@ -287,7 +313,7 @@ function Portfolio(): JSX.Element {
                   value: salesDropdownValue,
                 }}
                 title2={"YTD Withdrawals"}
-                count2={"$2,000"}
+                count2={ytdWithdrawals}
                 button={true}
                 belowText={false}
                 buttonVarient={"info"}
@@ -302,7 +328,8 @@ function Portfolio(): JSX.Element {
             <Grid item xs={12} sm={4}>
               <DefaultCard
                 title="Profit Earnings"
-                count="$150"
+                // count="$150"
+                count={profitEarning}
                 percentage={{
                   color: "secondary",
                   value: "+213%",
@@ -314,7 +341,7 @@ function Portfolio(): JSX.Element {
                   value: salesDropdownValue,
                 }}
                 title2={"Avg. Revenue"}
-                count2={"$333.33"}
+                count2={avgMonthlyProfit.toFixed(2)}
                 button={true}
                 belowText={true}
                 buttonVarient={"success"}
