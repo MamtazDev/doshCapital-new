@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 import { ReactNode, useEffect, useState } from "react";
 import "./index.css";
@@ -112,7 +113,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
         <MDBox
           style={{
             position: "absolute",
-            top: "50%",
+            top: "47%",
             right: "-15%",
             transform: "translate(-50%,-50%)",
             zIndex: 9,
@@ -124,34 +125,34 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           lineHeight={1}
           className="mmmmmmmm"
         >
-          <MDTypography variant="h5" sx={{ color: "#fff" }} fontWeight="medium">
+          <MDTypography variant="h2" sx={{ color: "#fff" }} fontWeight="medium">
             About Us
           </MDTypography>
           <MDTypography
-            variant="button"
-            sx={{ color: "#fff" }}
+            variant="h5"
+            sx={{ color: "#fff", marginBottom: "-20px" }}
             fontWeight="bold"
           >
             “Helping Others, make money while you sleep”
           </MDTypography>{" "}
           <br />
           <MDTypography
-            variant="button"
+            variant="h5"
             sx={{ color: "#fff" }}
             fontWeight="regular"
           >
             At Dosh we come together to fix one common problem by providing a
             Solution and Service to Financial Freedom. We provide this through
-            Automated Trading, Networking & DoshCoin
+            Automated Trading, Networking & DoshCoin. Ever hard of a company
+            that provides great Service a Robust Product and Reliable steady
+            Income through consistent profits?
           </MDTypography>{" "}
           <MDTypography
-            variant="button"
+            variant="h5"
             sx={{ color: "#fff" }}
             fontWeight="regular"
           >
-            Ever hard of a company that provides great Service a Robust Product
-            and Reliable steady Income through consistent profits? Its Dosh
-            Capital Investment!
+            It's Dosh Capital Investment!
           </MDTypography>
         </MDBox>
         <MDBox
@@ -302,7 +303,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
                   image={value}
                   title="Our Values"
                   subtitle="What we become"
-                  description="We operate with the intension of our customer's satisfaction and growth through -integrity, excellence & trust."
+                  description="We operate with the intension of our customer's satisfaction and growth through -Integrity, Excellence & Trust."
                   dateTime="06.03.20"
                   members={[team1, team2, team3, team4]}
                   dropdown={{
@@ -315,7 +316,7 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           </Grid>
         </MDBox>
         <Card style={{ margin: "40px 0" }}>
-          <MDBox pt={2} px={2} lineHeight={1.25}>
+          <MDBox pt={2} px={5} lineHeight={1.25}>
             <MDTypography variant="h6" fontWeight="medium">
               There’s a lot more you will find on Dustyz
             </MDTypography>

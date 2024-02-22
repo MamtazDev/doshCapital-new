@@ -71,6 +71,8 @@ function DefaultProjectCard({
   return (
     <Card
       sx={{
+        paddingLeft: "20px",
+        paddingRight: "20px",
         display: "flex",
         flexDirection: "column",
         backgroundColor: "transparent",

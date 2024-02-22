@@ -86,7 +86,7 @@ function DefaultCard({
               </MDTypography>
             </MDBox>
             <MDBox lineHeight={1}>
-              {button ? (
+              {/* {button ? ( */}
                 <Button
                   variant="contained"
                   size="small"
@@ -101,10 +101,10 @@ function DefaultCard({
                     }`,
                   }}
                 >
-                  {count}
+                  ${count}
                 </Button>
-              ) : (
-                <MDTypography
+              {/* ) : ( */}
+                {/* <MDTypography
                   variant="h5"
                   fontWeight="bold"
                   sx={{
@@ -116,8 +116,8 @@ function DefaultCard({
                   }}
                 >
                   {count}
-                </MDTypography>
-              )}
+                </MDTypography> */}
+              {/* )} */}
               <MDTypography
                 variant="button"
                 fontWeight="bold"
@@ -136,6 +136,7 @@ function DefaultCard({
               </MDTypography>
             </MDBox>
           </Grid>
+
           <Grid item>
             <MDBox mb={0.5} lineHeight={1} sx={{ textAlign: "right" }}>
               <MDTypography
@@ -148,6 +149,7 @@ function DefaultCard({
                 {title2}
               </MDTypography>
             </MDBox>
+
             <MDBox lineHeight={1}>
               <MDTypography
                 variant="h5"
@@ -167,14 +169,16 @@ function DefaultCard({
                 fontWeight="bold"
                 color={percentage2.color}
               >
-                {percentage2.value}
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
+                  marginRight="5px"
                   color={darkMode ? "text" : "secondary"}
+                  sx={{ fontSize: "10px" }}
                 >
                   {percentage2.label}
                 </MDTypography>
+                {percentage2.value}
               </MDTypography>
             </MDBox>
           </Grid>

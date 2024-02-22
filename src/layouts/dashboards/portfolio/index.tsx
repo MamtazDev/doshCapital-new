@@ -271,6 +271,7 @@ function Portfolio(): JSX.Element {
                 //     : 250
                 // }`}
                 count={ytdInvestMent}
+
                 percentage={{
                   color: "success",
                   value: "+55%",
@@ -281,8 +282,8 @@ function Portfolio(): JSX.Element {
                   menu: renderMenu(salesDropdown, closeSalesDropdown),
                   value: salesDropdownValue,
                 }}
-                title2={"Monthly Investment"}
                 count2={"$250"}
+                title2={"Monthly Deposit"}
                 button={false}
                 belowText={false}
                 buttonVarient={"inherit"}
