@@ -171,7 +171,7 @@ export default function App() {
   return authChecked ? (
     direction === "rtl" ? (
       <CacheProvider value={rtlCache}>
-        <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
+        <ThemeProvider theme={darkMode ? themeRTL : themeDarkRTL}>
           <CssBaseline />
           {layout === "dashboard" && (
             <>

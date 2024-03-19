@@ -282,6 +282,7 @@ function Portfolio(): JSX.Element {
                   menu: renderMenu(salesDropdown, closeSalesDropdown),
                   value: salesDropdownValue,
                 }}
+
                 count2={"$250"}
                 title2={"Monthly Deposit"}
                 button={false}
@@ -341,7 +342,7 @@ function Portfolio(): JSX.Element {
                   menu: renderMenu(salesDropdown, closeSalesDropdown),
                   value: salesDropdownValue,
                 }}
-                title2={"Avg. Revenue"}
+                title2={"Avg. Pool Revenue"}
                 count2={avgMonthlyProfit.toFixed(2)}
                 button={true}
                 belowText={true}
@@ -349,7 +350,7 @@ function Portfolio(): JSX.Element {
                 percentage2={{
                   color: "success",
                   value: "$126",
-                  label: " Contributions",
+                  label: " Pool $ Value",
                 }}
               />
             </Grid>

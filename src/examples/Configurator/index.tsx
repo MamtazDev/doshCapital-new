@@ -1,35 +1,35 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // @mui material components
 import Divider from "@mui/material/Divider";
-import Switch from "@mui/material/Switch";
+import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
-import Icon from "@mui/material/Icon";
+import Switch from "@mui/material/Switch";
 import { Theme } from "@mui/material/styles";
 
 // @mui icons
-import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 //  React TS components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDTypography from "components/MDTypography";
 
 // Custom styles for the Configurator
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
 
 //  React context
 import {
-  useMaterialUIController,
+  setDarkMode,
+  setFixedNavbar,
+  setMiniSidenav,
   setOpenConfigurator,
+  setSidenavColor,
   setTransparentSidenav,
   setWhiteSidenav,
-  setMiniSidenav,
-  setFixedNavbar,
-  setSidenavColor,
-  setDarkMode,
+  useMaterialUIController,
 } from "context";
 
 function Configurator(): JSX.Element {
@@ -305,6 +305,7 @@ function Configurator(): JSX.Element {
         >
           <MDTypography variant="h6">Light / Dark</MDTypography>
 
+          {/* <Switch checked={darkMode} onChange={handleDarkMode} /> */}
           <Switch checked={darkMode} onChange={handleDarkMode} />
         </MDBox>
         <Divider />

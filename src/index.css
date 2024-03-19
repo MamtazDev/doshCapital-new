@@ -531,6 +531,10 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   box-shadow: none !important;
 }
 
+.MuiBox-root .css-u65kbm{
+  text-align: right;
+}
+
 /* .css-1ne4z3u-MuiTypography-root{
   padding: 0px !important;
 }
@@ -539,3 +543,20 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   text-align: end !important;
 } */
 
+
+/* button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-10sx0ug-MuiButtonBase-root-MuiButton-root{
+      opacity: 1;
+      background: transparent;
+      color: #344767;
+      border-radius: none;
+      box-shadow: none;
+      border: 1px solid gray;
+} */
+
+h5.MuiTypography-root.MuiTypography-h5.css-rrigp5-MuiTypography-root{
+  padding-top: 6px;
+}
+
+span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root{
+  font-size: 10px !important;
+}
