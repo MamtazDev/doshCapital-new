@@ -48,7 +48,7 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Authentication />
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Accounts />
                 </Grid>
                 <Grid item xs={12}>
@@ -56,7 +56,7 @@ function Settings(): JSX.Element {
                 </Grid>
                 <Grid item xs={12}>
                   <Sessions />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}>
                   <DeleteAccount />
                 </Grid>
