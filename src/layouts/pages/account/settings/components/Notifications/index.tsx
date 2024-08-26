@@ -15,7 +15,7 @@ import TableCell from "layouts/pages/account/settings/components/TableCell";
 function Notifications(): JSX.Element {
   return (
     <Card id="notifications">
-      <MDBox p={3} lineHeight={1}>
+      {/* <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
           <MDTypography variant="h5">Notifications</MDTypography>
         </MDBox>
@@ -23,8 +23,8 @@ function Notifications(): JSX.Element {
           Choose how you receive notifications. These notification settings
           apply to the things you’re watching.
         </MDTypography>
-      </MDBox>
-      <MDBox pb={3} px={3}>
+      </MDBox> */}
+      {/* <MDBox pb={3} px={3}>
         <MDBox minWidth="auto" sx={{ overflow: "scroll" }}>
           <Table sx={{ minWidth: "36rem" }}>
             <MDBox component="thead">
@@ -150,7 +150,7 @@ function Notifications(): JSX.Element {
             </TableBody>
           </Table>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }

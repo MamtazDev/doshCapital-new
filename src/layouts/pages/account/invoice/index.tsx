@@ -5,6 +5,7 @@ import Table from "@mui/material/Table";
 import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 import { Theme } from "@mui/material/styles";
+import InvoiceLogo from "../../../../assets/images/DoshLogo.png"
 
 //  React TS components
 import MDBox from "components/MDBox";
@@ -42,13 +43,14 @@ function Invoice(): JSX.Element {
                   <Grid item xs={12} md={4}>
                     <MDBox
                       component="img"
-                      src={darkMode ? logoCT : logoCTDark}
-                      width="25%"
+                      src={darkMode ? InvoiceLogo : InvoiceLogo}
+                      width="80%"
                       p={1}
                       mb={1}
                     />
                     <MDTypography variant="h6" fontWeight="medium">
-                      St. Independence Embankment, 050105 Bucharest, Romania
+                    107 Badajoz Road, North Ryde <br />
+                    NSW – 2113 Sydney, Australia
                     </MDTypography>
                     <MDBox mt={1} mb={2}>
                       <MDTypography
@@ -56,7 +58,7 @@ function Invoice(): JSX.Element {
                         variant="body2"
                         color={darkMode ? "text" : "secondary"}
                       >
-                        tel: +4 (074) 1090873
+                        tel: +61 (0) 432 090 107
                       </MDTypography>
                     </MDBox>
                   </Grid>
@@ -68,7 +70,7 @@ function Invoice(): JSX.Element {
                     >
                       <MDBox mt={1}>
                         <MDTypography variant="h6" fontWeight="medium">
-                          Billed to: John Doe
+                          Billed to: Duston Archer
                         </MDTypography>
                       </MDBox>
                       <MDBox mb={1}>
@@ -76,11 +78,11 @@ function Invoice(): JSX.Element {
                           variant="body2"
                           color={darkMode ? "text" : "secondary"}
                         >
-                          4006 Locust View Drive
+                          U2-107 Badajoz Road,
                           <br />
-                          San Francisco CA
+                          North Ryde, NSW
                           <br />
-                          California
+                          Sydney, Australia
                         </MDTypography>
                       </MDBox>
                     </MDBox>
@@ -97,7 +99,7 @@ function Invoice(): JSX.Element {
                         Invoice no
                       </MDTypography>
                       <MDTypography variant="h5" fontWeight="medium">
-                        #0453119
+                        #D001-001
                       </MDTypography>
                     </Grid>
                     <Grid item xs={12} md={7} lg={5}>
@@ -475,7 +477,7 @@ function Invoice(): JSX.Element {
                         variant="h6"
                         fontWeight="regular"
                       >
-                        support@creative-tim.com
+                        support@dosh.com.au 
                       </MDTypography>
                     </MDTypography>
                   </Grid>
@@ -488,6 +490,13 @@ function Invoice(): JSX.Element {
                       alignItems="flex-end"
                       mt={{ xs: 2, md: 0 }}
                     >
+                      <MDButton
+                        variant="gradient"
+                        color="info"
+                        onClick={() => window.print()}
+                      >
+                        SEND EMAIL
+                      </MDButton>
                       <MDButton
                         variant="gradient"
                         color="info"

@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
-//  React TS components
+// React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
@@ -24,11 +24,13 @@ const CreatePool = () => {
   const { userInfo } = useContext(DataContext);
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
+  const [maxNumberPeople, setMaxNumberPeople] = useState<string>("");
 
   const navigate = useNavigate();
 
-  const handleMaxPeopleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const maxPeople = Number(e.target.value);
+  const handleMaxPeopleChange = (event: SelectChangeEvent<string>) => {
+    const maxPeople = Number(event.target.value);
+    setMaxNumberPeople(event.target.value);
 
     if (!maxPeople || !poolAmount) {
       setDepositedAmount(null);
@@ -48,15 +50,15 @@ const CreatePool = () => {
     const form = e.target as HTMLFormElement;
     const name = form.name.value;
     const amount = Number(poolAmount);
-    const maxNumberPeople = Number(form.maxNumberPeople.value);
+    const maxNumberPeopleValue = Number(maxNumberPeople);
     const creatorInfo = userInfo?.userId;
     const data = {
       creatorInfo,
       name,
       amount,
-      maxNumberPeople,
+      maxNumberPeople: maxNumberPeopleValue,
     };
-    const res = await axios.post(`${BASE_URL}/api/pools/add`, data);
+    await axios.post(`${BASE_URL}/api/pools/add`, data);
     navigate("/dashboards/portfolio");
   };
 
@@ -78,13 +80,13 @@ const CreatePool = () => {
         </MDBox>
         <MDBox mb={2}>
           <FormControl fullWidth sx={{ height: "45px" }}>
-            <InputLabel id="demo-simple-select-label">Pool Amount</InputLabel>
+            <InputLabel id="pool-amount-label">Pool Amount</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="amount"
+              labelId="pool-amount-label"
+              id="pool-amount"
+              label="Pool Amount"
               value={poolAmount}
-              onChange={handlePoolAmountChange} 
+              onChange={handlePoolAmountChange}
               sx={{ height: "100%" }}
             >
               <MenuItem value="7500">$7,500</MenuItem>
@@ -93,14 +95,22 @@ const CreatePool = () => {
           </FormControl>
         </MDBox>
         <MDBox mb={2}>
-          <MDInput
-            type="number"
-            label="Max Number People"
-            fullWidth
-            name="maxNumberPeople"
-            required
-            onChange={handleMaxPeopleChange}
-          />
+          <FormControl fullWidth sx={{ height: "45px" }}>
+            <InputLabel id="max-people-label">Max Number People</InputLabel>
+            <Select
+              labelId="max-people-label"
+              id="max-people"
+              label="Max Number People"
+              value={maxNumberPeople}
+              onChange={handleMaxPeopleChange}
+              sx={{ height: "100%" }}
+            >
+              <MenuItem value="5">5</MenuItem>
+              <MenuItem value="10">10</MenuItem>
+              <MenuItem value="20">20</MenuItem>
+              <MenuItem value="50">50</MenuItem>
+            </Select>
+          </FormControl>
           {depositedAmount && (
             <Typography
               sx={{ textAlign: "end", fontSize: "12px", color: "green" }}

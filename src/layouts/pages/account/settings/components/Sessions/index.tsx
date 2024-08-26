@@ -22,7 +22,7 @@ function Sessions(): JSX.Element {
 
   return (
     <Card id="sessions">
-      <MDBox p={3} lineHeight={1}>
+      {/* <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
           <MDTypography variant="h5">Sessions</MDTypography>
         </MDBox>
@@ -30,8 +30,8 @@ function Sessions(): JSX.Element {
           This is a list of devices that have logged into your account. Remove
           those that you do not recognize.
         </MDTypography>
-      </MDBox>
-      <MDBox pb={3} px={3} sx={{ overflow: "auto" }}>
+      </MDBox> */}
+      {/* <MDBox pb={3} px={3} sx={{ overflow: "auto" }}>
         <MDBox
           display="flex"
           justifyContent="space-between"
@@ -197,7 +197,7 @@ function Sessions(): JSX.Element {
             </MDTypography>
           </MDBox>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }

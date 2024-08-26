@@ -39,15 +39,15 @@ function Accounts(): JSX.Element {
 
   return (
     <Card id="accounts">
-      <MDBox p={3} lineHeight={1}>
+      {/* <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
           <MDTypography variant="h5">Accounts</MDTypography>
         </MDBox>
         <MDTypography variant="button" color="text">
           Here you can setup and manage your integration settings.
         </MDTypography>
-      </MDBox>
-      <MDBox pt={2} pb={3} px={3}>
+      </MDBox> */}
+      {/* <MDBox pt={2} pb={3} px={3}>
         <MDBox
           display="flex"
           justifyContent="space-between"
@@ -258,7 +258,7 @@ function Accounts(): JSX.Element {
             </MDBox>
           </MDBox>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }

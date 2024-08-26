@@ -33,6 +33,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import PaymentForm from "components/Payment/PaymentForm";
 import { Typography } from "@mui/material";
 import { BASE_URL } from "config/config";
+import  CreditCardModal  from "../Deposite/CreditCard";
 
 const Deposite = () => {
   const { userInfo } = useContext(DataContext);
@@ -45,6 +46,7 @@ const Deposite = () => {
   const [selectPoolName, setSelectPoolName] = useState("");
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectPoolName(event.target.value as string);
@@ -59,15 +61,6 @@ const Deposite = () => {
 
   const navigate = useNavigate();
 
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const handleSubmit = async () => {
     const amount = selectedAmount;
@@ -96,11 +89,21 @@ const Deposite = () => {
     getAllPools();
   }, []);
 
+  
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <Card id="deposite" sx={{ overflow: "visible" }}>
         <MDBox p={3}>
-          <MDTypography variant="h5">Deposite</MDTypography>
+          <MDTypography variant="h5">Deposit</MDTypography>
         </MDBox>
         {/* <MDBox component="form" pb={3} px={3} onSubmit={handleSubmit}> */}
 
@@ -111,24 +114,22 @@ const Deposite = () => {
           }}
         >
           <MDBox mb={2}>
-            <FormControl fullWidth sx={{ height: "45px" }}>
-              <InputLabel id="demo-simple-select-label">Select Pool</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={selectPoolName}
-                label="Age"
-                sx={{ height: "100%" }}
-                onChange={handleChange}
-              >
-                {allPools?.map((i, idx) => (
-                  <MenuItem key={idx} value={i?.name}>
-                    {i?.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </MDBox>
+          <FormControl fullWidth sx={{ height: "45px" }}>
+            <InputLabel id="demo-simple-select-label">Select Pool</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-selec"
+              label="demo-simple-selec"
+              value={selectPoolName}
+              onChange={handleChange}
+              sx={{ height: "100%" }}
+            >
+              <MenuItem value="DOSH-000">DOSH-000</MenuItem>
+              <MenuItem value="DOSH-100">DOSH-100</MenuItem>
+              <MenuItem value="DOSH-200">DOSH-200</MenuItem>
+            </Select>
+          </FormControl>
+        </MDBox>
           <MDBox mb={2}>
             <TextField
               fullWidth
@@ -141,7 +142,7 @@ const Deposite = () => {
             />
           </MDBox>
 
-          <MDBox mt={4} mb={1}>
+          {/* <MDBox mt={4} mb={1}>
             <MDButton
               size="small"
               variant="gradient"
@@ -151,16 +152,32 @@ const Deposite = () => {
               onClick={handleClickOpen}
               disabled={!selectedPoolInfo}
             >
-              Deposite
+              Deposit
             </MDButton>
-          </MDBox>
+          </MDBox> */}
+           <MDBox mt={4} mb={1}>
+        <MDButton
+          size="small"
+          variant="gradient"
+          color="info"
+          fullWidth
+          type="button"
+          onClick={handleClickOpen}
+          disabled={!selectedPoolInfo}
+        >
+          Deposit
+        </MDButton>
+      </MDBox>
+
+      <CreditCardModal open={open} handleClose={handleClose} />
+   
         </Box>
         {/* </MDBox> */}
       </Card>
 
-      <Dialog open={open} onClose={handleClose}>
+      {/* <Dialog open={open} onClose={handleClose}>
         <Box sx={{ backgroundColor: "#202940" }}>
-          <DialogTitle>Deposite</DialogTitle>
+          <DialogTitle>Deposit</DialogTitle>
           <DialogContent>
             <Typography>Pool: {selectPoolName}</Typography>
             <Typography sx={{ mb: 1 }}>Amount: ${selectedAmount}</Typography>
@@ -175,7 +192,7 @@ const Deposite = () => {
             </Box>
           </DialogContent>
         </Box>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };
