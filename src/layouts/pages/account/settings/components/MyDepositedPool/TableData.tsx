@@ -1,7 +1,7 @@
 // TableData.tsx
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
-import { TextAlign } from './types'; // Import TextAlign type
+import { TextAlign } from './types'; 
 
 interface TableDataProps {
   table: {
@@ -17,19 +17,19 @@ interface TableDataProps {
 const TableData: React.FC<TableDataProps> = ({ table }) => {
   return (
     <Table>
-      <TableHead>
+      <>
         <TableRow>
           {table.columns.map((column) => (
             <TableCell
               key={column.accessor}
-              style={{ width: column.width, textAlign: column.align }}
+              style={{ width:'800px', textAlign: column.align , color: 'white',}}
             >
               {column.Header}
             </TableCell>
           ))}
         </TableRow>
-      </TableHead>
-      <TableBody>
+      </>
+      <>
         {table.rows.map((row, index) => (
           <TableRow key={index}>
             {table.columns.map((column) => (
@@ -42,7 +42,7 @@ const TableData: React.FC<TableDataProps> = ({ table }) => {
             ))}
           </TableRow>
         ))}
-      </TableBody>
+      </>
     </Table>
   );
 };

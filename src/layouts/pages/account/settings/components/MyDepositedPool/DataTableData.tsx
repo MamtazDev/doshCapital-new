@@ -5,8 +5,8 @@ import { TextAlign } from "./types";
 
 const dataTableData = {
   columns: [
-    { Header: "Pool Name", accessor: "PoolName", width: "100%",align: "center" as TextAlign, },
-    { Header: "Initial Deposit", accessor: "InitialDeposit" },
+    { Header: "Pool Name", accessor: "PoolName",},
+    { Header: "Initial Deposit", accessor: "InitialDeposit",align: "center" as TextAlign, },
     { Header: "Pool Value",accessor: "PoolValue",align: "center" as TextAlign,},
     { Header: "Pool Balance", accessor: "PoolBalance",align: "center" as TextAlign,},
   ],
