@@ -7,7 +7,7 @@ import MDAvatar from "components/MDAvatar";
 interface Props {
   image: string;
   name: string;
-  orders: string | number;
+  orders?: string | number;
 }
 
 function ProductCell({ image, name, orders }: Props): JSX.Element {
@@ -29,7 +29,7 @@ function ProductCell({ image, name, orders }: Props): JSX.Element {
           >
             {orders}
           </MDTypography>{" "}
-          orders
+          member
         </MDTypography>
       </MDBox>
     </MDBox>

@@ -193,6 +193,29 @@ const Deposite = () => {
           </DialogContent>
         </Box>
       </Dialog> */}
+      {/* <Dialog open={open} onClose={handleClose}>
+  <Box sx={{ backgroundColor: "#1a1a1a", padding: "16px", borderRadius: "8px" }}>
+    <DialogTitle sx={{ color: "#fff", paddingBottom: "8px" }}>Deposit</DialogTitle>
+    <DialogContent>
+      <Typography sx={{ color: "#ccc", marginBottom: "8px" }}>
+        Pool: {selectPoolName}
+      </Typography>
+      <Typography sx={{ color: "#ccc", marginBottom: "16px" }}>
+        Amount: ${selectedAmount}
+      </Typography>
+      <Box sx={{ padding: "16px", borderRadius: "8px", backgroundColor: "#2a2a2a" }}>
+        <Elements stripe={stripePromise}>
+          <PaymentForm
+            amount={selectedAmount}
+            userInfo={userInfo}
+            handleSubmit={handleSubmit}
+          />
+        </Elements>
+      </Box>
+    </DialogContent>
+  </Box>
+</Dialog> */}
+
     </>
   );
 };

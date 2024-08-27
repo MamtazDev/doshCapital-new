@@ -488,6 +488,7 @@ function Invoice(): JSX.Element {
                       display="flex"
                       justifyContent={{ xs: "flex-start", md: "flex-end" }}
                       alignItems="flex-end"
+                      gap={2}
                       mt={{ xs: 2, md: 0 }}
                     >
                       <MDButton
