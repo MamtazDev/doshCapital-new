@@ -17,6 +17,7 @@ function Sidenav(): JSX.Element {
   const sidenavItems = [
     { icon: "person", label: "profile", href: "profile" },
     { icon: "paid", label: "deposite", href: "deposite" },
+    { icon: "add_box", label: "create pool", href: "create-pool" },
     { icon: "paid", label: "my Deposite", href: "myDeposite" },
     { icon: "receipt_long", label: "basic info", href: "basic-info" },
     { icon: "lock", label: "change password", href: "change-password" },
@@ -25,7 +26,7 @@ function Sidenav(): JSX.Element {
     { icon: "campaign", label: "notifications", href: "notifications" },
     { icon: "settings_applications", label: "sessions", href: "sessions" },
     { icon: "delete", label: "delete account", href: "delete-account" },
-    { icon: "add_box", label: "create pool", href: "create-pool" },
+    
   ];
 
   const renderSidenavItems = sidenavItems.map(({ icon, label, href }, key) => {

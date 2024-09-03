@@ -33,7 +33,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import PaymentForm from "components/Payment/PaymentForm";
 import { Typography } from "@mui/material";
 import { BASE_URL } from "config/config";
-import  CreditCardModal  from "../Deposite/CreditCard";
+import CreditCardModal from "../Deposite/CreditCard";
 
 const Deposite = () => {
   const { userInfo } = useContext(DataContext);
@@ -46,21 +46,33 @@ const Deposite = () => {
   const [selectPoolName, setSelectPoolName] = useState("");
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
+
   const [open, setOpen] = useState(false);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSelectPoolName(event.target.value as string);
+  const poolAmountMap = {
+    "DOSH-000": "1000",
+    "DOSH-100": "2000",
+    "DOSH-200": "3000",
+  };
 
-    const filteredPool = allPools?.find((i) => i.name === event.target.value);
-    setSelectedPoolInfo(filteredPool);
-    const amount = (
-      filteredPool?.amount / filteredPool?.maxNumberPeople
-    ).toFixed(2);
-    setSelectedAmount(amount);
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setSelectPoolName(event.target.value as string);
+
+  //   const filteredPool = allPools?.find((i) => i.name === event.target.value);
+  //   setSelectedPoolInfo(filteredPool);
+  //   const amount = (
+  //     filteredPool?.amount / filteredPool?.maxNumberPeople
+  //   ).toFixed(2);
+  //   setSelectedAmount(amount);
+  // };
+
+  const handleChange = (event: any) => {
+    const selectedPool = event.target.value;
+    setSelectPoolName(selectedPool);
+    setSelectedAmount(poolAmountMap[selectedPool] || "");
   };
 
   const navigate = useNavigate();
-
 
   const handleSubmit = async () => {
     const amount = selectedAmount;
@@ -89,8 +101,6 @@ const Deposite = () => {
     getAllPools();
   }, []);
 
-  
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -114,24 +124,37 @@ const Deposite = () => {
           }}
         >
           <MDBox mb={2}>
-          <FormControl fullWidth sx={{ height: "45px" }}>
-            <InputLabel id="demo-simple-select-label">Select Pool</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-selec"
-              label="demo-simple-selec"
-              value={selectPoolName}
-              onChange={handleChange}
-              sx={{ height: "100%" }}
-            >
-              <MenuItem value="DOSH-000">DOSH-000</MenuItem>
-              <MenuItem value="DOSH-100">DOSH-100</MenuItem>
-              <MenuItem value="DOSH-200">DOSH-200</MenuItem>
-            </Select>
-          </FormControl>
-        </MDBox>
+            <FormControl fullWidth sx={{ height: "45px" }}>
+              <InputLabel id="demo-simple-select-label">Select Pool</InputLabel>
+              <Select
+                // labelId="demo-simple-select-label"
+                // id="demo-simple-selec"
+                // label="demo-simple-selec"
+                // value={selectPoolName}
+                // onChange={handleChange}
+                // sx={{ height: "100%" }}
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Select Pool"
+                value={selectPoolName}
+                onChange={handleChange}
+                sx={{ height: "100%" }}
+              >
+                <MenuItem value="DOSH-000">DOSH-000</MenuItem>
+                <MenuItem value="DOSH-100">DOSH-100</MenuItem>
+                <MenuItem value="DOSH-200">DOSH-200</MenuItem>
+              </Select>
+            </FormControl>
+          </MDBox>
           <MDBox mb={2}>
             <TextField
+              // fullWidth
+              // id="outlined-read-only-input"
+              // label=""
+              // value={selectedAmount ? `${selectedAmount} $` : ""}
+              // InputProps={{
+              //   readOnly: true,
+              // }}
               fullWidth
               id="outlined-read-only-input"
               label=""
@@ -155,24 +178,22 @@ const Deposite = () => {
               Deposit
             </MDButton>
           </MDBox> */}
-           <MDBox mt={4} mb={1}>
-        <MDButton
-          size="small"
-          variant="gradient"
-          color="info"
-          fullWidth
-          type="button"
-          onClick={handleClickOpen}
-          disabled={!selectedPoolInfo}
-        >
-          Deposit
-        </MDButton>
-      </MDBox>
+          <MDBox mt={4} mb={1}>
+            <MDButton
+              size="small"
+              variant="gradient"
+              color="info"
+              fullWidth
+              type="button"
+              onClick={handleClickOpen}
+              // disabled={!selectedPoolInfo}
+            >
+              Deposit
+            </MDButton>
+          </MDBox>
 
-      <CreditCardModal open={open} handleClose={handleClose} />
-   
+          <CreditCardModal open={open} handleClose={handleClose} />
         </Box>
-        {/* </MDBox> */}
       </Card>
 
       {/* <Dialog open={open} onClose={handleClose}>
@@ -215,7 +236,6 @@ const Deposite = () => {
     </DialogContent>
   </Box>
 </Dialog> */}
-
     </>
   );
 };

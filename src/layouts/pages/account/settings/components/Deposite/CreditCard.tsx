@@ -1,13 +1,29 @@
 import { Box, Grid, Modal, TextField, Typography } from '@mui/material';
 import { CreditCard, Favorite, RingVolume } from '@mui/icons-material';
+import MasterCard from 'examples/Cards/MasterCard';
+import { useState } from 'react';
+import {  InputAdornment  } from '@mui/material';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import WifiIcon from '@mui/icons-material/Wifi';
+import PaypalIcon from '@mui/icons-material'; // Use appropriate icon for PayPal
+// import MasterCardIcon from '@mui/icons-material';
+// import { MasterCardIcon } from '@mui/icons-material/MasterCard';
 
 interface CreditCardModalProps {
   open: boolean;
   handleClose: () => void;
+  number: string;
+  holder: string;
+  expires: string;
 }
 
-const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, handleClose }) => {
+const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, handleClose , number, holder, expires }) => {
+  const [cardNumber, setCardNumber] = useState<string>(number);
+  const [cardHolder, setCardHolder] = useState<string>(holder);
+  const [cardExpires, setCardExpires] = useState<string>(expires);
+  const [cvv, setCvv] = useState<string>("");
   return (
+    <>
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
@@ -104,6 +120,112 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, handleClose }) 
         />
       </Box>
     </Modal>
+     <MasterCard
+     number={4562112245947852}
+     holder="jack peterson"
+     expires="11/22"
+   />
+    <Box
+      sx={{
+        width: 350,
+        height: 200,
+        backgroundColor: '#333',
+        borderRadius: '15px',
+        padding: '20px',
+        color: '#fff',
+        backgroundImage: 'url("")', // Add background image here
+        backgroundSize: 'cover',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
+    >
+      <WifiIcon sx={{ color: '#fff', fontSize: 20 }} />
+
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <TextField
+          value={cardNumber}
+          onChange={(e) => setCardNumber(e.target.value)}
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <CreditCardIcon sx={{ color: '#fff' }} />
+              </InputAdornment>
+            ),
+            style: { color: '#fff' },
+          }}
+          inputProps={{ maxLength: 16 }}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: '#fff' },
+            },
+            '& .MuiInputBase-root': {
+              '& input': { color: '#fff' },
+            },
+            width: '65%',
+          }}
+        />
+
+        {/* <PaypalIcon sx={{ color: '#fff', fontSize: 40 }} /> */}
+      </Box>
+
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+        <TextField
+          label="Expires"
+          value={cardExpires}
+          onChange={(e) => setCardExpires(e.target.value)}
+          variant="outlined"
+          inputProps={{ maxLength: 5 }}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: '#fff' },
+            },
+            '& .MuiInputBase-root': {
+              '& input': { color: '#fff' },
+            },
+            width: '45%',
+          }}
+        />
+
+        <TextField
+          label="CVV"
+          value={cvv}
+          onChange={(e) => setCvv(e.target.value)}
+          variant="outlined"
+          inputProps={{ maxLength: 3 }}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: '#fff' },
+            },
+            '& .MuiInputBase-root': {
+              '& input': { color: '#fff' },
+            },
+            width: '45%',
+          }}
+        />
+      </Box>
+
+      <TextField
+        label="Card Holder Name"
+        value={cardHolder}
+        onChange={(e) => setCardHolder(e.target.value)}
+        variant="outlined"
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': { borderColor: '#fff' },
+          },
+          '& .MuiInputBase-root': {
+            '& input': { color: '#fff' },
+          },
+          mt: 2,
+        }}
+      />
+
+      {/* <MasterCardIcon sx={{ color: '#fff', fontSize: 40, alignSelf: 'flex-end' }} /> */}
+    </Box>
+    </>
+    
   );
 };
 
