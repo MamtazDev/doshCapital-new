@@ -18,7 +18,7 @@ const CARD_OPTIONS = {
   iconStyle: "solid", // or "default"
   style: {
     base: {
-      color: "#000",
+      color: "#ffffff",
       fontSize: "16px",
       fontWeight: 400, // Moved inside 'base'
       width: "100%", // Moved inside 'base'
@@ -135,9 +135,22 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, clientSecret, h
         <p>Demo payment</p>
         
         <Box sx={{width: '100%'}}>
-          <CardNumberElement  className="payment_input" />
-          <CardExpiryElement  className="payment_input" />
-          <CardCvcElement  className="payment_input"  />
+          <CardNumberElement options={{
+            ...CARD_OPTIONS,
+            placeholder: "Enter card number",
+          }} className="payment_input" />
+          <CardExpiryElement 
+          options={{
+            ...CARD_OPTIONS,
+          
+          }}
+           className="payment_input" />
+          <CardCvcElement 
+          options={{
+            ...CARD_OPTIONS,
+          
+          }}
+           className="payment_input"  />
         </Box>
         
         <Button
