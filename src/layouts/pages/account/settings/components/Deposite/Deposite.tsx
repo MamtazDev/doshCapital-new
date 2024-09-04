@@ -34,18 +34,23 @@ import PaymentForm from "components/Payment/PaymentForm";
 import { Typography } from "@mui/material";
 import { BASE_URL } from "config/config";
 import CreditCardModal from "../Deposite/CreditCard";
+import Stripe from "stripe";
+
+
 
 const Deposite = () => {
   const { userInfo } = useContext(DataContext);
 
   const stripePromise = loadStripe(
-    "pk_test_51NFZaOLLDUmTZxUmkDuDcasoN5JOWe1Q4aPJXUqqURoA9fd2cS4Vcx7rooYsmfivbLhojg1vM1uzegRpZ7MNl52700t9DowwUF"
+    "pk_test_51OrZZ9GnuZvG4pKcUUbLCMULIiDFBypjTuGwjxScfrFJptzcmsXQ5lnW8vhy48Ax666eI3BlbrVmmtn1exUWpY6H00DFiccuQr"
   );
 
   const [allPools, setAllPools] = useState([]);
   const [selectPoolName, setSelectPoolName] = useState("");
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
+  const [clientSecret, setClientSecret] = useState("");
+
 
   const [open, setOpen] = useState(false);
 
@@ -101,13 +106,42 @@ const Deposite = () => {
     getAllPools();
   }, []);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpen = async () => {
+    try {
+      // const response = await fetch(`${BASE_URL}/api/deposite/createIntend`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     // Add any data required by your backend here
+      //     amount: 2000, // Example: amount in cents
+      //     currency: "usd", // Example: currency code
+      //   }),
+      // });
+      const response:any = await axios.post(`${BASE_URL}/api/deposite/createIntend`);
+
+
+
+      const clientSecret = response.data.client_secret;
+      console.log("clientSecret", response.data)
+
+      setClientSecret(clientSecret);
+      if (clientSecret) {
+        setOpen(true);
+      }
+
+      console.log("GenerateClientSecret from deposit", clientSecret);
+    } catch (error) {
+      console.error("Error fetching client secret:", error);
+    }
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
+
 
   return (
     <>
@@ -186,58 +220,46 @@ const Deposite = () => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-              // disabled={!selectedPoolInfo}
+            // disabled={!selectedPoolInfo}
             >
               Deposit
             </MDButton>
           </MDBox>
 
-          <CreditCardModal open={open} handleClose={handleClose} />
+
+         {clientSecret &&  <Elements stripe={stripePromise} options={{
+            clientSecret,
+            appearance: { theme: "stripe" }
+          }}>
+            <CreditCardModal clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
+          </Elements>}
         </Box>
       </Card>
-
-      {/* <Dialog open={open} onClose={handleClose}>
-        <Box sx={{ backgroundColor: "#202940" }}>
-          <DialogTitle>Deposit</DialogTitle>
-          <DialogContent>
-            <Typography>Pool: {selectPoolName}</Typography>
-            <Typography sx={{ mb: 1 }}>Amount: ${selectedAmount}</Typography>
-            <Box sx={{ border: "1px solid blue", p: 2, borderRadius: "5px" }}>
-              <Elements stripe={stripePromise}>
-                <PaymentForm
-                  amount={selectedAmount}
-                  userInfo={userInfo}
-                  handleSubmit={handleSubmit}
-                />
-              </Elements>
-            </Box>
-          </DialogContent>
-        </Box>
-      </Dialog> */}
-      {/* <Dialog open={open} onClose={handleClose}>
-  <Box sx={{ backgroundColor: "#1a1a1a", padding: "16px", borderRadius: "8px" }}>
-    <DialogTitle sx={{ color: "#fff", paddingBottom: "8px" }}>Deposit</DialogTitle>
-    <DialogContent>
-      <Typography sx={{ color: "#ccc", marginBottom: "8px" }}>
-        Pool: {selectPoolName}
-      </Typography>
-      <Typography sx={{ color: "#ccc", marginBottom: "16px" }}>
-        Amount: ${selectedAmount}
-      </Typography>
-      <Box sx={{ padding: "16px", borderRadius: "8px", backgroundColor: "#2a2a2a" }}>
-        <Elements stripe={stripePromise}>
-          <PaymentForm
-            amount={selectedAmount}
-            userInfo={userInfo}
-            handleSubmit={handleSubmit}
-          />
-        </Elements>
-      </Box>
-    </DialogContent>
-  </Box>
-</Dialog> */}
     </>
   );
 };
 
 export default Deposite;
+
+
+
+
+// const STRIPE_SK: string =
+//   "sk_test_51NFZaOLLDUmTZxUmmoNiB3NuGqC7qEXJXjHuwTAeboCeaYihKfwQXZQfJUMFHjDigF9pbV4dL05r4PoobuW6ATJR00GmJMXrQ8";
+
+// const createPaymentIntent = async (amountInCents: Number, currency: String) => {
+//   // const stripe = new Stripe(STRIPE_SK);
+//   const stripe = new Stripe(STRIPE_SK);
+//   // console.log("stripe Intent:", stripe)
+//   try {
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       amount: amountInCents,
+//       currency: currency,
+//     });
+
+//     return paymentIntent.client_secret;
+//   } catch (error) {
+//     console.error("Error on createPayment intent", error);
+//     throw new Error("Failed to create PaymentIntent");
+//   }
+// };

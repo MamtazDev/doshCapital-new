@@ -560,3 +560,11 @@ h5.MuiTypography-root.MuiTypography-h5.css-rrigp5-MuiTypography-root{
 span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root{
   font-size: 10px !important;
 }
+
+.payment_input{
+  border: 1px solid white;
+  padding: 10px 5px;
+  margin: 5px 0px;
+  border-radius: 8px;
+}
+
