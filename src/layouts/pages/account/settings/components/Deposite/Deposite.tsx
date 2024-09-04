@@ -231,7 +231,8 @@ const Deposite = () => {
             clientSecret,
             appearance: { theme: "stripe" }
           }}>
-            <CreditCardModal clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
+            <CreditCardModal selectPoolName={selectPoolName}
+selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
           </Elements>}
         </Box>
       </Card>

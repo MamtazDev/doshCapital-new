@@ -4,6 +4,7 @@ import { Box, Button, Grid, Modal, TextField, Typography } from '@mui/material';
 import { CreditCard, Favorite, RingVolume } from '@mui/icons-material';
 import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { BASE_URL } from 'config/config';
+import axios from 'axios';
 
 interface CreditCardModalProps {
   open: boolean;
@@ -12,6 +13,8 @@ interface CreditCardModalProps {
   holder: string;
   expires: string;
   clientSecret: string;
+  selectPoolName:any;
+selectedAmount:any;
 }
 
 const CARD_OPTIONS = {
@@ -30,12 +33,14 @@ const CARD_OPTIONS = {
   },
 };
 
-const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, clientSecret, handleClose, number, holder, expires }) => {
+const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
   const [cardNumber, setCardNumber] = useState<string>(number);
   const [cardHolder, setCardHolder] = useState<string>(holder);
   const [cardExpires, setCardExpires] = useState<string>(expires);
   const [cvv, setCvv] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log("holder", holder, expires, selectPoolName ,selectedAmount )
 
   const stripe = useStripe();
   const elements = useElements();
@@ -64,10 +69,11 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, clientSecret, h
       } else if (paymentResult.paymentIntent?.status === "succeeded") {
         await handleSuccessfulPayment(pool, amount);
       }
-  
+      
     } catch (error) {
       console.error('Error during payment:', error);
     } finally {
+      handleClose()
       setIsLoading(false);
     }
   };
@@ -90,19 +96,19 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open, clientSecret, h
   };
   
   const handleSuccessfulPayment = async (pool: string, amount: number) => {
-    const paymentData = { pool, amount };
+    const paymentData = { pool, amount, selectPoolName ,selectedAmount };
+
+    const data = {
+
+      name: selectPoolName,
+      amount: selectedAmount
+    }
     
-    const response = await fetch(`${BASE_URL}/api/deposite/payment`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(paymentData),
-    });
+    const response =   await axios.post(`${BASE_URL}/api/deposite/payment`, data);
   
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Payment successful:', data);
+    if (response) {
+      // const data = await response.json();
+      console.log('Payment successful:', response);
     } else {
       console.error('Payment submission failed:', response.statusText);
     }
