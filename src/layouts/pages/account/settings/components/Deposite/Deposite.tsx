@@ -229,7 +229,8 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-            disabled={!selectedAmount}
+              disabled={!isFormComplete}
+            // disabled={!selectedAmount}
             >
               {!isLoading ? "Deposit" : "Processing.."}
             </MDButton>

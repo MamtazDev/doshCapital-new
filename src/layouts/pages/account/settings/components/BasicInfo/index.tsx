@@ -15,13 +15,7 @@ import FormField from "layouts/pages/account/components/FormField";
 import selectData from "layouts/pages/account/settings/components/BasicInfo/data/selectData";
 import MDButton from "components/MDButton";
 
-function BasicInfo({
-  setFormComplete,
-  setFormValues,
-}: {
-  setFormComplete: (isComplete: boolean) => void;
-  setFormValues: (values: any) => void;
-}): JSX.Element {
+function BasicInfo({ setFormComplete, setFormValues }: { setFormComplete: (isComplete: boolean) => void; setFormValues: (values: any) => void; }): JSX.Element {
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
@@ -36,16 +30,47 @@ function BasicInfo({
     skills: [],
   });
 
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   // Simple form validation
+  //   const isFormValid = formState.firstName && formState.lastName && formState.email;
+
+  //   // If valid, pass the form values to the parent component
+  //   if (isFormValid) {
+  //     setFormValues(formState);
+  //     setFormComplete(true);
+  //   } else {
+  //     alert("Please fill all required fields.");
+  //   }
+  // };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Simple form validation
-    const isFormValid = formState.firstName && formState.lastName && formState.email;
+    const isFormValid =
+      formState.firstName && formState.lastName && formState.email;
 
     // If valid, pass the form values to the parent component
     if (isFormValid) {
       setFormValues(formState);
       setFormComplete(true);
+
+      // Reset form state to initial values
+      setFormState({
+        firstName: "",
+        lastName: "",
+        gender: "",
+        email: "",
+        dob: "",
+        days: "",
+        location: "",
+        year: "",
+        number: "",
+        language: "",
+        skills: [],
+      });
     } else {
       alert("Please fill all required fields.");
     }
