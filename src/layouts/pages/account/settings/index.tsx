@@ -18,8 +18,23 @@ import DeleteAccount from "layouts/pages/account/settings/components/DeleteAccou
 import CreatePool from "./components/CreatePool/CreatePool";
 import Deposite from "./components/Deposite/Deposite";
 import MyDepositedPool from "./components/MyDepositedPool";
+import { useState } from "react";
 
 function Settings(): JSX.Element {
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    email: "",
+    dob: "",
+    location: "",
+    number: "",
+    language: "",
+    skills: "",
+  });
+
+  const [isFormComplete, setIsFormComplete] = useState(false);
+
   return (
     <BaseLayout>
       <MDBox mt={4}>
@@ -33,15 +48,21 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Header />
                 </Grid>
+
+                {/* deposite components */}
                 <Grid item xs={12}>
-                  <Deposite />
+                  <Deposite isFormComplete={isFormComplete} formValues={formValues} />
                 </Grid>
+
                 <Grid item xs={12}>
                   <MyDepositedPool />
                 </Grid>
+
+                {/* basicinfo components */}
                 <Grid item xs={12}>
-                  <BasicInfo />
+                <BasicInfo setFormValues={setFormValues} setFormComplete={setIsFormComplete} />
                 </Grid>
+
                 <Grid item xs={12}>
                   <ChangePassword />
                 </Grid>

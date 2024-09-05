@@ -36,9 +36,13 @@ import { BASE_URL } from "config/config";
 import CreditCardModal from "../Deposite/CreditCard";
 import Stripe from "stripe";
 
+interface DepositProps {
+  isFormComplete: boolean;
+  formValues: any;
+}
 
-
-const Deposite = () => {
+const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
+  console.log("Depositing for: ", formValues);
   const { userInfo } = useContext(DataContext);
 
   const stripePromise = loadStripe(
@@ -119,7 +123,7 @@ const Deposite = () => {
       //     currency: "usd", // Example: currency code
       //   }),
       // });
-      const response:any = await axios.post(`${BASE_URL}/api/deposite/createIntend`);
+      const response: any = await axios.post(`${BASE_URL}/api/deposite/createIntend`);
 
 
 
@@ -145,6 +149,7 @@ const Deposite = () => {
 
   return (
     <>
+      {/* {show all data is comming perfectly} */}
       <Card id="deposite" sx={{ overflow: "visible" }}>
         <MDBox p={3}>
           <MDTypography variant="h5">Deposit</MDTypography>
@@ -220,19 +225,19 @@ const Deposite = () => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-            // disabled={!selectedPoolInfo}
+              disabled={!isFormComplete}
             >
               Deposit
             </MDButton>
           </MDBox>
 
 
-         {clientSecret &&  <Elements stripe={stripePromise} options={{
+          {clientSecret && <Elements stripe={stripePromise} options={{
             clientSecret,
             appearance: { theme: "stripe" }
           }}>
             <CreditCardModal selectPoolName={selectPoolName}
-selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
+              selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
           </Elements>}
         </Box>
       </Card>
