@@ -70,10 +70,10 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,s
         await handleSuccessfulPayment(pool, amount);
       }
       
+      handleClose()
     } catch (error) {
       console.error('Error during payment:', error);
     } finally {
-      handleClose()
       setIsLoading(false);
     }
   };
@@ -138,7 +138,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,s
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <p>Demo payment</p>
+        <p>Payment</p>
         
         <Box sx={{width: '100%'}}>
           <CardNumberElement options={{
@@ -165,7 +165,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,s
           color="primary"
           sx={{ width: '100%', padding: 1 }}
         >
-          Submit
+           {isLoading?  "Processing.." : "Submit"}
         </Button>
       </Box>
     </Modal>

@@ -54,6 +54,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
   const [clientSecret, setClientSecret] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const [open, setOpen] = useState(false);
@@ -111,6 +112,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   }, []);
 
   const handleClickOpen = async () => {
+    setIsLoading(true)
     try {
       // const response = await fetch(`${BASE_URL}/api/deposite/createIntend`, {
       //   method: 'POST',
@@ -136,7 +138,9 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
       }
 
       console.log("GenerateClientSecret from deposit", clientSecret);
+      setIsLoading(false)
     } catch (error) {
+      setIsLoading(false)
       console.error("Error fetching client secret:", error);
     }
   };
@@ -225,9 +229,9 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-              disabled={!isFormComplete}
+            disabled={!selectedAmount}
             >
-              Deposit
+              {!isLoading ? "Deposit" : "Processing.."}
             </MDButton>
           </MDBox>
 
