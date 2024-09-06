@@ -229,7 +229,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-              disabled={!isFormComplete}
+              disabled={!isFormComplete} // open this after desining
             // disabled={!selectedAmount}
             >
               {!isLoading ? "Deposit" : "Processing.."}
@@ -243,6 +243,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
           }}>
             <CreditCardModal selectPoolName={selectPoolName}
               selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
+              
           </Elements>}
         </Box>
       </Card>
