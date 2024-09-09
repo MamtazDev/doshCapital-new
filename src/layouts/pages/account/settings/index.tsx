@@ -53,6 +53,9 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Deposite isFormComplete={isFormComplete} formValues={formValues} />
                 </Grid>
+                <Grid item xs={12}>
+                  <CreatePool />
+                </Grid>
 
                 <Grid item xs={12}>
                   <MyDepositedPool />
@@ -81,9 +84,7 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <DeleteAccount />
                 </Grid>
-                <Grid item xs={12}>
-                  <CreatePool />
-                </Grid>
+                
               </Grid>
             </MDBox>
           </Grid>

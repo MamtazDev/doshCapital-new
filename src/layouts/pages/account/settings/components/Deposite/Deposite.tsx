@@ -42,7 +42,7 @@ interface DepositProps {
 }
 
 const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
-  console.log("Depositing for: ", formValues);
+  
   const { userInfo } = useContext(DataContext);
 
   const stripePromise = loadStripe(
@@ -229,8 +229,8 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-              disabled={!isFormComplete}
-            // disabled={!selectedAmount}
+              // disabled={!isFormComplete}
+              disabled={!isFormComplete && !selectedAmount}
             >
               {!isLoading ? "Deposit" : "Processing.."}
             </MDButton>
@@ -241,7 +241,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
             clientSecret,
             appearance: { theme: "stripe" }
           }}>
-            <CreditCardModal selectPoolName={selectPoolName}
+            <CreditCardModal formValues={formValues} selectPoolName={selectPoolName}
               selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
           </Elements>}
         </Box>

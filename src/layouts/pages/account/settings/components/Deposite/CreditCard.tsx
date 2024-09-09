@@ -14,7 +14,8 @@ interface CreditCardModalProps {
   expires: string;
   clientSecret: string;
   selectPoolName:any;
-selectedAmount:any;
+  formValues:any;
+  selectedAmount:any;
 }
 
 const CARD_OPTIONS = {
@@ -33,14 +34,16 @@ const CARD_OPTIONS = {
   },
 };
 
-const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
+const CreditCardModal: React.FC<CreditCardModalProps> = ({formValues, open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
   const [cardNumber, setCardNumber] = useState<string>(number);
   const [cardHolder, setCardHolder] = useState<string>(holder);
   const [cardExpires, setCardExpires] = useState<string>(expires);
   const [cvv, setCvv] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log("holder", holder, expires, selectPoolName ,selectedAmount )
+  const {firstName, phone , location} = formValues
+  console.log("holder formValues", firstName, phone, location, formValues )
+  
 
   const stripe = useStripe();
   const elements = useElements();
@@ -99,7 +102,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({ open,selectPoolName,s
     const paymentData = { pool, amount, selectPoolName ,selectedAmount };
 
     const data = {
-
+      phone,
       name: selectPoolName,
       amount: selectedAmount
     }

@@ -74,7 +74,7 @@ const CreatePool = () => {
             label="Pool Name"
             fullWidth
             name="name"
-            defaultValue="DOSH-0011"
+            defaultValue="DOSH-001"
             required
           />
         </MDBox>
@@ -105,10 +105,26 @@ const CreatePool = () => {
               onChange={handleMaxPeopleChange}
               sx={{ height: "100%" }}
             >
-              <MenuItem value="5">5</MenuItem>
-              <MenuItem value="10">10</MenuItem>
-              <MenuItem value="20">20</MenuItem>
-              <MenuItem value="50">50</MenuItem>
+              <MenuItem value="5">DOSH-0011</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0012</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0013</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0014</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0015</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0016</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0017</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0018</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-0019</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00110</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00111</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00112</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00113</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00114</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00115</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00116</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00117</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00118</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00119</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00120</MenuItem>
             </Select>
           </FormControl>
           {depositedAmount && (
