@@ -48,10 +48,15 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Header />
                 </Grid>
-
+                <Grid item xs={12}>
+                  <CreatePool />
+                </Grid>
                 {/* deposite components */}
                 <Grid item xs={12}>
-                  <Deposite isFormComplete={isFormComplete} formValues={formValues} />
+                  <Deposite
+                    isFormComplete={isFormComplete}
+                    formValues={formValues}
+                  />
                 </Grid>
 
                 <Grid item xs={12}>
@@ -60,7 +65,10 @@ function Settings(): JSX.Element {
 
                 {/* basicinfo components */}
                 <Grid item xs={12}>
-                <BasicInfo setFormValues={setFormValues} setFormComplete={setIsFormComplete} />
+                  <BasicInfo
+                    setFormValues={setFormValues}
+                    setFormComplete={setIsFormComplete}
+                  />
                 </Grid>
 
                 <Grid item xs={12}>
@@ -80,9 +88,6 @@ function Settings(): JSX.Element {
                 </Grid> */}
                 <Grid item xs={12}>
                   <DeleteAccount />
-                </Grid>
-                <Grid item xs={12}>
-                  <CreatePool />
                 </Grid>
               </Grid>
             </MDBox>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
 import { CreditCard, Favorite, RingVolume } from "@mui/icons-material";
+import mastercard from "../../../../../../assets/images/logos/mastercard.png";
+import pattern from "../../../../../../assets/images/shapes/pattern.svg";
 import {
   CardCvcElement,
   CardExpiryElement,
@@ -12,6 +14,7 @@ import {
 import { BASE_URL } from "config/config";
 import axios from "axios";
 import WifiIcon from "@mui/icons-material/Wifi";
+import MDButton from "components/MDButton";
 
 interface CreditCardModalProps {
   open: boolean;
@@ -138,62 +141,166 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           backgroundColor: "#333",
           borderRadius: "15px",
           color: "#fff",
-          backgroundImage:
-            'url("https://i.ibb.co/wwc07GQ/cq5dam-web-570-570.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "flex-start",
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          overflow: "hidden",
+          "::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${pattern})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.2,
+            zIndex: 0,
+          },
+          zIndex: 1,
         }}
       >
-        <WifiIcon className="wifi_icon" />
-
-        <Box sx={{ width: "60%" }}>
-          <CardNumberElement
-            options={{
-              ...CARD_OPTIONS,
-              placeholder: "Enter card number",
+        <Box>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "30px",
             }}
-            className="payment_input"
-          />
+          >
+            <div style={{ width: "100%" }}>
+              <WifiIcon className="wifi_icon" />
+              <CardNumberElement
+                options={{
+                  ...CARD_OPTIONS,
+                  placeholder: "4562   1122   4594   7852",
+                }}
+                className="payment_input"
+              />
+            </div>
+            <MDButton
+              variant="contained"
+              color="info"
+              sx={{
+                width: "20%",
+                padding: 1,
+                alignSelf: "flex-end",
+                color: "white",
+              }}
+            >
+              <img
+                width={15}
+                src="https://static-00.iconduck.com/assets.00/paypal-icon-1735x2048-7umw9cq7.png"
+                alt=""
+              />
+            </MDButton>
+          </div>
+
           <div className="flex-container">
-            <CardExpiryElement
-              options={{
-                ...CARD_OPTIONS,
-              }}
-              className="payment_input_expire"
-            />
-            <CardCvcElement
-              options={{
-                ...CARD_OPTIONS,
-              }}
-              className="payment_input_cv"
-            />
+            <div style={{ flexShrink: "0" }}>
+              <label
+                style={{
+                  fontSize: "0.875rem",
+                  fontWeight: "400",
+                  opacity: "0.8",
+                }}
+              >
+                Card Holder
+              </label>
+              <input
+                className="card_holder_input"
+                type="text"
+                placeholder="jack peterson"
+              />
+            </div>
+            <div style={{ flexShrink: "0" }}>
+              <label
+                style={{
+                  fontSize: "0.875rem",
+                  fontWeight: "400",
+                  opacity: "0.8",
+                }}
+              >
+                Expires
+              </label>
+              <CardExpiryElement
+                options={{
+                  ...CARD_OPTIONS,
+                  placeholder: "11/22",
+                }}
+                className="payment_input_expire"
+              />
+            </div>
+            <div style={{ flexShrink: "0" }}>
+              <label
+                style={{
+                  fontSize: "0.875rem",
+                  fontWeight: "400",
+                  opacity: "0.8",
+                }}
+              >
+                CVC
+              </label>
+              <CardCvcElement
+                options={{
+                  ...CARD_OPTIONS,
+                  placeholder: "123",
+                }}
+                className="payment_input_cv"
+              />
+            </div>
           </div>
         </Box>
-        <div className="button-image-container" style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "40px" }}>
-          <Button
+        <div
+          className="button-image-container"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "end !important",
+            width: "100%",
+            marginTop: "20px",
+          }}
+        >
+          {/* <Button
             onClick={handleSubmit}
             variant="contained"
-            color="primary"
-            sx={{ width: "20%", padding: 1, alignSelf: "flex-start" }}
+            sx={{
+              width: "20%",
+              padding: 1,
+              alignSelf: "flex-start",
+              color: "white",
+            }}
           >
             {isLoading ? "Processing.." : "Submit"}
-          </Button>
+          </Button> */}
 
-          <div className="img-container">
-            <img
-              className="master_card"
-              src="https://i.ibb.co/V2tnC45/mc-dla-symbol-92.png"
-              alt="MasterCard"
-            />
-          </div>
+          <MDButton
+            onClick={handleSubmit}
+            variant="contained"
+            color="info"
+            sx={{
+              width: "20%",
+              padding: 1,
+              alignSelf: "flex-end",
+              color: "white",
+            }}
+          >
+            {isLoading ? "Processing.." : "Submit"}
+          </MDButton>
+
+          <img
+            className="master_card"
+            width={61}
+            src={mastercard}
+            alt="MasterCard"
+          />
         </div>
       </Box>
     </Modal>

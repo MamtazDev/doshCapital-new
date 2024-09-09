@@ -50,12 +50,11 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   );
 
   const [allPools, setAllPools] = useState([]);
-  const [selectPoolName, setSelectPoolName] = useState("");
+  const [selectPoolName, setSelectPoolName] = useState("DOSH-000");
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
   const [clientSecret, setClientSecret] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
 
   const [open, setOpen] = useState(false);
 
@@ -112,7 +111,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   }, []);
 
   const handleClickOpen = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       // const response = await fetch(`${BASE_URL}/api/deposite/createIntend`, {
       //   method: 'POST',
@@ -125,12 +124,12 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
       //     currency: "usd", // Example: currency code
       //   }),
       // });
-      const response: any = await axios.post(`${BASE_URL}/api/deposite/createIntend`);
-
-
+      const response: any = await axios.post(
+        `${BASE_URL}/api/deposite/createIntend`
+      );
 
       const clientSecret = response.data.client_secret;
-      console.log("clientSecret", response.data)
+      console.log("clientSecret", response.data);
 
       setClientSecret(clientSecret);
       if (clientSecret) {
@@ -138,9 +137,9 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
       }
 
       console.log("GenerateClientSecret from deposit", clientSecret);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
-      setIsLoading(false)
+      setIsLoading(false);
       console.error("Error fetching client secret:", error);
     }
   };
@@ -148,8 +147,6 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   const handleClose = () => {
     setOpen(false);
   };
-
-
 
   return (
     <>
@@ -229,22 +226,33 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               fullWidth
               type="button"
               onClick={handleClickOpen}
-              disabled={!isFormComplete} // open this after desining
-            // disabled={!selectedAmount}
+              // disabled={!isFormComplete} // open this after desining
+              disabled={!selectedAmount}
             >
               {!isLoading ? "Deposit" : "Processing.."}
             </MDButton>
           </MDBox>
 
-
-          {clientSecret && <Elements stripe={stripePromise} options={{
-            clientSecret,
-            appearance: { theme: "stripe" }
-          }}>
-            <CreditCardModal selectPoolName={selectPoolName}
-              selectedAmount={selectedAmount} clientSecret={clientSecret} open={open} handleClose={handleClose} number={""} holder={""} expires={""} />
-              
-          </Elements>}
+          {clientSecret && (
+            <Elements
+              stripe={stripePromise}
+              options={{
+                clientSecret,
+                appearance: { theme: "stripe" },
+              }}
+            >
+              <CreditCardModal
+                selectPoolName={selectPoolName}
+                selectedAmount={selectedAmount}
+                clientSecret={clientSecret}
+                open={open}
+                handleClose={handleClose}
+                number={""}
+                holder={""}
+                expires={""}
+              />
+            </Elements>
+          )}
         </Box>
       </Card>
     </>
@@ -252,9 +260,6 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
 };
 
 export default Deposite;
-
-
-
 
 // const STRIPE_SK: string =
 //   "sk_test_51NFZaOLLDUmTZxUmmoNiB3NuGqC7qEXJXjHuwTAeboCeaYihKfwQXZQfJUMFHjDigF9pbV4dL05r4PoobuW6ATJR00GmJMXrQ8";

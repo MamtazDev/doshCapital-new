@@ -24,7 +24,7 @@ const CreatePool = () => {
   const { userInfo } = useContext(DataContext);
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
-  const [maxNumberPeople, setMaxNumberPeople] = useState<string>("");
+  const [maxNumberPeople, setMaxNumberPeople] = useState<string>("20");
 
   const navigate = useNavigate();
 
@@ -74,10 +74,11 @@ const CreatePool = () => {
             label="Pool Name"
             fullWidth
             name="name"
-            defaultValue="DOSH-0011"
+            defaultValue="DOSH-000"
             required
           />
         </MDBox>
+
         <MDBox mb={2}>
           <FormControl fullWidth sx={{ height: "45px" }}>
             <InputLabel id="pool-amount-label">Pool Amount</InputLabel>
@@ -119,6 +120,54 @@ const CreatePool = () => {
             </Typography>
           )}
         </MDBox>
+        <MDBox mb={2}>
+          <FormControl fullWidth sx={{ height: "45px" }}>
+            <InputLabel id="client-id">Client ID</InputLabel>
+            <Select
+              labelId="client-id"
+              id="client-id"
+              label="Client ID"
+              value={maxNumberPeople}
+              onChange={handleMaxPeopleChange}
+              sx={{ height: "100%" }}
+            >
+              {[
+                "DOSH-001",
+                "DOSH-002",
+                "DOSH-003",
+                "DOSH-004",
+                "DOSH-005",
+                "DOSH-006",
+                "DOSH-007",
+                "DOSH-008",
+                "DOSH-009",
+                "DOSH-0010",
+                "DOSH-0011",
+                "DOSH-0012",
+                "DOSH-0013",
+                "DOSH-0014",
+                "DOSH-0015",
+                "DOSH-0016",
+                "DOSH-0017",
+                "DOSH-0018",
+                "DOSH-0019",
+                "DOSH-0020",
+              ].map((data, index) => (
+                <MenuItem key={index} value={data}>
+                  {data}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {depositedAmount && (
+            <Typography
+              sx={{ textAlign: "end", fontSize: "12px", color: "green" }}
+            >
+              Per person can deposit ${depositedAmount}
+            </Typography>
+          )}
+        </MDBox>
+
         <MDBox mt={4} mb={1}>
           <MDButton
             size="small"
