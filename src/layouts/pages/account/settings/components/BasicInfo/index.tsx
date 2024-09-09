@@ -25,7 +25,7 @@ function BasicInfo({ setFormComplete, setFormValues }: { setFormComplete: (isCom
     days: "",
     location: "",
     year: "",
-    number: "",
+    phone: "",
     language: "",
     skills: [],
   });
@@ -67,7 +67,7 @@ function BasicInfo({ setFormComplete, setFormValues }: { setFormComplete: (isCom
         days: "",
         location: "",
         year: "",
-        number: "",
+        phone: "",
         language: "",
         skills: [],
       });
@@ -194,9 +194,9 @@ function BasicInfo({ setFormComplete, setFormValues }: { setFormComplete: (isCom
               label="Phone Number"
               placeholder="+40 735 631 620"
               inputProps={{ type: "number" }}
-              value={formState.number}
+              value={formState.phone}
               onChange={(e: any) =>
-                setFormState({ ...formState, number: e.target.value })
+                setFormState({ ...formState, phone: e.target.value })
               }
             />
           </Grid>

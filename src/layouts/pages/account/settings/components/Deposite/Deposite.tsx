@@ -42,7 +42,6 @@ interface DepositProps {
 }
 
 const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
-  console.log("Depositing for: ", formValues);
   const { userInfo } = useContext(DataContext);
 
   const stripePromise = loadStripe(
@@ -242,6 +241,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
               }}
             >
               <CreditCardModal
+                formValues={formValues}
                 selectPoolName={selectPoolName}
                 selectedAmount={selectedAmount}
                 clientSecret={clientSecret}

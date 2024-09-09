@@ -33,6 +33,7 @@ const MyDepositedPool = () => {
         });
 
         setUserDepositedPool(poolInfoArray);
+        console.log("userDepositedPool", userDepositedPool)
       }
     } catch (error) {
       console.error('Error fetching user deposits:', error);
@@ -41,6 +42,7 @@ const MyDepositedPool = () => {
 
   useEffect(() => {
     getUserDeposites();
+    console.log("userInfo?.userId", userInfo?.userId)
   }, [userInfo?.userId]);
 
   return (

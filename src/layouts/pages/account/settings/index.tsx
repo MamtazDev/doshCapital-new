@@ -58,6 +58,9 @@ function Settings(): JSX.Element {
                     formValues={formValues}
                   />
                 </Grid>
+                <Grid item xs={12}>
+                  <CreatePool />
+                </Grid>
 
                 <Grid item xs={12}>
                   <MyDepositedPool />
