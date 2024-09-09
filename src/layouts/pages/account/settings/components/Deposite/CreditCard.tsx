@@ -1,10 +1,17 @@
-import { useState } from 'react';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Box, Button, Grid, Modal, TextField, Typography } from '@mui/material';
-import { CreditCard, Favorite, RingVolume } from '@mui/icons-material';
-import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { BASE_URL } from 'config/config';
-import axios from 'axios';
+import { useState } from "react";
+import InputAdornment from "@mui/material/InputAdornment";
+import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
+import { CreditCard, Favorite, RingVolume } from "@mui/icons-material";
+import {
+  CardCvcElement,
+  CardExpiryElement,
+  CardNumberElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
+import { BASE_URL } from "config/config";
+import axios from "axios";
+import WifiIcon from "@mui/icons-material/Wifi";
 
 interface CreditCardModalProps {
   open: boolean;
@@ -34,7 +41,18 @@ const CARD_OPTIONS = {
   },
 };
 
-const CreditCardModal: React.FC<CreditCardModalProps> = ({formValues, open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
+// const CreditCardModal: React.FC<CreditCardModalProps> = ({formValues, open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
+const CreditCardModal: React.FC<CreditCardModalProps> = ({
+  open,
+  formValues,
+  selectPoolName,
+  selectedAmount,
+  clientSecret,
+  handleClose,
+  number,
+  holder,
+  expires,
+}) => {
   const [cardNumber, setCardNumber] = useState<string>(number);
   const [cardHolder, setCardHolder] = useState<string>(holder);
   const [cardExpires, setCardExpires] = useState<string>(expires);
@@ -49,129 +67,143 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({formValues, open,selec
   const elements = useElements();
 
   const handleSubmit = async () => {
-    console.log('Submitted', { cardNumber, cardHolder, cardExpires, cvv });
+    console.log("Submitted", { cardNumber, cardHolder, cardExpires, cvv });
     setIsLoading(true);
-  
+
     if (!stripe) {
       console.log("Stripe not initialized");
       setIsLoading(false);
       return;
     }
-  
+
     const pool = "DOSH-100";
     const amount = 200;
-  
+
     try {
       // const clientSecret = await createPaymentIntent(amount * 100, "usd");
       // console.log("Client Secret:", clientSecret);
-  
+
       const paymentResult = await confirmPayment(clientSecret);
-  
+
       if (paymentResult.error) {
         handlePaymentError(paymentResult.error);
       } else if (paymentResult.paymentIntent?.status === "succeeded") {
         await handleSuccessfulPayment(pool, amount);
       }
-      
-      handleClose()
+
+      handleClose();
     } catch (error) {
-      console.error('Error during payment:', error);
+      console.error("Error during payment:", error);
     } finally {
       setIsLoading(false);
     }
   };
-  
+
   const confirmPayment = async (clientSecret: string) => {
     const cardElement = elements.getElement(CardNumberElement);
-  
+
     return await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: cardElement,
         billing_details: {
-          name: 'Dusty Achargy',
+          name: "Dusty Achargy",
         },
       },
     });
   };
-  
+
   const handlePaymentError = (error: any) => {
     console.error("Payment Error:", error);
   };
-  
+
   const handleSuccessfulPayment = async (pool: string, amount: number) => {
-    const paymentData = { pool, amount, selectPoolName ,selectedAmount };
+    const paymentData = { pool, amount, selectPoolName, selectedAmount };
 
     const data = {
       phone,
       name: selectPoolName,
-      amount: selectedAmount
-    }
-    
-    const response =   await axios.post(`${BASE_URL}/api/deposite/payment`, data);
-  
+      amount: selectedAmount,
+    };
+
+    const response = await axios.post(`${BASE_URL}/api/deposite/payment`, data);
+
     if (response) {
       // const data = await response.json();
-      console.log('Payment successful:', response);
+      console.log("Payment successful:", response);
     } else {
-      console.error('Payment submission failed:', response.statusText);
+      console.error("Payment submission failed:", response.statusText);
     }
   };
-
 
   return (
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 500, // Increase the width of the modal
-          // height: '100%', // Ensure the height is full
+          width: 650,
           padding: 4,
-          backgroundColor: '#333',
-          borderRadius: '15px',
-          color: '#fff',
-          backgroundImage: 'url("https://i.ibb.co/pjgpFPb/freudenstadt-20000-sdb-d2c853-preview-800x782.png")',
-          backgroundSize: 'cover', // Cover the entire modal
-          backgroundPosition: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          backgroundColor: "#333",
+          borderRadius: "15px",
+          color: "#fff",
+          backgroundImage:
+            'url("https://i.ibb.co/wwc07GQ/cq5dam-web-570-570.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       >
-        <p>Payment</p>
-        
-        <Box sx={{width: '100%'}}>
-          <CardNumberElement options={{
-            ...CARD_OPTIONS,
-            placeholder: "Enter card number",
-          }} className="payment_input" />
-          <CardExpiryElement 
-          options={{
-            ...CARD_OPTIONS,
-          
-          }}
-           className="payment_input" />
-          <CardCvcElement 
-          options={{
-            ...CARD_OPTIONS,
-          
-          }}
-           className="payment_input"  />
+        <WifiIcon className="wifi_icon" />
+
+        <Box sx={{ width: "60%" }}>
+          <CardNumberElement
+            options={{
+              ...CARD_OPTIONS,
+              placeholder: "Enter card number",
+            }}
+            className="payment_input"
+          />
+          <div className="flex-container">
+            <CardExpiryElement
+              options={{
+                ...CARD_OPTIONS,
+              }}
+              className="payment_input_expire"
+            />
+            <CardCvcElement
+              options={{
+                ...CARD_OPTIONS,
+              }}
+              className="payment_input_cv"
+            />
+          </div>
         </Box>
-        
-        <Button
-          onClick={handleSubmit}
-          variant="contained"
-          color="primary"
-          sx={{ width: '100%', padding: 1 }}
-        >
-           {isLoading?  "Processing.." : "Submit"}
-        </Button>
+        <div className="button-image-container" style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "40px" }}>
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            color="primary"
+            sx={{ width: "20%", padding: 1, alignSelf: "flex-start" }}
+          >
+            {isLoading ? "Processing.." : "Submit"}
+          </Button>
+
+          <div className="img-container">
+            <img
+              className="master_card"
+              src="https://i.ibb.co/V2tnC45/mc-dla-symbol-92.png"
+              alt="MasterCard"
+            />
+          </div>
+        </div>
       </Box>
     </Modal>
+
     //  </Elements>
   );
 };
@@ -197,12 +229,8 @@ export default CreditCardModal;
 //   }
 // };
 
-
-
-
-
-
- {/* <TextField
+{
+  /* <TextField
           value={cardNumber}
           onChange={(e) => setCardNumber(e.target.value)}
           variant="outlined"
@@ -227,9 +255,11 @@ export default CreditCardModal;
             marginBottom: 2,
             width: '100%',
           }}
-        /> */}
+        /> */
+}
 
-        {/* <CardNumberElement
+{
+  /* <CardNumberElement
           className="payment_input"
           options={{
             ...CARD_OPTIONS,
@@ -251,79 +281,78 @@ export default CreditCardModal;
               />
             </div>
           </div>
-        </div> */}
+        </div> */
+}
 
+// const handleSubmit = async () => {
+//   console.log('Submitted', { cardNumber, cardHolder, cardExpires, cvv });
+//   setIsLoading(true);
+//   if (!stripe) {
+//     console.log("no Stripe")
+//     setIsLoading(false);
+//     return;
+//   }
 
-        // const handleSubmit = async () => {
-        //   console.log('Submitted', { cardNumber, cardHolder, cardExpires, cvv });
-        //   setIsLoading(true);
-        //   if (!stripe) {
-        //     console.log("no Stripe")
-        //     setIsLoading(false);
-        //     return;
-        //   }
-      
-        //   let pool = "DOSH-100";
-        //   let amount = 200;
-      
-        //   try {
-        //     // Define the data to be sent in the POST request
-      
-        //     const clientSecret = await createPaymentIntent(
-        //       amount * 100,
-        //       "usd"
-        //     );
-      
-        //     console.log("clientSecret", clientSecret)
-      
-        //     const cardElement = elements.getElement(CardNumberElement);
-        //     const { error, paymentIntent } = await stripe.confirmCardPayment(
-        //       clientSecret,
-        //       {
-        //         payment_method: {
-        //           card: cardElement,
-        //           billing_details: {
-        //             name: `Dusty Achargy`,
-        //             address: {
-        //               country: "USA",
-        //               // postal_code: 1206,
-        //             },
-        //           },
-        //         },
-        //       }
-        //     );
-      
-        //     if (error) {
-        //       console.error("error", error);
-        //       setIsLoading(false);
-      
-      
-        //     } else if (paymentIntent.status === "succeeded") {
-        //       setIsLoading(false);
-      
-        //       console.log(paymentIntent, "payyyy");
-      
-        //       const createPaymentData = {
-        //         pool: "dfsdfsdf",
-        //         amount: amount,
-        //       };
-        //       const response = await fetch(`${BASE_URL}/api/deposite/payment`, {
-        //         method: 'POST',
-        //         headers: {
-        //           'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(createPaymentData),
-        //       });
-      
-        //       if (response.ok) {
-        //         const data = await response.json();
-        //         console.log('Payment successful:', data);
-        //       } else {
-        //         console.error('Payment failed:', response.statusText);
-        //       }
-        //     }
-      
-        //   } catch (error) {
-        //     console.error('Error during payment:', error);
-        //   }
-        // };
+//   let pool = "DOSH-100";
+//   let amount = 200;
+
+//   try {
+//     // Define the data to be sent in the POST request
+
+//     const clientSecret = await createPaymentIntent(
+//       amount * 100,
+//       "usd"
+//     );
+
+//     console.log("clientSecret", clientSecret)
+
+//     const cardElement = elements.getElement(CardNumberElement);
+//     const { error, paymentIntent } = await stripe.confirmCardPayment(
+//       clientSecret,
+//       {
+//         payment_method: {
+//           card: cardElement,
+//           billing_details: {
+//             name: `Dusty Achargy`,
+//             address: {
+//               country: "USA",
+//               // postal_code: 1206,
+//             },
+//           },
+//         },
+//       }
+//     );
+
+//     if (error) {
+//       console.error("error", error);
+//       setIsLoading(false);
+
+//     } else if (paymentIntent.status === "succeeded") {
+//       setIsLoading(false);
+
+//       console.log(paymentIntent, "payyyy");
+
+//       const createPaymentData = {
+//         pool: "dfsdfsdf",
+//         amount: amount,
+//       };
+//       const response = await fetch(`${BASE_URL}/api/deposite/payment`, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(createPaymentData),
+//       });
+
+//       if (response.ok) {
+//         const data = await response.json();
+//         console.log('Payment successful:', data);
+//       } else {
+//         console.error('Payment failed:', response.statusText);
+//       }
+//     }
+
+//   } catch (error) {
+//     console.error('Error during payment:', error);
+//   }
+// };

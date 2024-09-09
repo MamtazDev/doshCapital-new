@@ -113,7 +113,7 @@ export default function App() {
   }, [pathname]);
 
   useEffect(() => {
-    setDarkMode(dispatch, true);
+    setDarkMode(dispatch, false);
   }, []);
 
   const getRoutes = (allRoutes: any[]): any =>

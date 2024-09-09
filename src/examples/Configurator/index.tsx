@@ -242,6 +242,7 @@ function Configurator(): JSX.Element {
             >
               Dark
             </MDButton>
+            
             <MDBox sx={{ mx: 1, width: "8rem", minWidth: "8rem" }}>
               <MDButton
                 color="dark"
@@ -258,6 +259,7 @@ function Configurator(): JSX.Element {
                 Transparent
               </MDButton>
             </MDBox>
+
             <MDButton
               color="dark"
               variant="gradient"
@@ -274,6 +276,7 @@ function Configurator(): JSX.Element {
             </MDButton>
           </MDBox>
         </MDBox>
+
         <MDBox
           display="flex"
           justifyContent="space-between"
