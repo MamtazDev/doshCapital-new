@@ -103,7 +103,6 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
       <MenuItem onClick={close}>Something else here</MenuItem>
     </Menu>
   );
-  console.log(mission, "gggggg");
 
   return (
     <DashboardLayout>
@@ -123,14 +122,36 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           // width="30%"
           mt={4}
           lineHeight={1}
+          px={4}
           className="mmmmmmmm"
         >
-          <MDTypography variant="h2" sx={{ color: "#fff" }} fontWeight="medium">
+          <MDTypography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontSize: {
+                xs: "18px",
+                sm: "20px",
+                md: "24px",
+                lg: "28px",
+              },
+            }}
+            fontWeight="medium"
+          >
             About Us
           </MDTypography>
           <MDTypography
             variant="h5"
-            sx={{ color: "#fff", marginBottom: "-20px" }}
+            sx={{
+              color: "#fff",
+              marginBottom: "-20px",
+              fontSize: {
+                xs: "16px",
+                sm: "18px",
+                md: "20px",
+                lg: "24px",
+              },
+            }}
             fontWeight="bold"
           >
             “Helping Others, make money while you sleep”
@@ -138,7 +159,15 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           <br />
           <MDTypography
             variant="h5"
-            sx={{ color: "#fff" }}
+            sx={{
+              color: "#fff",
+              fontSize: {
+                xs: "12px",
+                sm: "14px",
+                md: "16px",
+                lg: "18px",
+              },
+            }}
             fontWeight="regular"
           >
             At Dosh we come together to fix one common problem by providing a
@@ -149,7 +178,15 @@ function About({ children }: { children?: ReactNode }): JSX.Element {
           </MDTypography>{" "}
           <MDTypography
             variant="h5"
-            sx={{ color: "#fff" }}
+            sx={{
+              color: "#fff",
+              fontSize: {
+                xs: "14px",
+                sm: "16px",
+                md: "18px",
+                lg: "20px",
+              },
+            }}
             fontWeight="regular"
           >
             It's Dosh Capital Investment!

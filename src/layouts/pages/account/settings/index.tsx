@@ -36,51 +36,51 @@ function Settings(): JSX.Element {
   const [isFormComplete, setIsFormComplete] = useState(false);
 
   return (
-    <BaseLayout>
-      <MDBox mt={4}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={3}>
-            <Sidenav />
-          </Grid>
-          <Grid item xs={12} lg={9}>
-            <MDBox mb={3}>
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <Header />
-                </Grid>
-                <Grid item xs={12}>
-                  <CreatePool />
-                </Grid>
-                {/* deposite components */}
-                <Grid item xs={12}>
-                  <Deposite
-                    isFormComplete={isFormComplete}
-                    formValues={formValues}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <CreatePool />
-                </Grid>
+    // <BaseLayout>
+    <MDBox mt={4}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} lg={3}>
+          <Sidenav />
+        </Grid>
+        <Grid item xs={12} lg={9}>
+          <MDBox mb={3}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Header />
+              </Grid>
+              <Grid item xs={12}>
+                <CreatePool />
+              </Grid>
+              {/* deposite components */}
+              <Grid item xs={12}>
+                <Deposite
+                  isFormComplete={isFormComplete}
+                  formValues={formValues}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <CreatePool />
+              </Grid>
 
-                <Grid item xs={12}>
-                  <MyDepositedPool />
-                </Grid>
+              <Grid item xs={12}>
+                <MyDepositedPool />
+              </Grid>
 
-                {/* basicinfo components */}
-                <Grid item xs={12}>
-                  <BasicInfo
-                    setFormValues={setFormValues}
-                    setFormComplete={setIsFormComplete}
-                  />
-                </Grid>
+              {/* basicinfo components */}
+              <Grid item xs={12}>
+                <BasicInfo
+                  setFormValues={setFormValues}
+                  setFormComplete={setIsFormComplete}
+                />
+              </Grid>
 
-                <Grid item xs={12}>
-                  <ChangePassword />
-                </Grid>
-                <Grid item xs={12}>
-                  <Authentication />
-                </Grid>
-                {/* <Grid item xs={12}>
+              <Grid item xs={12}>
+                <ChangePassword />
+              </Grid>
+              <Grid item xs={12}>
+                <Authentication />
+              </Grid>
+              {/* <Grid item xs={12}>
                   <Accounts />
                 </Grid>
                 <Grid item xs={12}>
@@ -89,15 +89,15 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Sessions />
                 </Grid> */}
-                <Grid item xs={12}>
-                  <DeleteAccount />
-                </Grid>
+              <Grid item xs={12}>
+                <DeleteAccount />
               </Grid>
-            </MDBox>
-          </Grid>
+            </Grid>
+          </MDBox>
         </Grid>
-      </MDBox>
-    </BaseLayout>
+      </Grid>
+    </MDBox>
+    // </BaseLayout>
   );
 }
 

@@ -92,7 +92,7 @@ function DefaultCard({
                 size="small"
                 sx={{
                   display: "block",
-                  padding: "0 30px",
+                  padding: "0 15px",
                   fontSize: "18px",
                   color: "#fff",
                   textAlign: "right",
@@ -101,7 +101,7 @@ function DefaultCard({
                   }`,
                 }}
               >
-                ${count}
+                ${count}.00
               </Button>
               {/* ) : ( */}
               {/* <MDTypography
@@ -156,6 +156,7 @@ function DefaultCard({
                 fontWeight="bold"
                 textAlign="right"
                 sx={{ fontSize: "16px" }}
+                marginTop="8px"
               >
                 {count2}
               </MDTypography>
@@ -168,13 +169,15 @@ function DefaultCard({
                 variant="button"
                 fontWeight="bold"
                 color={percentage2.color}
+                sx={{ fontSize: "12px" }}
+                marginTop="8px"
+                display="block"
               >
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   marginRight="5px"
                   color={darkMode ? "text" : "secondary"}
-                  sx={{ fontSize: "10px" }}
                 >
                   {percentage2.label}
                 </MDTypography>

@@ -71,7 +71,7 @@
   }
 
   .home_text {
-    font-size: 25px !important;
+    font-size: 28px !important;
     line-height: 43px !important;
   }
 
@@ -102,7 +102,7 @@
 .css-1xw3iwd {
   margin-top: 0px !important;
   padding-top: 64px !important;
-  background-color: red !important;
+  /* background-color:  !important; */
 }
 
 .css-1dur2uz-MuiPaper-root-MuiDialog-paper {
@@ -288,9 +288,9 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     margin-right: 0 !important;
   }
 
-  .css-1vcu4nh-MuiGrid-root>.MuiGrid-item {
+  /* .css-1vcu4nh-MuiGrid-root>.MuiGrid-item {
     padding-top: 180px !important;
-  }
+  } */
 
   .css-nkchhw {
     padding: 0 !important;

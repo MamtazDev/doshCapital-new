@@ -31,6 +31,7 @@ import Header from "layouts/pages/profile/components/Header";
 import { useMaterialUIController } from "context";
 import { botsData } from "data/bots";
 import ComplexProductCard from "examples/Cards/ProductCards/ComplexProductCard";
+import { Container } from "@mui/material";
 
 function Products(): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
@@ -88,28 +89,32 @@ function Products(): JSX.Element {
         <DashboardNavbar light absolute />
       </MDBox> */}
       <Header />
-      <MDBox pb={3}>
-        <Grid container alignItems="center">
-          <Grid item xs={12} md={7}>
-            <MDBox mb={1}>
-              <MDTypography variant="h5">
-                Some of Our Awesome Products
-              </MDTypography>
-            </MDBox>
-            <MDBox mb={2}>
-              <MDTypography variant="body2" color="text">
-                This is the paragraph where you can write more details about
-                your products. Keep you user engaged by providing meaningful
-                information.
-              </MDTypography>
-            </MDBox>
+      <MDBox pb={3} px={3}>
+        <Container>
+          <Grid container alignItems="center">
+            <Grid item xs={12} md={7}>
+              <MDBox mb={1}>
+                <MDTypography variant="h5">
+                  Some of Our Awesome Products
+                </MDTypography>
+              </MDBox>
+              <MDBox mb={2}>
+                <MDTypography variant="body2" color="text" textAlign="justify">
+                  Stay ahead of the game with the advancement of my AI, “what
+                  humans call Artificial”, we will soon have my Trading Robots
+                  analysing the markets, trading using Knowledge Fusion, Logical
+                  Algorithms & Data Science, placing trades for you, while you
+                  sleep!
+                </MDTypography>
+              </MDBox>
+            </Grid>
+            {/* <Grid item xs={12} md={5} sx={{ textAlign: "right" }}>
+              <MDButton variant="gradient" color="info">
+                <Icon>add</Icon>&nbsp; Add New
+              </MDButton>
+            </Grid> */}
           </Grid>
-          <Grid item xs={12} md={5} sx={{ textAlign: "right" }}>
-            <MDButton variant="gradient" color="info">
-              <Icon>add</Icon>&nbsp; Add New
-            </MDButton>
-          </Grid>
-        </Grid>
+        </Container>
         <MDBox mt={5}>
           <Grid container spacing={3}>
             {bots.map((product) => (
@@ -127,6 +132,7 @@ function Products(): JSX.Element {
           </Grid>
         </MDBox>
       </MDBox>
+
       <Footer />
     </DashboardLayout>
   );

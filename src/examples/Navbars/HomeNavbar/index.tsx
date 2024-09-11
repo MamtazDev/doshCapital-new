@@ -147,9 +147,9 @@ function HomeNavbar({
     function handleScroll(e: any) {
       if (window.scrollY > 100) {
         navRef.current.style.backgroundColor = `black`;
-        navRef.current.style.borderRadius = `20px`;
-        navRef.current.style.width = `98.1%`;
-        navRef.current.style.marginLeft = `16px`;
+        // navRef.current.style.borderRadius = `20px`;
+        // navRef.current.style.width = `98.1%`;
+        // navRef.current.style.marginLeft = `16px`;
       } else {
         navRef.current.style.backdropFilter = `none`;
         navRef.current.style.backgroundColor = `transparent`;
@@ -166,7 +166,8 @@ function HomeNavbar({
       <MDBox
         ref={navRef}
         py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
+        // px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
+        px={2}
         width="calc(100%)"
         // shadow={transparent ? "none" : "md"}
         color={light ? "white" : "dark"}
@@ -202,7 +203,7 @@ function HomeNavbar({
                 <img
                   src={doshLogo}
                   alt="logo of doshcapital"
-                  width={mobileView ? "200" : "300"}
+                  width={mobileView ? "300" : "300"}
                 />
               </MDBox>
               <MDBox
