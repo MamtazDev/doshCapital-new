@@ -55,22 +55,15 @@ function Configurator(): JSX.Element {
     | "dark"
   )[] = ["primary", "dark", "info", "success", "warning", "error"];
 
-  // Use the useEffect hook to change the button state for the sidenav type based on window size.
   useEffect(() => {
-    // A function that sets the disabled state of the buttons for the sidenav type.
-    function handleDisabled() {
-      return window.innerWidth > 1200 ? setDisabled(false) : setDisabled(true);
+    if (darkMode) {
+      setWhiteSidenav(dispatch, false);
+      setTransparentSidenav(dispatch, false);
+    } else {
+      setWhiteSidenav(dispatch, true);
+      setTransparentSidenav(dispatch, false);
     }
-
-    // The event listener that's calling the handleDisabled function when resizing the window.
-    window.addEventListener("resize", handleDisabled);
-
-    // Call the handleDisabled function to set the state with the initial value.
-    handleDisabled();
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleDisabled);
-  }, []);
+  }, [darkMode, dispatch]);
 
   const handleCloseConfigurator = () => setOpenConfigurator(dispatch, false);
   const handleTransparentSidenav = () => {
@@ -235,14 +228,14 @@ function Configurator(): JSX.Element {
               disabled={disabled}
               fullWidth
               sx={
-                !transparentSidenav && !whiteSidenav
-                  ? sidenavTypeActiveButtonStyles
-                  : sidenavTypeButtonsStyles
+                !transparentSidenav && !whiteSidenav && darkMode
+                  ? sidenavTypeActiveButtonStyles // Apply active styles when dark sidenav is selected in dark mode
+                  : sidenavTypeButtonsStyles // Default styles
               }
             >
               Dark
             </MDButton>
-            
+
             <MDBox sx={{ mx: 1, width: "8rem", minWidth: "8rem" }}>
               <MDButton
                 color="dark"
@@ -252,8 +245,8 @@ function Configurator(): JSX.Element {
                 fullWidth
                 sx={
                   transparentSidenav && !whiteSidenav
-                    ? sidenavTypeActiveButtonStyles
-                    : sidenavTypeButtonsStyles
+                    ? sidenavTypeActiveButtonStyles // Active styles for transparent sidenav
+                    : sidenavTypeButtonsStyles // Default styles
                 }
               >
                 Transparent
@@ -267,9 +260,9 @@ function Configurator(): JSX.Element {
               disabled={disabled}
               fullWidth
               sx={
-                whiteSidenav && !transparentSidenav
-                  ? sidenavTypeActiveButtonStyles
-                  : sidenavTypeButtonsStyles
+                whiteSidenav && !transparentSidenav && !darkMode
+                  ? sidenavTypeActiveButtonStyles // Active styles when white sidenav is selected in light mode
+                  : sidenavTypeButtonsStyles // Default styles
               }
             >
               White
