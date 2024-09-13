@@ -25,6 +25,7 @@ const CreatePool = () => {
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
   const [maxNumberPeople, setMaxNumberPeople] = useState<string>("20");
+  const [clientId, setClientId] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -39,6 +40,10 @@ const CreatePool = () => {
 
     const amountOfDeposite = (Number(poolAmount) / maxPeople).toFixed(2);
     setDepositedAmount(amountOfDeposite);
+  };
+  const handleClientChange = (event: SelectChangeEvent<string>) => {
+    const id = Number(event.target.value);
+    setClientId(event.target.value);
   };
 
   const handlePoolAmountChange = (event: SelectChangeEvent<string>) => {
@@ -143,8 +148,8 @@ const CreatePool = () => {
               labelId="client-id"
               id="client-id"
               label="Client ID"
-              value={maxNumberPeople}
-              onChange={handleMaxPeopleChange}
+              value={clientId}
+              onChange={handleClientChange}
               sx={{ height: "100%" }}
             >
               {[
