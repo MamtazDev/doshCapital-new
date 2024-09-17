@@ -25,7 +25,6 @@ const CreatePool = () => {
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
   const [maxNumberPeople, setMaxNumberPeople] = useState<string>("20");
-  const [clientId, setClientId] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -40,10 +39,6 @@ const CreatePool = () => {
 
     const amountOfDeposite = (Number(poolAmount) / maxPeople).toFixed(2);
     setDepositedAmount(amountOfDeposite);
-  };
-  const handleClientChange = (event: SelectChangeEvent<string>) => {
-    const id = Number(event.target.value);
-    setClientId(event.target.value);
   };
 
   const handlePoolAmountChange = (event: SelectChangeEvent<string>) => {
@@ -107,12 +102,13 @@ const CreatePool = () => {
               labelId="max-people-label"
               id="max-people"
               label="Max Number People"
-              value={maxNumberPeople}
-              onChange={handleMaxPeopleChange}
+              // value={maxNumberPeople}
+              // onChange={handleMaxPeopleChange}
               sx={{ height: "100%" }}
             >
-              <MenuItem value="5">DOSH-0011</MenuItem>
-              <MenuItem value="DOSH-0011">DOSH-0012</MenuItem>
+              <MenuItem value="5">0</MenuItem>
+              <MenuItem value="5">20</MenuItem>
+              {/* <MenuItem value="DOSH-0011">DOSH-0012</MenuItem>
               <MenuItem value="DOSH-0011">DOSH-0013</MenuItem>
               <MenuItem value="DOSH-0011">DOSH-0014</MenuItem>
               <MenuItem value="DOSH-0011">DOSH-0015</MenuItem>
@@ -130,7 +126,7 @@ const CreatePool = () => {
               <MenuItem value="DOSH-0011">DOSH-00117</MenuItem>
               <MenuItem value="DOSH-0011">DOSH-00118</MenuItem>
               <MenuItem value="DOSH-0011">DOSH-00119</MenuItem>
-              <MenuItem value="DOSH-0011">DOSH-00120</MenuItem>
+              <MenuItem value="DOSH-0011">DOSH-00120</MenuItem> */}
             </Select>
           </FormControl>
           {depositedAmount && (
@@ -148,8 +144,8 @@ const CreatePool = () => {
               labelId="client-id"
               id="client-id"
               label="Client ID"
-              value={clientId}
-              onChange={handleClientChange}
+              value={maxNumberPeople}
+              onChange={handleMaxPeopleChange}
               sx={{ height: "100%" }}
             >
               {[
