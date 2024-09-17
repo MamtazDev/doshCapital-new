@@ -45,19 +45,40 @@ const CreatePool = () => {
     setPoolAmount(event.target.value);
   };
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const form = e.target as HTMLFormElement;
+  //   const name = form?.name?.value;
+  //   const amount = Number(poolAmount);
+  //   const maxNumberPeopleValue = Number(maxNumberPeople);
+  //   const creatorInfo = userInfo?.userId;
+  //   const data = {
+  //     creatorInfo,
+  //     name,
+  //     amount,
+  //     maxNumberPeople: maxNumberPeopleValue,
+  //   };
+  //   await axios.post(`${BASE_URL}/api/pools/add`, data);
+  //   navigate("/dashboards/portfolio");
+  // };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const name = form.name.value;
+
+    // Explicitly cast form.name as HTMLInputElement
+    const name = (form.name as unknown as HTMLInputElement).value;
     const amount = Number(poolAmount);
     const maxNumberPeopleValue = Number(maxNumberPeople);
     const creatorInfo = userInfo?.userId;
+
     const data = {
       creatorInfo,
       name,
       amount,
       maxNumberPeople: maxNumberPeopleValue,
     };
+
     await axios.post(`${BASE_URL}/api/pools/add`, data);
     navigate("/dashboards/portfolio");
   };
@@ -67,7 +88,7 @@ const CreatePool = () => {
       <MDBox p={3}>
         <MDTypography variant="h5">Create Pool</MDTypography>
       </MDBox>
-      <MDBox component="form" pb={3} px={3} onSubmit={handleSubmit}>
+      <MDBox component="form" pb={3} px={3} onSubmit={() => handleSubmit}>
         <MDBox mb={2}>
           <MDInput
             type="text"

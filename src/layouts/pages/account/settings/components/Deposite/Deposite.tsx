@@ -57,10 +57,10 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
 
   const [open, setOpen] = useState(false);
 
-  const poolAmountMap = {
-    "DOSH-000": "1000",
-    "DOSH-100": "2000",
-    "DOSH-200": "3000",
+  const poolAmountMap: { [key: string]: string } = {
+    "DOSH-000": "100",
+    "DOSH-100": "200",
+    "DOSH-200": "300",
   };
 
   // const handleChange = (event: SelectChangeEvent) => {
@@ -74,7 +74,7 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   //   setSelectedAmount(amount);
   // };
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: SelectChangeEvent<string>) => {
     const selectedPool = event.target.value;
     setSelectPoolName(selectedPool);
     setSelectedAmount(poolAmountMap[selectedPool] || "");

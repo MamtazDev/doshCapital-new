@@ -26,7 +26,6 @@ function Sidenav(): JSX.Element {
     { icon: "campaign", label: "notifications", href: "notifications" },
     { icon: "settings_applications", label: "sessions", href: "sessions" },
     { icon: "delete", label: "delete account", href: "delete-account" },
-    
   ];
 
   const renderSidenavItems = sidenavItems.map(({ icon, label, href }, key) => {

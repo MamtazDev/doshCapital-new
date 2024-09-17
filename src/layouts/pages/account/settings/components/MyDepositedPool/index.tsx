@@ -33,16 +33,16 @@ const MyDepositedPool = () => {
         });
 
         setUserDepositedPool(poolInfoArray);
-        console.log("userDepositedPool", userDepositedPool)
+        console.log("userDepositedPool", userDepositedPool);
       }
     } catch (error) {
-      console.error('Error fetching user deposits:', error);
+      console.error("Error fetching user deposits:", error);
     }
   };
 
   useEffect(() => {
     getUserDeposites();
-    console.log("userInfo?.userId", userInfo?.userId)
+    console.log("userInfo?.userId", userInfo?.userId);
   }, [userInfo?.userId]);
 
   return (
@@ -52,7 +52,7 @@ const MyDepositedPool = () => {
       </MDBox>
 
       <Box p={2}>
-        <Grid  spacing={2}>
+        <Grid spacing={2}>
           <Grid item xs={12}>
             <Box p={2}>
               <TableData

@@ -35,6 +35,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
       <DefaultNavbar
         routes={pageRoutes}
         action={{
+          icon: "",
           type: "internal",
           route: "/authentication/sign-up/cover",
           label: "Sign Up",

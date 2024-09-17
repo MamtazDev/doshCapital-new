@@ -5,7 +5,7 @@ import Table from "@mui/material/Table";
 import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 import { Theme } from "@mui/material/styles";
-import InvoiceLogo from "../../../../assets/images/DoshLogo.png"
+import InvoiceLogo from "../../../../assets/images/DoshLogo.png";
 
 //  React TS components
 import MDBox from "components/MDBox";
@@ -49,8 +49,8 @@ function Invoice(): JSX.Element {
                       mb={1}
                     />
                     <MDTypography variant="h6" fontWeight="medium">
-                    107 Badajoz Road, North Ryde <br />
-                    NSW – 2113 Sydney, Australia
+                      107 Badajoz Road, North Ryde <br />
+                      NSW – 2113 Sydney, Australia
                     </MDTypography>
                     <MDBox mt={1} mb={2}>
                       <MDTypography
@@ -477,7 +477,7 @@ function Invoice(): JSX.Element {
                         variant="h6"
                         fontWeight="regular"
                       >
-                        support@dosh.com.au 
+                        {`support@dosh.com.au`}
                       </MDTypography>
                     </MDTypography>
                   </Grid>

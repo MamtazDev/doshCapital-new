@@ -15,7 +15,13 @@ import FormField from "layouts/pages/account/components/FormField";
 import selectData from "layouts/pages/account/settings/components/BasicInfo/data/selectData";
 import MDButton from "components/MDButton";
 
-function BasicInfo({ setFormComplete, setFormValues }: { setFormComplete: (isComplete: boolean) => void; setFormValues: (values: any) => void; }): JSX.Element {
+function BasicInfo({
+  setFormComplete,
+  setFormValues,
+}: {
+  setFormComplete: (isComplete: boolean) => void;
+  setFormValues: (values: any) => void;
+}): JSX.Element {
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",

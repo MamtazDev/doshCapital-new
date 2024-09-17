@@ -15,6 +15,7 @@ import { BASE_URL } from "config/config";
 import axios from "axios";
 import WifiIcon from "@mui/icons-material/Wifi";
 import MDButton from "components/MDButton";
+import { StripeCardNumberElementOptions } from "@stripe/stripe-js";
 
 interface CreditCardModalProps {
   open: boolean;
@@ -23,19 +24,18 @@ interface CreditCardModalProps {
   holder: string;
   expires: string;
   clientSecret: string;
-  selectPoolName:any;
-  formValues:any;
-  selectedAmount:any;
+  selectPoolName: any;
+  formValues: any;
+  selectedAmount: any;
 }
 
-const CARD_OPTIONS = {
+const CARD_OPTIONS: StripeCardNumberElementOptions = {
   iconStyle: "solid", // or "default"
   style: {
     base: {
       color: "#ffffff",
       fontSize: "16px",
       fontWeight: 400, // Moved inside 'base'
-      width: "100%", // Moved inside 'base'
     },
     invalid: {
       iconColor: "#ffc7ee",
@@ -62,9 +62,8 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
   const [cvv, setCvv] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const {firstName, phone , location} = formValues
-  console.log("holder formValues", firstName, phone, location, formValues )
-  
+  const { firstName, phone, location } = formValues;
+  console.log("holder formValues", firstName, phone, location, formValues);
 
   const stripe = useStripe();
   const elements = useElements();

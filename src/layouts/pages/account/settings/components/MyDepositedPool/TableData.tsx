@@ -1,11 +1,21 @@
-// TableData.tsx
-import React from 'react';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
-import { TextAlign } from './types'; 
+import React from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import { TextAlign } from "chart.js";
 
 interface TableDataProps {
   table: {
-    columns: Array<{ Header: string; accessor: string; width?: string; align?: TextAlign }>;
+    columns: Array<{
+      Header: string;
+      accessor: string;
+      width?: string;
+      align?: TextAlign;
+    }>;
     rows: Array<{ [key: string]: React.ReactNode }>;
   };
   entriesPerPage?: boolean;
@@ -22,7 +32,11 @@ const TableData: React.FC<TableDataProps> = ({ table }) => {
           {table.columns.map((column) => (
             <TableCell
               key={column.accessor}
-              style={{ width:'800px', textAlign: column.align , color: 'white',}}
+              style={{
+                width: "800px",
+                textAlign: column.align,
+                color: "white",
+              }}
             >
               {column.Header}
             </TableCell>

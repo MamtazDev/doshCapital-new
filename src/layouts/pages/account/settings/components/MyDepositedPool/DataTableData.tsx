@@ -1,7 +1,7 @@
 import DefaultCell from "layouts/dashboards/sales/components/DefaultCell";
 import ProductCell from "layouts/dashboards/sales/components/ProductCell";
 import nikeV22 from "assets/images/ecommerce/blue-shoe.jpeg";
-import { TextAlign } from "./types";
+import { TextAlign } from "chart.js";
 
 const dataTableData = {
   columns: [
