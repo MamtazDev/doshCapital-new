@@ -24,6 +24,7 @@ const CreatePool = () => {
   const { userInfo } = useContext(DataContext);
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
+  const [poolName, setPoolName] = useState<string>("");
   const [maxNumberPeople, setMaxNumberPeople] = useState<string>("20");
 
   const navigate = useNavigate();
@@ -43,6 +44,9 @@ const CreatePool = () => {
 
   const handlePoolAmountChange = (event: SelectChangeEvent<string>) => {
     setPoolAmount(event.target.value);
+  };
+  const handlePoolNameChange = (event: SelectChangeEvent<string>) => {
+    setPoolName(event.target.value);
   };
 
   // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,7 +93,7 @@ const CreatePool = () => {
         <MDTypography variant="h5">Create Pool</MDTypography>
       </MDBox>
       <MDBox component="form" pb={3} px={3} onSubmit={() => handleSubmit}>
-        <MDBox mb={2}>
+        {/* <MDBox mb={2}>
           <MDInput
             type="text"
             label="Pool Name"
@@ -98,6 +102,23 @@ const CreatePool = () => {
             defaultValue="DOSH-000"
             required
           />
+        </MDBox> */}
+        <MDBox mb={2}>
+          <FormControl fullWidth sx={{ height: "45px" }}>
+            <InputLabel id="pool-name">Pool Name</InputLabel>
+            <Select
+              labelId="pool-name"
+              id="pool-name"
+              label="Pool name"
+              value={poolName}
+              onChange={handlePoolNameChange}
+              sx={{ height: "100%" }}
+            >
+              <MenuItem value="000">DOSH-000</MenuItem>
+              <MenuItem value="100">DOSH-100</MenuItem>
+              <MenuItem value="200">DOSH-200</MenuItem>
+            </Select>
+          </FormControl>
         </MDBox>
 
         <MDBox mb={2}>
@@ -171,25 +192,25 @@ const CreatePool = () => {
             >
               {[
                 "D-001",
-                "D-003",
                 "D-002",
+                "D-003",
                 "D-004",
                 "D-005",
                 "D-006",
                 "D-007",
                 "D-008",
                 "D-009",
-                "D-0010",
-                "D-0011",
-                "D-0012",
-                "D-0013",
-                "D-0014",
-                "D-0015",
-                "D-0016",
-                "D-0017",
-                "D-0018",
-                "D-0019",
-                "D-0020",
+                "D-010",
+                "D-011",
+                "D-012",
+                "D-013",
+                "D-014",
+                "D-015",
+                "D-016",
+                "D-017",
+                "D-018",
+                "D-019",
+                "D-020",
               ].map((data, index) => (
                 <MenuItem key={index} value={data}>
                   {data}

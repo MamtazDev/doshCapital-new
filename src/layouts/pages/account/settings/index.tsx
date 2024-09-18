@@ -48,9 +48,6 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Header />
                 </Grid>
-                <Grid item xs={12}>
-                  <CreatePool />
-                </Grid>
                 {/* deposite components */}
                 <Grid item xs={12}>
                   <Deposite

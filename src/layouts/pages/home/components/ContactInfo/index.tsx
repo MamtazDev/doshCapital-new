@@ -23,47 +23,52 @@ function ContactInfo(): JSX.Element {
             backgroundImage: `url(${contactImg})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "30px 0",
+            padding: "50px 0",
             backgroundBlendMode: "overlay",
             backgroundColor: "#373232",
             borderRadius: "20px",
           }}
         >
           <Container>
-            <Grid container rowSpacing={"20px"}>
+            <Grid container rowSpacing={"20px"} alignItems={"center"}>
               <Grid md={6}>
-                <MDBox sx={{ marginBottom: "40px" }}>
-                  <MDBox sx={{ paddingBottom: "20px" }}>
-                    <MDTypography variant="h1" sx={{ paddingBottom: "10px" }}>
+                <MDBox>
+                  <MDBox sx={{ paddingBottom: "20px" }} mt={4}>
+                    <MDTypography
+                      variant="h2"
+                      color="white"
+                      // sx={{ paddingBottom: "5px" }}
+                    >
                       Get In Touch
                     </MDTypography>
                     <MDTypography
                       variant="p"
                       fontWeight="normal"
                       sx={{ color: "#A6A6A6" }}
-                      fontSize="16px"
+                      fontSize="14px"
                     >
                       You need more information? Check what other persons are
-                      saying about our product. They are very happy with their
+                      saying <br />
+                      about our product. They are very happy with their
                       purchase.
                     </MDTypography>
                   </MDBox>
 
-                  <MDBox sx={{ display: "flex", gap: "20px" }}>
+                  <MDBox sx={{ display: "flex", gap: "10px" }}>
                     <MDBox mt={1}>
                       <AddLocationIcon
                         style={{ color: "white" }}
-                        fontSize="large"
+                        fontSize="medium"
                       />
                     </MDBox>
 
                     <MDBox>
-                      <MDTypography variant="h3">
+                      <MDTypography variant="h4" color="white">
                         Find us at the office
                       </MDTypography>
                       <MDTypography
                         variant="p"
-                        sx={{ fontSize: "16px", color: "#A6A6A6" }}
+                        sx={{ fontSize: "13px", color: "#A6A6A6" }}
                       >
                         Bld Mihail Kogainiceanu, nr, 8, 7652, <br /> Bucharest,{" "}
                         <br /> Romania
@@ -71,18 +76,20 @@ function ContactInfo(): JSX.Element {
                     </MDBox>
                   </MDBox>
                 </MDBox>
-                <MDBox>
-                  <MDBox sx={{ display: "flex", gap: "20px" }}>
+                <MDBox mt={3}>
+                  <MDBox sx={{ display: "flex", gap: "10px" }}>
                     <MDBox mt={1}>
-                      <CallIcon style={{ color: "white" }} fontSize="large" />
+                      <CallIcon style={{ color: "white" }} fontSize="medium" />
                     </MDBox>
 
                     <MDBox>
-                      <MDTypography variant="h3">Give us a ring</MDTypography>
+                      <MDTypography variant="h4" color="white">
+                        Give us a ring
+                      </MDTypography>
                       <MDTypography
                         variant="p"
                         color="secondary"
-                        sx={{ fontSize: "16px", color: "#A6A6A6" }}
+                        sx={{ fontSize: "13px", color: "#A6A6A6" }}
                       >
                         Michel Jordan <br /> +40 762 321 762 <br /> Mon - Fri,
                         8:00 - 22:00
