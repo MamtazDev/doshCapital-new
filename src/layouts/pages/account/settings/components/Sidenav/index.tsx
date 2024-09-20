@@ -16,8 +16,9 @@ function Sidenav(): JSX.Element {
 
   const sidenavItems = [
     { icon: "person", label: "profile", href: "profile" },
-    { icon: "paid", label: "deposite", href: "deposite" },
     { icon: "add_box", label: "create pool", href: "create-pool" },
+    { icon: "paid", label: "deposite", href: "deposite" },
+    { icon: "add_box", label: "Pool Members", href: "pool-members" },
     { icon: "paid", label: "my Deposite", href: "myDeposite" },
     { icon: "receipt_long", label: "basic info", href: "basic-info" },
     { icon: "lock", label: "change password", href: "change-password" },

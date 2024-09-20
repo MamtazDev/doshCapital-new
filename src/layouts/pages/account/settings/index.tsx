@@ -48,6 +48,9 @@ function Settings(): JSX.Element {
                 <Grid item xs={12}>
                   <Header />
                 </Grid>
+                <Grid item xs={12}>
+                  <CreatePool isMember={false} />
+                </Grid>
                 {/* deposite components */}
                 <Grid item xs={12}>
                   <Deposite
@@ -55,8 +58,9 @@ function Settings(): JSX.Element {
                     formValues={formValues}
                   />
                 </Grid>
+
                 <Grid item xs={12}>
-                  <CreatePool />
+                  <CreatePool isMember={true} />
                 </Grid>
 
                 <Grid item xs={12}>

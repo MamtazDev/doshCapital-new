@@ -58,9 +58,9 @@ const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   const [open, setOpen] = useState(false);
 
   const poolAmountMap: { [key: string]: string } = {
-    "DOSH-000": "100",
-    "DOSH-100": "200",
-    "DOSH-200": "300",
+    "DOSH-000": "7500",
+    "DOSH-100": "15000",
+    "DOSH-200": "20000",
   };
 
   // const handleChange = (event: SelectChangeEvent) => {
