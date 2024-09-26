@@ -1,9 +1,5 @@
-import { useState } from "react";
-import InputAdornment from "@mui/material/InputAdornment";
-import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
-import { CreditCard, Favorite, RingVolume } from "@mui/icons-material";
-import mastercard from "../../../../../../assets/images/logos/mastercard.png";
-import pattern from "../../../../../../assets/images/shapes/pattern.svg";
+import WifiIcon from "@mui/icons-material/Wifi";
+import { Box, Modal } from "@mui/material";
 import {
   CardCvcElement,
   CardExpiryElement,
@@ -11,11 +7,14 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import { BASE_URL } from "config/config";
-import axios from "axios";
-import WifiIcon from "@mui/icons-material/Wifi";
-import MDButton from "components/MDButton";
 import { StripeCardNumberElementOptions } from "@stripe/stripe-js";
+import axios from "axios";
+import MDButton from "components/MDButton";
+import { BASE_URL } from "config/config";
+import { useState } from "react";
+import LogoImg from "../../../../../../assets/images/logo.png";
+import mastercard from "../../../../../../assets/images/logos/mastercard.png";
+import pattern from "../../../../../../assets/images/shapes/pattern.svg";
 
 interface CreditCardModalProps {
   open: boolean;
@@ -44,7 +43,6 @@ const CARD_OPTIONS: StripeCardNumberElementOptions = {
   },
 };
 
-// const CreditCardModal: React.FC<CreditCardModalProps> = ({formValues, open,selectPoolName,selectedAmount, clientSecret, handleClose, number, holder, expires }) => {
 const CreditCardModal: React.FC<CreditCardModalProps> = ({
   open,
   formValues,
@@ -141,7 +139,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 650,
+          width: 550,
           padding: 4,
           backgroundColor: "#333",
           borderRadius: "15px",
@@ -171,294 +169,172 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           zIndex: 1,
         }}
       >
-        <Box>
+        <Box width="100%">
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "end",
               justifyContent: "space-between",
               gap: "30px",
             }}
           >
             <div style={{ width: "100%" }}>
               <WifiIcon className="wifi_icon" />
-              <CardNumberElement
-                options={{
-                  ...CARD_OPTIONS,
-                  placeholder: "4562   1122   4594   7852",
-                }}
-                className="payment_input"
-              />
             </div>
-            <MDButton
-              variant="contained"
-              color="info"
-              sx={{
-                width: "20%",
-                padding: 1,
-                alignSelf: "flex-end",
-                color: "white",
-              }}
-            >
-              <img
-                width={15}
-                src="https://static-00.iconduck.com/assets.00/paypal-icon-1735x2048-7umw9cq7.png"
-                alt=""
-              />
-            </MDButton>
+            <div style={{ position: "absolute", top: "20px", right: "20px" }}>
+              <img width={50} src={LogoImg} alt="" />
+            </div>
           </div>
+          <Box>
+            <Box>
+              <Box marginBottom={1}>
+                <label
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "400",
+                    opacity: "0.8",
+                  }}
+                >
+                  Card Holder
+                </label>
+                <input
+                  className="card_holder_input"
+                  type="text"
+                  placeholder=""
+                />
+              </Box>
+              <Box marginBottom={1}>
+                <label
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "400",
+                    opacity: "0.8",
+                  }}
+                >
+                  Card Number
+                </label>
+                <CardNumberElement
+                  options={{
+                    ...CARD_OPTIONS,
+                    placeholder: "",
+                  }}
+                  className="payment_input"
+                />
+              </Box>
+              <Box display={"flex"} alignItems={"center"} marginBottom={1}>
+                <Box
+                  style={{
+                    display: "flex",
+                    alignItems: "end",
+                    gap: "20px",
+                    width: "100%",
+                  }}
+                >
+                  <Box
+                    style={{
+                      display: "flex",
+                      alignItems: "end",
+                      gap: "20px",
+                    }}
+                  >
+                    <Box>
+                      <label
+                        style={{
+                          fontSize: "0.875rem",
+                          fontWeight: "400",
+                          opacity: "0.8",
+                        }}
+                      >
+                        Expires
+                      </label>
+                      <CardExpiryElement
+                        options={{
+                          ...CARD_OPTIONS,
+                          placeholder: "",
+                        }}
+                        className="payment_input_expire"
+                      />
+                    </Box>
+                    <Box>
+                      <label
+                        style={{
+                          fontSize: "0.875rem",
+                          fontWeight: "400",
+                          opacity: "0.8",
+                        }}
+                      >
+                        CVV
+                      </label>
+                      <CardCvcElement
+                        options={{
+                          ...CARD_OPTIONS,
+                          placeholder: "",
+                        }}
+                        className="payment_input_cv"
+                      />
+                    </Box>
+                  </Box>
 
-          <div className="flex-container">
-            <div style={{ flexShrink: "0" }}>
-              <label
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "400",
-                  opacity: "0.8",
-                }}
-              >
-                Card Holder
-              </label>
-              <input
-                className="card_holder_input"
-                type="text"
-                placeholder="jack peterson"
-              />
-            </div>
-            <div style={{ flexShrink: "0" }}>
-              <label
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "400",
-                  opacity: "0.8",
-                }}
-              >
-                Expires
-              </label>
-              <CardExpiryElement
-                options={{
-                  ...CARD_OPTIONS,
-                  placeholder: "11/22",
-                }}
-                className="payment_input_expire"
-              />
-            </div>
-            <div style={{ flexShrink: "0" }}>
-              <label
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "400",
-                  opacity: "0.8",
-                }}
-              >
-                CVC
-              </label>
-              <CardCvcElement
-                options={{
-                  ...CARD_OPTIONS,
-                  placeholder: "123",
-                }}
-                className="payment_input_cv"
-              />
-            </div>
-          </div>
+                  <Box marginLeft="50px">
+                    <MDButton
+                      onClick={handleSubmit}
+                      variant="contained"
+                      color="info"
+                      sx={{
+                        width: "20%",
+                        padding: 1,
+                        marginTop: "8px",
+                        alignSelf: "flex-start",
+                        color: "white",
+                      }}
+                    >
+                      {isLoading ? "Processing.." : "Submit"}
+                    </MDButton>
+                  </Box>
+                </Box>
+
+                <Box position="absolute" right={20} bottom={30}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                  >
+                    <MDButton
+                      variant="contained"
+                      color="info"
+                      sx={{
+                        width: "20%",
+                        height: "64px",
+                        padding: "4px",
+                        alignSelf: "flex-end",
+                        color: "white",
+                        marginBottom: "12px",
+                      }}
+                    >
+                      <img
+                        width={15}
+                        src="https://static-00.iconduck.com/assets.00/paypal-icon-1735x2048-7umw9cq7.png"
+                        alt=""
+                      />
+                    </MDButton>
+
+                    <img
+                      className="master_card"
+                      width={61}
+                      src={mastercard}
+                      alt="MasterCard"
+                    />
+                  </div>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
         </Box>
-        <div
-          className="button-image-container"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "end !important",
-            width: "100%",
-            marginTop: "20px",
-          }}
-        >
-          {/* <Button
-            onClick={handleSubmit}
-            variant="contained"
-            sx={{
-              width: "20%",
-              padding: 1,
-              alignSelf: "flex-start",
-              color: "white",
-            }}
-          >
-            {isLoading ? "Processing.." : "Submit"}
-          </Button> */}
-
-          <MDButton
-            onClick={handleSubmit}
-            variant="contained"
-            color="info"
-            sx={{
-              width: "20%",
-              padding: 1,
-              alignSelf: "flex-end",
-              color: "white",
-            }}
-          >
-            {isLoading ? "Processing.." : "Submit"}
-          </MDButton>
-
-          <img
-            className="master_card"
-            width={61}
-            src={mastercard}
-            alt="MasterCard"
-          />
-        </div>
       </Box>
     </Modal>
-
-    //  </Elements>
   );
 };
 
 export default CreditCardModal;
-
-// export const STRIPE_SK: string =
-//   "sk_test_51NFZaOLLDUmTZxUmmoNiB3NuGqC7qEXJXjHuwTAeboCeaYihKfwQXZQfJUMFHjDigF9pbV4dL05r4PoobuW6ATJR00GmJMXrQ8";
-
-// const createPaymentIntent = async (amountInCents: Number, currency: String) => {
-//   const stripe = Stripe(STRIPE_SK);
-//   // console.log("stripe Intent:", stripe)
-//   try {
-//     const paymentIntent = await stripe.paymentIntents.create({
-//       amount: amountInCents,
-//       currency: currency,
-//     });
-
-//     return paymentIntent.client_secret;
-//   } catch (error) {
-//     console.error("Error on createPayment intent", error);
-//     throw new Error("Failed to create PaymentIntent");
-//   }
-// };
-
-{
-  /* <TextField
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          variant="outlined"
-          placeholder="Card Number"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <CreditCard sx={{ color: '#fff' }} />
-              </InputAdornment>
-
-            ),
-            style: { color: '#fff' },
-          }}
-          inputProps={{ maxLength: 16 }}
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              '& fieldset': { borderColor: '#fff' },
-            },
-            '& .MuiInputBase-root': {
-              '& input': { color: '#fff' },
-            },
-            marginBottom: 2,
-            width: '100%',
-          }}
-        /> */
-}
-
-{
-  /* <CardNumberElement
-          className="payment_input"
-          options={{
-            ...CARD_OPTIONS,
-            placeholder: "Enter card number",
-          }}
-        />
-        <div className="row mt-4">
-          <div className="col-lg-6">
-            <CardExpiryElement
-              options={CARD_OPTIONS}
-              className="payment_input"
-            />
-          </div>
-          <div className="col-lg-6 mt-lg-0 mt-4">
-            <div className="payment_card">
-              <CardCvcElement
-                options={CARD_OPTIONS}
-                className="payment_input"
-              />
-            </div>
-          </div>
-        </div> */
-}
-
-// const handleSubmit = async () => {
-//   console.log('Submitted', { cardNumber, cardHolder, cardExpires, cvv });
-//   setIsLoading(true);
-//   if (!stripe) {
-//     console.log("no Stripe")
-//     setIsLoading(false);
-//     return;
-//   }
-
-//   let pool = "DOSH-100";
-//   let amount = 200;
-
-//   try {
-//     // Define the data to be sent in the POST request
-
-//     const clientSecret = await createPaymentIntent(
-//       amount * 100,
-//       "usd"
-//     );
-
-//     console.log("clientSecret", clientSecret)
-
-//     const cardElement = elements.getElement(CardNumberElement);
-//     const { error, paymentIntent } = await stripe.confirmCardPayment(
-//       clientSecret,
-//       {
-//         payment_method: {
-//           card: cardElement,
-//           billing_details: {
-//             name: `Dusty Achargy`,
-//             address: {
-//               country: "USA",
-//               // postal_code: 1206,
-//             },
-//           },
-//         },
-//       }
-//     );
-
-//     if (error) {
-//       console.error("error", error);
-//       setIsLoading(false);
-
-//     } else if (paymentIntent.status === "succeeded") {
-//       setIsLoading(false);
-
-//       console.log(paymentIntent, "payyyy");
-
-//       const createPaymentData = {
-//         pool: "dfsdfsdf",
-//         amount: amount,
-//       };
-//       const response = await fetch(`${BASE_URL}/api/deposite/payment`, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(createPaymentData),
-//       });
-
-//       if (response.ok) {
-//         const data = await response.json();
-//         console.log('Payment successful:', data);
-//       } else {
-//         console.error('Payment failed:', response.statusText);
-//       }
-//     }
-
-//   } catch (error) {
-//     console.error('Error during payment:', error);
-//   }
-// };

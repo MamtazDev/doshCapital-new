@@ -555,10 +555,12 @@ span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root {
 }
 
 .payment_input {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  width: 60%;
+  background-color: black;
   color: white;
-  border: 1px solid gray;
-  border-radius: 8px;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
   padding: 5px;
 }
 
@@ -567,16 +569,16 @@ span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root {
 }
 
 .card_holder_input {
-  background-color: transparent;
-  border: 1px solid gray;
-  border-radius: 8px;
+  background-color: black;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
   padding: 5px;
   display: block;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
-  width: 100%;
+  width: 60%;
   color: white;
   position: relative;
   z-index: 9999;
@@ -596,12 +598,17 @@ span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root {
 
 .payment_input_expire,
 .payment_input_cv {
+  background-color: #000;
   color: white;
   width: 100% !important;
-  min-width: 150px;
-  border: 1px solid gray;
-  border-radius: 8px;
+  min-width: 75px;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
   padding: 5px;
+}
+
+.payment_input_cv {
+  min-width: 55px;
 }
 
 .css-1vzkduw {
