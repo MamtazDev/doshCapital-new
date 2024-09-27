@@ -124,9 +124,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
       name: selectPoolName,
       amount: selectedAmount,
     };
-
     const response = await axios.post(`${BASE_URL}/api/deposite/payment`, data);
-
     if (response) {
       // const data = await response.json();
       console.log("Payment successful:", response);

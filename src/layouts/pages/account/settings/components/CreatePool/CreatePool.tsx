@@ -28,7 +28,7 @@ const poolAmountMap: { [key: string]: string } = {
 };
 
 const CreatePool = ({ isMember }: { isMember: Boolean }) => {
-  const { userInfo } = useContext(DataContext);
+  const { userInfo, selectedUser, setSelectedUser } = useContext(DataContext);
   const [depositedAmount, setDepositedAmount] = useState<string | null>(null);
   const [poolAmount, setPoolAmount] = useState<string>("");
   const [poolName, setPoolName] = useState<string>("");
@@ -39,8 +39,7 @@ const CreatePool = ({ isMember }: { isMember: Boolean }) => {
   const handleMaxPeopleChange = (event: SelectChangeEvent<string>) => {
     const maxPeople = Number(event.target.value);
     setMaxNumberPeople(maxPeople);
-    console.log("maxPeople", maxPeople);
-
+    setSelectedUser(maxPeople);
     // if (!maxPeople || !poolAmount) {
     //   setDepositedAmount(null);
     //   return;
@@ -48,8 +47,6 @@ const CreatePool = ({ isMember }: { isMember: Boolean }) => {
     // const amountOfDeposite = (Number(poolAmount) / maxPeople).toFixed(2);
     // setDepositedAmount(amountOfDeposite);
   };
-
-  console.log("maxNumberPeople-up", maxNumberPeople);
 
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
 
@@ -60,10 +57,9 @@ const CreatePool = ({ isMember }: { isMember: Boolean }) => {
   const handlePoolNameChange = (event: SelectChangeEvent<string>) => {
     const selectedPool = event.target.value;
     const amountOfDeposite = (
-      Number(poolAmountMap[selectedPool]) / maxNumberPeople
+      Number(poolAmountMap[selectedPool]) / selectedUser
     ).toFixed(2);
-    console.log("amountOfDeposite,", amountOfDeposite);
-    console.log("maxNumberPeople,", maxNumberPeople);
+
     setDepositedAmount(amountOfDeposite);
 
     setPoolName(selectedPool);
