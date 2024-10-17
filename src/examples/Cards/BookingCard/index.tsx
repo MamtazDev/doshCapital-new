@@ -50,7 +50,7 @@ function BookingCard({
           src={image}
           alt={title}
           borderRadius="lg"
-          shadow="md"
+          
           width="100%"
           height="280px"
           position="relative"
@@ -58,7 +58,7 @@ function BookingCard({
         />
         <MDBox
           borderRadius="lg"
-          shadow="md"
+          
           width="100%"
           height="100%"
           position="absolute"
