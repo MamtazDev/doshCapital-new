@@ -137,7 +137,8 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 550,
+          width: " 100%",
+          maxWidth: 550,
           padding: 4,
           backgroundColor: "#333",
           borderRadius: "15px",
@@ -151,6 +152,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           justifyContent: "center",
           alignItems: "flex-start",
           overflow: "hidden",
+          overflowX: "auto",
           "::before": {
             content: '""',
             position: "absolute",
