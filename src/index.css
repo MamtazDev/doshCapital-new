@@ -14,7 +14,7 @@
   width: 90% !important;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   #paddingResponsive {
     padding: "0px 0px" !important;
   }
@@ -71,9 +71,8 @@
   }
 
   .home_text {
-    font-size: 25px !important;
+    font-size: 28px !important;
     line-height: 43px !important;
-
   }
 
   .ppppppp {
@@ -103,7 +102,7 @@
 .css-1xw3iwd {
   margin-top: 0px !important;
   padding-top: 64px !important;
-  background-color: red !important;
+  /* background-color:  !important; */
 }
 
 .css-1dur2uz-MuiPaper-root-MuiDialog-paper {
@@ -185,11 +184,11 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-17ceore-MuiSvgIcon-root {
 }
 
 .css-dg8ndu-MuiButtonBase-root-MuiButton-root {
-  background-color: #A13BB6 !important;
+  background-color: #a13bb6 !important;
 }
 
 .css-1jpt7oq-MuiButtonBase-root-MuiButton-root {
-  background-color: #A13BB6 !important;
+  background-color: #a13bb6 !important;
   color: #fff !important;
   line-height: unset !important;
   min-height: 1.4rem !important;
@@ -211,7 +210,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   padding: 0 !important;
 }
 
-@media(max-width: 550px) {
+@media (max-width: 550px) {
   .css-1rqwpyb {
     width: 100% !important;
   }
@@ -252,7 +251,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     padding: 18px !important;
   }
 
-
   .css-1uci8p7-MuiTypography-root,
   .css-1f4od06-MuiTypography-root {
     font-size: 12px !important;
@@ -264,15 +262,15 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   }
 }
 
-.css-1ggm64l{
+.css-1ggm64l {
   width: 90% !important;
 }
 
-.css-twwm0c{
+.css-twwm0c {
   padding-top: 166px !important;
 }
 
-@media(max-width:550px) {
+@media (max-width: 550px) {
   .css-twwm0c {
     padding: 200px 0 0;
   }
@@ -290,9 +288,9 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     margin-right: 0 !important;
   }
 
-  .css-1vcu4nh-MuiGrid-root>.MuiGrid-item {
+  /* .css-1vcu4nh-MuiGrid-root>.MuiGrid-item {
     padding-top: 180px !important;
-  }
+  } */
 
   .css-nkchhw {
     padding: 0 !important;
@@ -309,7 +307,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   .css-uob07-MuiGrid-root {
     padding-right: 0 !important;
   }
-
 }
 
 .unknowncss {
@@ -331,7 +328,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 .css-3mxn9g-MuiInputBase-root-MuiInput-root:after,
 .css-9bjbn6::after,
 .css-n00w46::after {
-  border-color: #A13BB6 !important;
+  border-color: #a13bb6 !important;
 }
 
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root textarea {
@@ -354,7 +351,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   width: 380px !important;
 }
 
-@media(max-width: 468px) {
+@media (max-width: 468px) {
   .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-colorSecondary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-multiline.css-ir432g {
     width: 250px !important;
   }
@@ -374,7 +371,6 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 
 .css-1x5xr51 {
   background-color: #a13bb6 !important;
-  ;
 }
 
 .css-17b4eun {
@@ -398,20 +394,20 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
 }
 
 .css-1clepfi-MuiTypography-root {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
 }
 
 .css-mr5mm8-MuiTypography-root {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
 }
 
 .css-q25wk7-MuiTypography-root {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
   color: white !important;
 }
 
 .css-1349kmb-MuiTypography-root {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
   color: white !important;
 }
 
@@ -440,12 +436,12 @@ h5.MuiTypography-root.MuiTypography-h5.css-xmfo17 {
 }
 
 h1.MuiTypography-root.MuiTypography-h1.css-acx4kb {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
   color: white !important;
 }
 
 h3.MuiTypography-root.MuiTypography-h3.css-19064t5 {
-  font-family: 'EB Garamond', serif !important;
+  font-family: "EB Garamond", serif !important;
   color: white !important;
 }
 
@@ -475,18 +471,16 @@ span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-6
 } */
 
 .css-1avclyg-MuiTypography-root {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
 button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-1663t47-MuiButtonBase-root-MuiButton-root {
-  color: #FFF !important;
+  color: #fff !important;
 }
-
 
 button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-15r4lj3-MuiButtonBase-root-MuiButton-root {
   color: #fff !important;
 }
-
 
 /* @media(min-width: 992px) {
   .css-11b450n {
@@ -494,13 +488,13 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   }
 } */
 
-@media(max-width: 578px) {
+@media (max-width: 578px) {
   .MuiBox-root.css-hgn5yn {
     margin-left: 4px !important;
   }
 }
 
-@media(max-width: 578px) {
+@media (max-width: 578px) {
   .css-1u2wc6v {
     padding-left: 35px !important;
     padding-bottom: 100px !important;
@@ -512,7 +506,7 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   padding-bottom: 10px !important;
 }
 
-@media(max-width: 550px) {
+@media (max-width: 550px) {
   .css-nzxbvp {
     width: 85% !important;
   }
@@ -526,12 +520,12 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   height: 0px !important;
 }
 
-.css-7uzf97{
+.css-7uzf97 {
   background-color: transparent !important;
   box-shadow: none !important;
 }
 
-.MuiBox-root .css-u65kbm{
+.MuiBox-root .css-u65kbm {
   text-align: right;
 }
 
@@ -543,7 +537,6 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
   text-align: end !important;
 } */
 
-
 /* button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-10sx0ug-MuiButtonBase-root-MuiButton-root{
       opacity: 1;
       background: transparent;
@@ -553,10 +546,72 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
       border: 1px solid gray;
 } */
 
-h5.MuiTypography-root.MuiTypography-h5.css-rrigp5-MuiTypography-root{
+h5.MuiTypography-root.MuiTypography-h5.css-rrigp5-MuiTypography-root {
   padding-top: 6px;
 }
 
-span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root{
+span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root {
   font-size: 10px !important;
+}
+
+.payment_input {
+  /* margin-top: 20px; */
+  width: 60%;
+  background-color: black;
+  color: white;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
+  padding: 5px;
+}
+
+.wifi_icon {
+  color: #8e6c1f;
+}
+
+.card_holder_input {
+  background-color: black;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
+  padding: 5px;
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  margin: 0;
+  width: 60%;
+  color: white;
+  position: relative;
+  z-index: 9999;
+
+}
+
+.card_holder_input:focus-visible {
+  outline: none;
+}
+
+.flex-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.payment_input_expire,
+.payment_input_cv {
+  background-color: #000;
+  color: white;
+  width: 100% !important;
+  min-width: 75px;
+  /* border: 1px solid gray; */
+  border: 2px solid #606060;
+  padding: 5px;
+}
+
+.payment_input_cv {
+  min-width: 55px;
+}
+
+.css-1vzkduw {
+  margin-top: 0 !important;
+  padding: 15px 0 !important;
 }

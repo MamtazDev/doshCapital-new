@@ -55,7 +55,7 @@ function ComplexProductCard({
   const { setProductDatas } = useContext(DataContext);
 
   return (
-    <Card sx={{ maxWidth: "20rem" }}>
+    <Card sx={{ maxWidth: { lg: "20rem" } }}>
       <MDBox p={2}>
         <MDBox display="flex" flexDirection="column" alignItems="center">
           <MDBox

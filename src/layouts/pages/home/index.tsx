@@ -47,20 +47,31 @@ function HomePage(): JSX.Element {
       <Box
         sx={{
           padding: isMobile ? "0 10px" : "0 40px",
-          paddingTop: "180px",
+          paddingTop: "50px",
           background: darkMode ? "#1A2035!important" : "#F0F2F5!important",
         }}
       >
-        <Card sx={{ mt: -30, px: { lg: 5 } }}>
+        <Box
+          sx={{
+            paddingTop: "130px",
+            paddingBottom: "130px",
+            position: "relative",
+            zIndex: "50",
+            borderRadius: "20px",
+            backgroundColor: "#e4e8ed !important",
+          }}
+        >
+          <Card sx={{ mt: -30, px: { lg: 5 } }}>
+            <Container sx={{ px: { xs: 0 } }}>
+              <Sell />
+            </Container>
+          </Card>
           <Container sx={{ px: { xs: 0 } }}>
-            <Sell />
+            <Team />
           </Container>
-        </Card>
-        <Container sx={{ px: { xs: 0 } }}>
-          <Team />
-        </Container>
-        <ContactInfo />
+        </Box>
       </Box>
+      <ContactInfo />
       <Footer />
       {isMobile ? <BottomNavbar /> : ""}
       <Configurator />

@@ -198,7 +198,7 @@ function DashboardNavbar({ absolute, light, isMini }: Props): JSX.Element {
                 sx={navbarIconButton}
                 onClick={handleConfiguratorOpen}
               >
-                <Icon sx={iconsStyle}>settings</Icon>
+                <Icon sx={iconsStyle}>settings </Icon>
               </IconButton>
               <IconButton
                 size="small"

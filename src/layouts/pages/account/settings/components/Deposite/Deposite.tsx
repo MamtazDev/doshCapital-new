@@ -33,41 +33,54 @@ import { loadStripe } from "@stripe/stripe-js";
 import PaymentForm from "components/Payment/PaymentForm";
 import { Typography } from "@mui/material";
 import { BASE_URL } from "config/config";
+import CreditCardModal from "../Deposite/CreditCard";
+import Stripe from "stripe";
 
-const Deposite = () => {
+interface DepositProps {
+  isFormComplete: boolean;
+  formValues: any;
+}
+
+const Deposite = ({ isFormComplete, formValues }: DepositProps) => {
   const { userInfo } = useContext(DataContext);
 
   const stripePromise = loadStripe(
-    "pk_test_51NFZaOLLDUmTZxUmkDuDcasoN5JOWe1Q4aPJXUqqURoA9fd2cS4Vcx7rooYsmfivbLhojg1vM1uzegRpZ7MNl52700t9DowwUF"
+    "pk_test_51OrZZ9GnuZvG4pKcUUbLCMULIiDFBypjTuGwjxScfrFJptzcmsXQ5lnW8vhy48Ax666eI3BlbrVmmtn1exUWpY6H00DFiccuQr"
   );
 
   const [allPools, setAllPools] = useState([]);
-  const [selectPoolName, setSelectPoolName] = useState("");
+  const [selectPoolName, setSelectPoolName] = useState("DOSH-000");
   const [selectedPoolInfo, setSelectedPoolInfo] = useState<any>(null);
   const [selectedAmount, setSelectedAmount] = useState<any>(null);
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setSelectPoolName(event.target.value as string);
-
-    const filteredPool = allPools?.find((i) => i.name === event.target.value);
-    setSelectedPoolInfo(filteredPool);
-    const amount = (
-      filteredPool?.amount / filteredPool?.maxNumberPeople
-    ).toFixed(2);
-    setSelectedAmount(amount);
-  };
-
-  const navigate = useNavigate();
+  const [clientSecret, setClientSecret] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const poolAmountMap: { [key: string]: string } = {
+    "DOSH-000": "7500",
+    "DOSH-100": "15000",
+    "DOSH-200": "20000",
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setSelectPoolName(event.target.value as string);
+
+  //   const filteredPool = allPools?.find((i) => i.name === event.target.value);
+  //   setSelectedPoolInfo(filteredPool);
+  //   const amount = (
+  //     filteredPool?.amount / filteredPool?.maxNumberPeople
+  //   ).toFixed(2);
+  //   setSelectedAmount(amount);
+  // };
+
+  const handleChange = (event: SelectChangeEvent<string>) => {
+    const selectedPool = event.target.value;
+    setSelectPoolName(selectedPool);
+    setSelectedAmount(poolAmountMap[selectedPool] || "");
   };
+
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     const amount = selectedAmount;
@@ -96,11 +109,50 @@ const Deposite = () => {
     getAllPools();
   }, []);
 
+  const handleClickOpen = async () => {
+    setIsLoading(true);
+    try {
+      // const response = await fetch(`${BASE_URL}/api/deposite/createIntend`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     // Add any data required by your backend here
+      //     amount: 2000, // Example: amount in cents
+      //     currency: "usd", // Example: currency code
+      //   }),
+      // });
+      const response: any = await axios.post(
+        `${BASE_URL}/api/deposite/createIntend`
+      );
+
+      const clientSecret = response.data.client_secret;
+      console.log("clientSecret", response.data);
+
+      setClientSecret(clientSecret);
+      if (clientSecret) {
+        setOpen(true);
+      }
+
+      console.log("GenerateClientSecret from deposit", clientSecret);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error fetching client secret:", error);
+    }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
+      {/* {show all data is comming perfectly} */}
       <Card id="deposite" sx={{ overflow: "visible" }}>
         <MDBox p={3}>
-          <MDTypography variant="h5">Deposite</MDTypography>
+          <MDTypography variant="h5">Deposit</MDTypography>
         </MDBox>
         {/* <MDBox component="form" pb={3} px={3} onSubmit={handleSubmit}> */}
 
@@ -114,23 +166,34 @@ const Deposite = () => {
             <FormControl fullWidth sx={{ height: "45px" }}>
               <InputLabel id="demo-simple-select-label">Select Pool</InputLabel>
               <Select
+                // labelId="demo-simple-select-label"
+                // id="demo-simple-selec"
+                // label="demo-simple-selec"
+                // value={selectPoolName}
+                // onChange={handleChange}
+                // sx={{ height: "100%" }}
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
+                label="Select Pool"
                 value={selectPoolName}
-                label="Age"
-                sx={{ height: "100%" }}
                 onChange={handleChange}
+                sx={{ height: "100%" }}
               >
-                {allPools?.map((i, idx) => (
-                  <MenuItem key={idx} value={i?.name}>
-                    {i?.name}
-                  </MenuItem>
-                ))}
+                <MenuItem value="DOSH-000">DOSH-000</MenuItem>
+                <MenuItem value="DOSH-100">DOSH-100</MenuItem>
+                <MenuItem value="DOSH-200">DOSH-200</MenuItem>
               </Select>
             </FormControl>
           </MDBox>
           <MDBox mb={2}>
             <TextField
+              // fullWidth
+              // id="outlined-read-only-input"
+              // label=""
+              // value={selectedAmount ? `${selectedAmount} $` : ""}
+              // InputProps={{
+              //   readOnly: true,
+              // }}
               fullWidth
               id="outlined-read-only-input"
               label=""
@@ -141,7 +204,7 @@ const Deposite = () => {
             />
           </MDBox>
 
-          <MDBox mt={4} mb={1}>
+          {/* <MDBox mt={4} mb={1}>
             <MDButton
               size="small"
               variant="gradient"
@@ -151,33 +214,69 @@ const Deposite = () => {
               onClick={handleClickOpen}
               disabled={!selectedPoolInfo}
             >
-              Deposite
+              Deposit
+            </MDButton>
+          </MDBox> */}
+          <MDBox mt={4} mb={1}>
+            <MDButton
+              size="small"
+              variant="gradient"
+              color="info"
+              fullWidth
+              type="button"
+              onClick={handleClickOpen}
+              // disabled={!isFormComplete} // open this after desining
+              disabled={!selectedAmount}
+            >
+              {!isLoading ? "Deposit" : "Processing.."}
             </MDButton>
           </MDBox>
-        </Box>
-        {/* </MDBox> */}
-      </Card>
 
-      <Dialog open={open} onClose={handleClose}>
-        <Box sx={{ backgroundColor: "#202940" }}>
-          <DialogTitle>Deposite</DialogTitle>
-          <DialogContent>
-            <Typography>Pool: {selectPoolName}</Typography>
-            <Typography sx={{ mb: 1 }}>Amount: ${selectedAmount}</Typography>
-            <Box sx={{ border: "1px solid blue", p: 2, borderRadius: "5px" }}>
-              <Elements stripe={stripePromise}>
-                <PaymentForm
-                  amount={selectedAmount}
-                  userInfo={userInfo}
-                  handleSubmit={handleSubmit}
-                />
-              </Elements>
-            </Box>
-          </DialogContent>
+          {clientSecret && (
+            <Elements
+              stripe={stripePromise}
+              options={{
+                clientSecret,
+                appearance: { theme: "stripe" },
+              }}
+            >
+              <CreditCardModal
+                formValues={formValues}
+                selectPoolName={selectPoolName}
+                selectedAmount={selectedAmount}
+                clientSecret={clientSecret}
+                open={open}
+                handleClose={handleClose}
+                number={""}
+                holder={""}
+                expires={""}
+              />
+            </Elements>
+          )}
         </Box>
-      </Dialog>
+      </Card>
     </>
   );
 };
 
 export default Deposite;
+
+// const STRIPE_SK: string =
+//   "sk_test_51NFZaOLLDUmTZxUmmoNiB3NuGqC7qEXJXjHuwTAeboCeaYihKfwQXZQfJUMFHjDigF9pbV4dL05r4PoobuW6ATJR00GmJMXrQ8";
+
+// const createPaymentIntent = async (amountInCents: Number, currency: String) => {
+//   // const stripe = new Stripe(STRIPE_SK);
+//   const stripe = new Stripe(STRIPE_SK);
+//   // console.log("stripe Intent:", stripe)
+//   try {
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       amount: amountInCents,
+//       currency: currency,
+//     });
+
+//     return paymentIntent.client_secret;
+//   } catch (error) {
+//     console.error("Error on createPayment intent", error);
+//     throw new Error("Failed to create PaymentIntent");
+//   }
+// };

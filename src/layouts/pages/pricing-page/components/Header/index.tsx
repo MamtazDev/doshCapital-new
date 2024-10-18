@@ -35,6 +35,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
       <DefaultNavbar
         routes={pageRoutes}
         action={{
+          icon: "",
           type: "internal",
           route: "/authentication/sign-up/cover",
           label: "Sign Up",
@@ -47,8 +48,8 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
         position="relative"
         minHeight="50vh"
         height="50vh"
-        borderRadius="xl"
-        m={2}
+        // borderRadius="xl"
+        // m={2}
         pt={2}
         sx={{
           backgroundImage: ({
@@ -84,7 +85,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
           </Grid>
         </Grid>
       </MDBox>
-      <Grid container sx={{ px: 6, my: 8 }}>
+      <Grid container sx={{ px: 2, my: 12 }}>
         <Grid item xs={12}>
           <Card sx={{ mt: -16 }}>
             <MDBox minWidth={{ xs: "22rem", md: "25rem" }} mx="auto" mt={6}>

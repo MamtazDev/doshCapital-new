@@ -29,6 +29,7 @@ function BasicLayout({ image, children }: Props): JSX.Element {
       <DefaultNavbar
         routes={pageRoutes}
         action={{
+          icon: "",
           type: "external",
           route:
             "https://creative-tim.com/product/material-dashboard-2-pro-react-ts",
