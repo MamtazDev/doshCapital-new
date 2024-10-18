@@ -88,7 +88,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
       if (paymentResult.error) {
         handlePaymentError(paymentResult.error);
       } else if (paymentResult.paymentIntent?.status === "succeeded") {
-        await handleSuccessfulPayment(pool, amount);
+        await handleSuccessfulPayment(formValues);
       }
 
       handleClose();
@@ -116,14 +116,15 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
     console.error("Payment Error:", error);
   };
 
-  const handleSuccessfulPayment = async (pool: string, amount: number) => {
-    const paymentData = { pool, amount, selectPoolName, selectedAmount };
+  const handleSuccessfulPayment = async (formValues:any) => {
+    const paymentData = { selectPoolName, selectedAmount };
 
     const data = {
-      phone,
+      formValues:formValues,
       name: selectPoolName,
       amount: selectedAmount,
     };
+    console.log('data',data)
     const response = await axios.post(`${BASE_URL}/api/deposite/payment`, data);
     if (response) {
       // const data = await response.json();
@@ -137,7 +138,8 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
-          width: 550,
+          width: " 100%",
+          maxWidth: 550,
           padding: 4,
           backgroundColor: "#333",
           borderRadius: "15px",
@@ -151,6 +153,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           justifyContent: "center",
           alignItems: "flex-start",
           overflow: "hidden",
+          overflowX: "auto",
           "::before": {
             content: '""',
             position: "absolute",

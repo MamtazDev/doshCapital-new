@@ -99,7 +99,7 @@ function Invoice(): JSX.Element {
                         Invoice no
                       </MDTypography>
                       <MDTypography variant="h5" fontWeight="medium">
-                        #D001-001
+                        #D000-001
                       </MDTypography>
                     </Grid>
                     <Grid item xs={12} md={7} lg={5}>

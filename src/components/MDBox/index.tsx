@@ -13,7 +13,7 @@ interface Props extends BoxProps {
   color?: string;
   opacity?: number;
   borderRadius?: string;
-  shadow?: string;
+ 
   coloredShadow?: string;
   [key: string]: any;
 }
@@ -26,8 +26,8 @@ const MDBox: FC<Props> = forwardRef(
       color,
       opacity,
       borderRadius,
-      shadow,
-      coloredShadow,
+     
+    
       ...rest
     },
     ref
@@ -40,9 +40,9 @@ const MDBox: FC<Props> = forwardRef(
         bgColor,
         color,
         opacity,
-        borderRadius,
-        shadow,
-        coloredShadow,
+        borderRadius
+        
+      
       }}
     />
   )
