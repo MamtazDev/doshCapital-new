@@ -491,15 +491,14 @@ function Invoice(): JSX.Element {
                       gap={2}
                       mt={{ xs: 2, md: 0 }}
                     >
-                      <a href="mailto:support@dosh.com.au">
-                        <MDButton
-                          variant="gradient"
-                          color="info"
-                          // onClick={() => window.print()}
-                        >
-                          SEND EMAIL
-                        </MDButton>
-                      </a>
+                      <MDButton
+                        variant="gradient"
+                        color="info"
+                        // onClick={() => window.print()}
+                      >
+                        SEND EMAIL
+                      </MDButton>
+
                       <MDButton
                         variant="gradient"
                         color="info"
