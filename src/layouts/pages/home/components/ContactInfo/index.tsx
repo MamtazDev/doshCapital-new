@@ -40,7 +40,7 @@ function ContactInfo(): JSX.Element {
           <Container>
             <Grid container rowSpacing={"20px"} alignItems={"center"}>
               <Grid md={6}>
-                <MDBox>
+                <MDBox sx={{ paddingLeft: "50px" }}>
                   <MDBox sx={{ paddingBottom: "20px" }} mt={4}>
                     <MDTypography
                       variant="h2"
@@ -84,7 +84,7 @@ function ContactInfo(): JSX.Element {
                     </MDBox>
                   </MDBox>
                 </MDBox>
-                <MDBox mt={3}>
+                <MDBox mt={3} sx={{ paddingLeft: "50px" }}>
                   <MDBox sx={{ display: "flex", gap: "10px" }}>
                     <MDBox mt={1}>
                       <CallIcon style={{ color: "white" }} fontSize="medium" />
