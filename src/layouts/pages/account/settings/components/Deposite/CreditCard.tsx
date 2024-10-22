@@ -141,6 +141,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           width: " 100%",
           maxWidth: 550,
           padding: 4,
+          paddingLeft: "70px",
           backgroundColor: "#333",
           borderRadius: "15px",
           color: "#fff",
@@ -276,14 +277,15 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
                     </Box>
                   </Box>
 
-                  <Box marginLeft="50px">
+                  <Box marginLeft="25px">
                     <MDButton
                       onClick={handleSubmit}
                       variant="contained"
                       color="info"
                       sx={{
-                        width: "20%",
-                        padding: 1,
+                        // width: "25%",
+
+                        padding: "4px 20px",
                         marginTop: "8px",
                         alignSelf: "flex-start",
                         color: "white",
@@ -311,7 +313,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
                         padding: "4px",
                         alignSelf: "flex-end",
                         color: "white",
-                        marginBottom: "12px",
+                        marginBottom: "35px",
                       }}
                     >
                       <img

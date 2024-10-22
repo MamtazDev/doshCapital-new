@@ -494,10 +494,11 @@ function Invoice(): JSX.Element {
                       <MDButton
                         variant="gradient"
                         color="info"
-                        onClick={() => window.print()}
+                        // onClick={() => window.print()}
                       >
                         SEND EMAIL
                       </MDButton>
+
                       <MDButton
                         variant="gradient"
                         color="info"

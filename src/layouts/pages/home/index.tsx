@@ -58,7 +58,7 @@ function HomePage(): JSX.Element {
             position: "relative",
             zIndex: "50",
             borderRadius: "20px",
-            backgroundColor: "#e4e8ed !important",
+            // backgroundColor: "white !important",
           }}
         >
           <Card sx={{ mt: -30, px: { lg: 5 } }}>

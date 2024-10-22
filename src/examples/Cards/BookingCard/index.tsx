@@ -50,16 +50,14 @@ function BookingCard({
           src={image}
           alt={title}
           borderRadius="lg"
-          
-          width="100%"
+          width="95%"
           height="280px"
           position="relative"
           zIndex={1}
         />
         <MDBox
           borderRadius="lg"
-          
-          width="100%"
+          width="95%"
           height="100%"
           position="absolute"
           left={0}
