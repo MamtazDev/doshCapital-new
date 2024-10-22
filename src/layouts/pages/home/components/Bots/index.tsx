@@ -58,7 +58,11 @@ const Bots = () => {
               {bots.map((bot, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <Bot title={bot.title} subtitle={bot.subtitle} image={bot.image} />
+                    <Bot
+                      title={bot.title}
+                      subtitle={bot.subtitle}
+                      image={bot.image}
+                    />
                   </SwiperSlide>
                 );
               })}

@@ -142,10 +142,9 @@
   background-color: transparent !important;
   box-shadow: none !important;
   margin-top: 20px !important;
-
 }
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width: 1400px) {
   .MuiContainer-root {
     max-width: 100% !important;
   }

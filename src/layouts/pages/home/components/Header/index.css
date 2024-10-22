@@ -21,7 +21,7 @@
   height: unset !important;
 }
 
-@media screen and (max-width:667px) {
+@media screen and (max-width: 667px) {
   .homebg {
     display: none;
     width: unset !important;
@@ -38,7 +38,7 @@
   display: none;
 }
 
-@media screen and (max-width:667px) {
+@media screen and (max-width: 667px) {
   .homebgThree {
     position: absolute;
     left: -18px;
@@ -54,27 +54,25 @@
   }
 }
 
-
-
 .css-yjwis {
   z-index: unset !important;
 }
 
 #fname::placeholder {
-  color: #22283f !important
+  color: #22283f !important;
 }
 
 #lname::placeholder {
-  color: #22283f !important
+  color: #22283f !important;
 }
 
 #email::placeholder {
-  color: #22283f !important
+  color: #22283f !important;
 }
 
 #message::placeholder {
   color: #22283f !important;
-  width: 100%
+  width: 100%;
 }
 
 #message {

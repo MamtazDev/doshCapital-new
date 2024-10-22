@@ -121,7 +121,7 @@ export default function App() {
       (route: {
         collapse: any;
         route: string;
-        component: ReactElement<any, string | JSXElementConstructor<any> >;
+        component: ReactElement<any, string | JSXElementConstructor<any>>;
         key: Key;
       }) => {
         if (route.collapse) {

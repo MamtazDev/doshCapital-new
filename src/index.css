@@ -33,7 +33,7 @@
 }
 
 .css-vuuwxc {
-  width: unset !important;
+  width: unset ;
 }
 
 .css-28xbig-MuiGrid-root {
@@ -202,9 +202,9 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
   text-align: start !important;
 }
 
-.MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
+/* .MuiGrid-root.MuiGrid-grid-md-6.css-1gidecq-MuiGrid-root {
   padding-left: 75px;
-}
+} */
 
 .css-1xzqqmo-MuiGrid-root {
   padding: 0 !important;
@@ -235,7 +235,7 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-siz
     padding: 0 !important;
   }
 
-  .css-exfl4s-MuiGrid-root>.MuiGrid-item {
+  .css-exfl4s-MuiGrid-root > .MuiGrid-item {
     padding: 0 !important;
   }
 
@@ -582,7 +582,6 @@ span.MuiTypography-root.MuiTypography-button.css-1a49fuf-MuiTypography-root {
   color: white;
   position: relative;
   z-index: 9999;
-
 }
 
 .card_holder_input:focus-visible {

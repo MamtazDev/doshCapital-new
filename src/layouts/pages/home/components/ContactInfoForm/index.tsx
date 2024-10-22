@@ -72,7 +72,7 @@ function ContactInfoForm() {
         marginTop={"-50px"}
         shadow="xl"
       >
-        <MDTypography variant="h6" sx={{ color: "white" }}>
+        <MDTypography variant="h6" color="white" sx={{ color: "white" }}>
           Contact us
         </MDTypography>
       </MDBox>

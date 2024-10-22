@@ -1,4 +1,12 @@
-const Bot = ({ title, subtitle, image }: { title: string; subtitle: string; image: string }) => {
+const Bot = ({
+  title,
+  subtitle,
+  image,
+}: {
+  title: string;
+  subtitle: string;
+  image: string;
+}) => {
   return (
     <div>
       <figure className="snip1584">

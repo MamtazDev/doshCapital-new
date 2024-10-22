@@ -206,8 +206,6 @@ function Portfolio(): JSX.Element {
     year: "numeric",
   });
 
-
-
   const [poolValue, setPoolValue] = useState(5000);
   const [poolYtdBalance, setPoolYtdBalance] = useState(8000);
   const [poolProfit, setPoolProfit] = useState(3000);
@@ -227,20 +225,19 @@ function Portfolio(): JSX.Element {
   const [fee, setFee] = useState(0);
   const [accountBalance, setAccountBalance] = useState(365);
   const [ytdWithdrawals, setYtdWithdrawals] = useState(0);
-  const [avgMonthlyProfit,setAvgMonthlyProfit] = useState(0);
-
+  const [avgMonthlyProfit, setAvgMonthlyProfit] = useState(0);
 
   useEffect(() => {
     setInvestment(poolValue / members);
-    setYtdInvestment(initalInvestment + ( monthlyDeposit * monthYtd));
+    setYtdInvestment(initalInvestment + monthlyDeposit * monthYtd);
     setPoolProfit(poolYtdBalance - poolValue);
     setTotalIn(profitEarning + ytdInvestMent + otherPoolIncome + networkIncome);
-    setNetworkContributos(totalIn*.05);
-    setComissions(0.10 * profitEarning);
+    setNetworkContributos(totalIn * 0.05);
+    setComissions(0.1 * profitEarning);
     setFee(0.02 * withdrawal);
     setTotalOut(withdrawal + networkContributos + comissions + fee);
     setAccountBalance(totalIn - totalOut);
-    setProfitEarning(poolProfit / members)
+    setProfitEarning(poolProfit / members);
     setAvgMonthlyProfit(poolProfit / monthYtd);
   }, [poolValue]);
 
@@ -271,7 +268,6 @@ function Portfolio(): JSX.Element {
                 //     : 250
                 // }`}
                 count={ytdInvestMent}
-
                 percentage={{
                   color: "success",
                   value: "+55%",
@@ -282,7 +278,6 @@ function Portfolio(): JSX.Element {
                   menu: renderMenu(salesDropdown, closeSalesDropdown),
                   value: salesDropdownValue,
                 }}
-
                 count2={"$250"}
                 title2={"Monthly Deposit"}
                 button={false}

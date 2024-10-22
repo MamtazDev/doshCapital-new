@@ -57,7 +57,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
     bgcolor: "transparant",
     border: "2px solid #000",
     boxShadow: 24,
-    p: 4
+    p: 4,
   };
 
   return (
