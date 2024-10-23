@@ -149,7 +149,7 @@ function DashboardNavbar({ absolute, light, isMini }: Props): JSX.Element {
       <Toolbar sx={navbarContainer}>
         <MDBox
           color="inherit"
-          mb={{ xs: 1, md: 0 }}
+          mb={{ xs: 10, md: 0 }}
           sx={(theme) => navbarRow(theme, { isMini })}
         >
           <Breadcrumbs

@@ -69,7 +69,7 @@ function Breadcrumbs({ icon, title, route, light }: Props): JSX.Element {
           {title.replace("-", " ")}
         </MDTypography>
       </MuiBreadcrumbs>
-      <MDTypography
+      {/* <MDTypography
         fontWeight="bold"
         textTransform="capitalize"
         variant="h6"
@@ -77,7 +77,7 @@ function Breadcrumbs({ icon, title, route, light }: Props): JSX.Element {
         noWrap
       >
         {title.replace("-", " ")}
-      </MDTypography>
+      </MDTypography> */}
     </MDBox>
   );
 }
