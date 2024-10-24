@@ -35,7 +35,7 @@ const TableData: React.FC<TableDataProps> = ({ table }) => {
               style={{
                 width: "800px",
                 textAlign: column.align,
-                color: "white",
+                // color: "white",
               }}
             >
               {column.Header}

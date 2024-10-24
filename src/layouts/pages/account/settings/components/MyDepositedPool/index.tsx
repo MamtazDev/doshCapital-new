@@ -51,10 +51,10 @@ const MyDepositedPool = () => {
         <MDTypography variant="h5">My Deposited Pool</MDTypography>
       </MDBox>
 
-      <Box p={2}>
+      <Box>
         <Grid spacing={2}>
           <Grid item xs={12}>
-            <Box p={2}>
+            <Box sx={{ overflowX: "scroll" }}>
               <TableData
                 table={dataTableData}
                 entriesPerPage={false}
