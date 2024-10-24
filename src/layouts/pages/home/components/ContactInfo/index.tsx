@@ -38,12 +38,17 @@ function ContactInfo(): JSX.Element {
           }}
         >
           <Container>
-            <Grid container rowSpacing={"20px"} 
-            sx={{ paddingLeft: {
-                xs: '0',    
-                sm: '75px', 
-            } }} 
-    alignItems={"center"}>
+            <Grid
+              container
+              rowSpacing={"20px"}
+              sx={{
+                paddingLeft: {
+                  xs: "0",
+                  sm: "75px",
+                },
+              }}
+              alignItems={"center"}
+            >
               <Grid md={6}>
                 <MDBox sx={{ paddingLeft: "50px" }}>
                   <MDBox sx={{ paddingBottom: "20px" }} mt={4}>
@@ -112,10 +117,15 @@ function ContactInfo(): JSX.Element {
                 </MDBox>
               </Grid>
 
-              <Grid md={6} sx={{ paddingLeft: {
-                xs: '0',    
-                md: '75px', 
-            } }} >
+              <Grid
+                md={6}
+                sx={{
+                  paddingLeft: {
+                    xs: "0",
+                    md: "75px",
+                  },
+                }}
+              >
                 <ContactInfoForm />
               </Grid>
             </Grid>

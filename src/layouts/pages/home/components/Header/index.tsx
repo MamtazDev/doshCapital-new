@@ -105,7 +105,10 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                     fontWeight="bold"
                     align="right"
                     // style={{ fontFamily: "felix-titling-regular" }}
-                    sx={{ fontFamily: "felix-titling-regular", fontSize: {xs: "26px", sm: "28px", md:"2.25rem"} }}
+                    sx={{
+                      fontFamily: "felix-titling-regular",
+                      fontSize: { xs: "26px", sm: "28px", md: "2.25rem" },
+                    }}
                     // className="home_text"
                   >
                     AUTOMATED TRADING

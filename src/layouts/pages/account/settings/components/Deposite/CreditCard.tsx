@@ -141,12 +141,12 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
           width: "100%",
           maxWidth: 550,
           padding: {
-            xs: 1,  
+            xs: 1,
             lg: 4,
           },
           paddingLeft: {
-            xs: "8px",  
-            md: "70px", 
+            xs: "8px",
+            md: "70px",
           },
           backgroundColor: "#333",
           borderRadius: "15px",
@@ -178,23 +178,15 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
         }}
       >
         <Box width="100%">
-          <div
-            style={{
-              display: "flex",
-              alignItems: "end",
-              justifyContent: "space-between",
-              gap: "30px",
-            }}
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-between"}
           >
-            <div style={{ width: "100%" }}>
-              <WifiIcon className="wifi_icon" />
-            </div>
-            <div style={{ position: "absolute", top: "20px", right: "20px" }}>
-              <img width={50} src={LogoImg} alt="" />
-            </div>
-          </div>
-          <Box>
             <Box>
+              <div style={{ width: "100%" }}>
+                <WifiIcon className="wifi_icon" />
+              </div>
               <Box marginBottom={1}>
                 <label
                   style={{
@@ -229,7 +221,7 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
                   className="payment_input"
                 />
               </Box>
-              <Box display={"flex"} alignItems={"center"} marginBottom={1}>
+              <Box display={"flex"} alignItems={"center"}>
                 <Box
                   style={{
                     display: "flex",
@@ -292,8 +284,8 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
                         // width: "25%",
 
                         padding: {
-                          xs: "2px 10px", 
-                          md: "4px 20px", 
+                          xs: "2px 10px",
+                          md: "4px 20px",
                         },
                         marginTop: "8px",
                         alignSelf: "flex-start",
@@ -304,43 +296,49 @@ const CreditCardModal: React.FC<CreditCardModalProps> = ({
                     </MDButton>
                   </Box>
                 </Box>
+              </Box>
+            </Box>
+            <Box sx={{ height: "100%" }}>
+              <Box
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: {
+                    xs: "10px",
+                    lg: "30px",
+                  },
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <img width={50} src={LogoImg} alt="" />
+                </div>
+                <MDButton
+                  variant="contained"
+                  color="info"
+                  sx={{
+                    width: "20%",
+                    height: "64px",
+                    padding: "4px",
+                    alignSelf: "flex-end",
+                    color: "white",
+                    // marginBottom: "35px",
+                  }}
+                >
+                  <img
+                    width={15}
+                    src="https://static-00.iconduck.com/assets.00/paypal-icon-1735x2048-7umw9cq7.png"
+                    alt=""
+                  />
+                </MDButton>
 
-                <Box position="absolute" right={20} bottom={30}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      justifyContent:"space-between"
-                    }}
-                  >
-                    <MDButton
-                      variant="contained"
-                      color="info"
-                      sx={{
-                        width: "20%",
-                        height: "64px",
-                        padding: "4px",
-                        alignSelf: "flex-end",
-                        color: "white",
-                        // marginBottom: "35px",
-                      }}
-                    >
-                      <img
-                        width={15}
-                        src="https://static-00.iconduck.com/assets.00/paypal-icon-1735x2048-7umw9cq7.png"
-                        alt=""
-                      />
-                    </MDButton>
-
-                    <img
-                      className="master_card"
-                      width={61}
-                      src={mastercard}
-                      alt="MasterCard"
-                    />
-                  </div>
-                </Box>
+                <img
+                  className="master_card"
+                  width={61}
+                  src={mastercard}
+                  alt="MasterCard"
+                />
               </Box>
             </Box>
           </Box>
